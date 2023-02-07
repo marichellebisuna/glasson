@@ -1,7 +1,14 @@
+import { useState } from 'react'
+import { Navigate } from 'react-router-dom'
 import './product.scss'
+
 const Product = () => {
-  return (
-    <div>Product</div>
+  const [user, setUser] = useState(false)
+  return (   
+    <div>
+      {user ? <div className='home'>Product</div> : <Navigate to='/login' />}  
+    </div> 
+    
   )
 }
 

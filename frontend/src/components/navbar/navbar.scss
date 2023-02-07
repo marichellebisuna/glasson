@@ -1,0 +1,194 @@
+.navbar{
+ .top{
+    width:100vw;
+    border-bottom: 1px solid lightgray;
+  .container{    
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .left{
+      display: flex;
+       flex-direction: row;
+      .social{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:20px;
+        height:20px;
+        border: 1px solid gray;
+        border-radius: 4px;
+        padding: 12px;
+        color: gray;
+        margin: 5px;
+        cursor: pointer;
+        & :hover{
+          color: rgb(55, 54, 54);
+        }
+      }
+    }
+    .right{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      color:gray;
+      font-size: 0.80 rem;
+      gap: 40px;
+       cursor: pointer;
+      & :hover{
+          color: rgb(55, 54, 54);
+        }
+      .email, .times{
+        span{
+        padding-right: 5px;       
+      }
+      }     
+    }
+  }
+ }
+  
+  .middle{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    margin:0 auto;
+    .logo{
+      cursor: pointer;
+    }
+    .menu{
+      display: flex;
+    align-items: center;
+    justify-content: space-between;
+       text-transform: uppercase;
+       color: gray;
+       ul{
+        display: flex;
+        list-style: none;  
+        gap:20px;    
+        margin-right: 70px;
+        & .active{
+          font-weight: 700;
+          color: rgb(55, 54, 54);
+        }
+        & :hover{
+          color: rgb(55, 54, 54);
+        }
+        a{
+          text-decoration: none;
+          color: gray;;
+          cursor: pointer;
+        }
+       }
+      .icons{
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        & :hover{
+          color: rgb(55, 54, 54);
+        }
+        .cart{
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .number{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top:-10px;
+            left:15px;
+            font-size: .75rem;
+            background-color: 
+            #1891ac;
+            color: white;
+            border-radius: 50%;
+            padding: 4px 7px;             
+        }
+        }        
+      }
+    }   
+  }
+  
+  .bottom{
+    width:90vw;
+    margin:0 auto;
+    color:gray;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    .container{   
+      display: flex;  
+     .search{       
+      display: flex;
+      align-items: center;
+      justify-content: center;       
+      border: 1px solid lightgray;        
+      .categories{
+        position: relative;          
+        select {         
+          border: none !important;  
+          padding-left: 20px;        
+          outline: none;         
+          scroll-behavior: smooth;         
+          cursor: pointer;   
+          padding-right: 70px;           
+          z-index: 1; 
+          font-weight: 700;                  
+        } 
+          .button{
+        position: absolute;
+        top:3px;
+        right:-5px;
+        border-right: 2px solid lightgray;
+        background-color: white;
+        padding-right:10px;
+        margin-right:5px;
+        pointer-events: none;
+        font-size: 12px;
+        } 
+    }
+      input {
+      width:500px;
+      background-color: transparent;
+      border-style: none;
+      outline:0px;
+      margin-left: 10px;            
+      }   
+    }
+      button{
+        border: none;
+        color: white;
+        background-color:#1891ac;          
+        font-size: 13px;
+        padding:10px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+    .support{  
+      width:300px;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-left: 20px;
+      .icon{
+        font-size: 2rem;      
+      }
+      .hotline{ 
+        padding-left: 20px;     
+        .text{
+        color: rgb(55, 54, 54);
+        font-weight: 500;
+      }
+      }
+    }
+    
+    
+  }
+}

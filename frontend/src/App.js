@@ -1,10 +1,52 @@
 import './App.scss';
+import Navbar from './components/navbar/Navbar';
+import {
+  createBrowserRouter,
+  RouterProvider, 
+  Navigate
+} from "react-router-dom";
+import Home from './pages/home/Home';
+import Product from './pages/product/Product';
+import Products from './pages/products/Products';
+import Login from './pages/login/Login';
+import Register from './pages/register/Register';
+import Layout from './components/layout/Layout';
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path:"/",
+    element:<Layout/>,
+    children:[
+      {
+        path: "/",
+        element: <Home/>
+      },
+      {
+        path: "/products/:id",
+        element: <Products />,
+      },
+      {
+        path: "/product/:id",
+        element: <Product />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/register",
+        element: <Register />,
+      },
+    ]
+
+  }
+]);
+function App() {  
   return (
     <div className="app">
-      <h1>Hello</h1>
+       <RouterProvider router={router} />      
     </div>
+
   );
 }
 
