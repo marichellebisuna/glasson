@@ -15,8 +15,11 @@ const Featured = () => {
           <li><Link to="/">Armani Sp</Link></li>
           <li><Link to="/">Armani YX</Link></li>
         </ul>
-      </div>
-      <Product />
+      </div>    
+      <div className="product">
+          <Product />  
+      </div>  
+         
       </div>
   )
 }
