@@ -1,5 +1,6 @@
 import './footer.scss'
 import cards from '../../assets/cards.png'
+import {Link} from 'react-router-dom'
 const Footer = () => {
   return (
     <div className="footer">
@@ -21,31 +22,31 @@ const Footer = () => {
         <div className="column">
           <div className="title">Information</div>
           <ul>
-            <li>About us</li>
-            <li>Contact Us</li>
-            <li>Blogs</li>
-            <li>Terms Of Use</li>
-            <li>Privacy Policies</li>
+            <li><Link to="#">About us</Link></li>
+            <li><Link to="#">Contact Us</Link></li>
+            <li><Link to="#">Blogs</Link></li>
+            <li><Link to="#">Terms Of Use</Link></li>
+            <li><Link to="#">Privacy Policies</Link></li>
           </ul>
         </div>
         <div className="column">
           <div className="title">My Account</div>
           <ul>
-            <li>My Order</li>
-            <li>Wishlist</li>
-            <li>My Credit</li>
-            <li>Login</li>
-            <li>Personal Info</li>
+            <li><Link to="#">My Order</Link></li>
+            <li><Link to="#">Wishlist</Link></li>
+            <li><Link to="#">My Credit</Link></li>
+            <li><Link to="#">Login</Link></li>
+            <li><Link to="#">Personal Info</Link></li>
           </ul>
         </div>
         <div className="column">
           <div className="title">Customer</div>
           <ul>
-            <li>Help & FAQ?</li>
-            <li>Order & Return</li>
-            <li>Shipping Info</li>
-            <li>Search Team</li>
-            <li>Store Location</li>
+            <li><Link to="#">Help & FAQ?</Link></li>
+            <li><Link to="#">Order & Return</Link></li>
+            <li><Link to="#">Shipping Info</Link></li>
+            <li><Link to="#">Search Team</Link></li>
+            <li><Link to="#">Store Location</Link></li>
           </ul>
         </div>
         <div className="column">
@@ -84,7 +85,7 @@ const Footer = () => {
        
       </div>
       <div className="bottom">
-        <div className="left">Copyright &copy; <span style={{color:"red", fontWeight:700}}>Glasso</span>. All Rights Reserved </div>
+        <div className="left">Copyright &copy; <span style={{color:"red", fontWeight:700,cursor:"pointer"}}><Link to='/'>Glasso</Link></span>. All Rights Reserved </div>
         <div className="right"><img src={cards} alt="" srcset="" /></div>
       </div>
     </div>

@@ -4,7 +4,7 @@
   background-color: #f6f6f6;
   .top{
     display: flex;
-    width: 90vw;
+    width: 70vw;
     margin: 40px auto;
     .column{
       display: flex;
@@ -57,20 +57,27 @@
             color: gray;
             padding-right: 10px;
           }
+          a{
+            text-decoration: none;
+            color: gray;
+            &:hover{
+              color:inherit;
+            }
+          }
         }
       }
       .store{
         .details{
-         //nt-weight: 700;
-          
+          color:gray;
+          cursor: pointer;          
           .icon{
             padding: 10px 0;
-            i{
-               color:gray;
-               padding-right: 10px;
-              
-            }
-           
+             &:hover{
+            color:black;
+          }             
+            i{              
+               padding-right: 10px;                
+            }           
           }
         }
       }
@@ -83,7 +90,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 90vw;
+      width: 70vw;
       margin: 30px auto;
     .left{
       .join{
@@ -96,7 +103,7 @@
     }
     .right{
       background-color:#ffa053;   
-      font-size: 1.5rem;   
+      // font-size: 2rem;   
       display: flex;
       align-items: center;
       border-top-right-radius: 20px;
@@ -110,7 +117,8 @@
         border-style: none;
         outline:0px;
         margin-left: 10px;   
-        letter-spacing: 1.3px;
+        letter-spacing: 1.3px;  
+        font-size: 1.1rem;
         color: white ;       
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
           color: white;
@@ -126,17 +134,22 @@
           text-transform: uppercase;
           border-top-right-radius: 20px;
           border-bottom-right-radius: 20px;
+          cursor: pointer;
         }  
     }
     }
     
   }
   .bottom{
-    width: 90vw;
+    width: 70vw;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;;
+    padding: 10px 0;
+    a{
+      color: red;
+      text-decoration: none;
+    }
   }
 }
