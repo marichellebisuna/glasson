@@ -1,0 +1,42 @@
+.featured{
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  h1{
+    font-size: 3rem;
+  }
+  .categories{
+    padding: 30px 0;
+    color: gray;
+   
+    ul{
+      list-style: none;
+      display: flex;
+      gap:50px;
+      li{
+       
+        &.active{
+          color:red !important;
+          font-weight: 700;
+          border-bottom: 3px solid red;
+          padding-bottom: 5px;
+          
+        }
+        &:hover{
+          color:red;
+          font-weight: 700;
+          border-bottom: 3px solid red;
+          padding-bottom: 5px;
+           transform: all 2s ease;
+        }
+        a{
+          cursor: pointer;
+          text-decoration: none;
+          color:inherit
+        }
+      }
+    }
+  }
+}
