@@ -19,6 +19,7 @@ const Featured = () => {
       <div className="product">
           <Product />  
       </div>  
+      <div className="plus"><i class="fa-solid fa-plus"></i></div>
          
       </div>
   )
