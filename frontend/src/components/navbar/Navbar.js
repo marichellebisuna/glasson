@@ -1,13 +1,27 @@
 import './navbar.scss'
 import logo from '../../media/logo.png'
 import {Link} from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 const Navbar = () => {
+  const [active, setActive] = useState(false)
+
+  const isActive = () => {
+    window.scrollY > 0 ? setActive(true) : setActive(false)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", isActive);
+
+    return () => {
+      window.removeEventListener("scroll", isActive);
+    }
+  }, [])
+  
   
   return (
-    <div className='navbar'>      
-      <div className="top">   
+    <div className='navbar'>  
+      <div className={active ? "top active" : "top"}>   
         <div className="container">
           <div className="left">         
             <div className="social"><i class="fa-brands fa-facebook-f"></i></div>
@@ -21,12 +35,10 @@ const Navbar = () => {
             <span><i class="fa-regular fa-clock"></i></span> 9:00 AM - 18:00 PM
             </div>
           </div>
-      </div>
-        
-
-      </div>
+        </div>
+      </div>    
       <div className="middle">
-        <div className="logo"><img src={logo} alt="" srcset="" />
+        <div className="logo"><Link to="/"> <img src={logo} alt="" srcset="" /></Link>
         </div>
         <div className="menu">       
           <ul className='list'>
