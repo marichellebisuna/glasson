@@ -10,7 +10,7 @@
   .categories{
     padding: 30px 0;
     color: gray;
-   
+    height:50px;
     ul{
       list-style: none;
       display: flex;
@@ -41,6 +41,10 @@
   }
   .product{
     margin:15px auto;
+  }
+  .text{
+    font-size: .80rem;
+    color:gray;
   }
   .plus{
     border:1px solid gray;
