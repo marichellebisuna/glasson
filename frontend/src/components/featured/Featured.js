@@ -1,17 +1,17 @@
 import React, {useState} from 'react'
 import './featured.scss'
-import Product from '../../pages/product/Product'
-import {Link} from 'react-router-dom'
+import ProductCard from '../products/productcard/ProductCard'
 import {products} from "../../data"
-
 
 const Featured = () => {
   const [productItems, setProductItems] = useState(products)
-  
+ 
   const tempCategory=new Set(products.map(product=>product.category))
   let categories = Array.from(tempCategory)
   categories = ["all", ...categories]
-  
+  console.log(categories)
+  console.log(productItems)
+
   const handleProducts=(category)=>{
         let tempProducts = [...products]
    
@@ -35,16 +35,19 @@ const Featured = () => {
       <div className="categories">
         <ul>
         {categories && categories.map((category, index)=>
-          <li className={`${isActive(index)}`} onClick={()=>setTab(index)}> <a key={index} onClick={()=>{handleProducts(category)}}>{category} </a></li>
-      )}
-         
+          <li key={index} className={`${isActive(index)}`} onClick={()=>setTab(index)}>           
+            <div className='alink' onClick={()=>{handleProducts(category)}}>{category} </div></li>
+      )}         
         </ul>
-      </div>    
-      <div className="product">
-          <Product productItems={productItems}/>  
+      </div>   
+ 
+         <div className="product">
+          <ProductCard productItems={productItems}/>  
       </div>  
-      <div className="text">Viewing 1-10 of 230</div>
-      <div className="plus"><i class="fa-solid fa-plus"></i></div>
+       
+     
+      {/* <div className="text">Viewing 1-10 of 230</div>
+      <div className="plus"><i class="fa-solid fa-plus"></i></div> */}
          
       </div>
   )

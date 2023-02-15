@@ -33,7 +33,7 @@
     margin: 10px auto;
     padding: 10px 90px;
     position: sticky;
-    top:160px;
+    top:115px;
     z-index: 1;
     background-color: white;
     .container{
@@ -45,32 +45,42 @@
       border-top: 1px solid lightgray;
       .left{
       text-transform: capitalize;
+      a{
+         text-decoration: none;
+         color:gray;
+         &:hover{
+          color:inherit;
+         }
+      }     
       }
       .right{
         display: flex;
         align-items: center;
         justify-content: center;   
-      .sort{
-        position: relative;          
-        select {         
-          border: none !important;  
-         outline: none;         
-          scroll-behavior: smooth;         
-          cursor: pointer; 
-          z-index: 1; 
-          font-weight: 700;                  
-        } 
-          .button{
-        position: absolute;
-        top:3px;
-        right:-5px;
-        background-color: white;
-        padding-right:10px;
-        margin-right:5px;
-        pointer-events: none;
-        font-size: 12px;
-        } 
-      }
+        .sort{
+          position: relative; 
+          padding-right: 7px;                   
+          select {         
+            border: none !important;  
+            outline: none;         
+            scroll-behavior: smooth;   
+            text-transform: uppercase;      
+            cursor: pointer; 
+            z-index: 1; 
+            font-weight: 700; 
+            letter-spacing: 1.1px;                 
+          } 
+            .button{
+            position: absolute;
+            top:3px;
+            right:-5px;
+            background-color: white;
+            padding-right:10px;
+            margin-right:5px;
+            pointer-events: none;
+            font-size: 12px;
+            } 
+        }
       }
     }
    
@@ -86,13 +96,14 @@
       flex:1;
       margin-right: 30px;
       position: sticky;
-      top:240px;
-      height: max-content;
+      top:200px;
+      height: max-content;  
+      
     }
     .right{
       display: flex;
-    align-items: center;
-    justify-content: center;
+      align-items: center;
+      justify-content: center;
       flex:3;
     }
   }

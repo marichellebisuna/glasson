@@ -6,10 +6,10 @@ const Hotdeals = () => {
       <div className="left">
        <div className="image-here">
         <div className="icons">
-          <div className="icon"><i class="fa-solid fa-chart-simple"></i></div>
-          <div className="icon"> <i class="fa-solid fa-magnifying-glass-plus"></i></div>
-          <div className="icon"><i class="fa-regular fa-heart"></i></div>
-          <div className="icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <div className="icon"><i className="fa-solid fa-chart-simple"></i></div>
+          <div className="icon"> <i className="fa-solid fa-magnifying-glass-plus"></i></div>
+          <div className="icon"><i className="fa-regular fa-heart"></i></div>
+          <div className="icon"><i className="fa-solid fa-bag-shopping"></i></div>
         </div>
         <div className="image">
           <img src={blue} alt="" />
@@ -18,11 +18,11 @@ const Hotdeals = () => {
           <div className="title">armani exchange</div>
           <div className="price">$30.00 <span className='strike'>$45.00</span></div>
           <div className="rating">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-regular fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-regular fa-star"></i>
           </div>
         </div>
        </div>
@@ -43,21 +43,21 @@ const Hotdeals = () => {
       <div className="right">
        <div className="image-here">
        <div className="icons">
-          <div className="icon"><i class="fa-solid fa-chart-simple"></i></div>
-          <div className="icon"> <i class="fa-solid fa-magnifying-glass-plus"></i></div>
-          <div className="icon"><i class="fa-regular fa-heart"></i></div>
-          <div className="icon"><i class="fa-solid fa-bag-shopping"></i></div>
+          <div className="icon"><i className="fa-solid fa-chart-simple"></i></div>
+          <div className="icon"> <i className="fa-solid fa-magnifying-glass-plus"></i></div>
+          <div className="icon"><i className="fa-regular fa-heart"></i></div>
+          <div className="icon"><i className="fa-solid fa-bag-shopping"></i></div>
         </div>
         <div className="image"> <img src={blue} alt="" /></div>
         <div className="details">
         <div className="title">armani exchange</div>
           <div className="price">$30.00 <span className='strike'>$45.00</span></div>
           <div className="rating">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
+          <i className="fa-solid fa-star"></i>
           </div>
         </div>
        </div>

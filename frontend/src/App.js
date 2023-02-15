@@ -1,9 +1,7 @@
 import './App.scss';
-import Navbar from './components/navbar/Navbar';
 import {
   createBrowserRouter,
-  RouterProvider, 
-  Navigate
+  RouterProvider
 } from "react-router-dom";
 import Home from './pages/home/Home';
 import Product from './pages/product/Product';

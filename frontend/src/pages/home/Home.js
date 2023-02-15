@@ -5,8 +5,9 @@ import Instagram from '../../components/instagram/Instagram'
 import Banner from '../../components/banner/Banner'
 import Hero from '../../components/hero/Hero'
 import './home.scss'
+
 const Home = () => {
-  
+
   return (   
     <div>     
      <Hero />

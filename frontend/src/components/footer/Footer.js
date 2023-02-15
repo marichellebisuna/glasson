@@ -11,10 +11,10 @@ const Footer = () => {
              <div className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet et dolor ac consequat. In feugiat leo eros, nec pretium est sollicitudin et. Donec nec imperdiet lectus. 
              </div>
             <div className="left">         
-              <div className="social"><i class="fa-brands fa-facebook-f"></i></div>
-              <div className="social"><i class="fa-brands fa-twitter"></i></div>
-              <div className="social"><i class="fa-brands fa-google-plus-g"></i></div>
-              <div className="social"><i class="fa-brands fa-instagram"></i></div>          
+              <div className="social"><i className="fa-brands fa-facebook-f"></i></div>
+              <div className="social"><i className="fa-brands fa-twitter"></i></div>
+              <div className="social"><i className="fa-brands fa-google-plus-g"></i></div>
+              <div className="social"><i className="fa-brands fa-instagram"></i></div>          
             </div>
           </div>
          
@@ -53,17 +53,17 @@ const Footer = () => {
           <div className="store">
             <div className="title">Store 1</div>
             <div className='details'>
-              <div className='icon'><i class="fa-solid fa-location-dot"></i>Strawberry, AR 72469, USA</div>
-              <div className='icon'><i class="fa-solid fa-phone"></i>+ 1 870-625-7364</div>
-              <div className='icon'><i class="fa-regular fa-clock"></i>06:30 am - 22:00 pmr</div>
+              <div className='icon'><i className="fa-solid fa-location-dot"></i>Strawberry, AR 72469, USA</div>
+              <div className='icon'><i className="fa-solid fa-phone"></i>+ 1 870-625-7364</div>
+              <div className='icon'><i className="fa-regular fa-clock"></i>06:30 am - 22:00 pmr</div>
             </div>  
           </div>
           <div className="store" style={{marginTop:"20px"}}>
             <div className="title">Store 2</div>
             <div className='details'>
-              <div className='icon'><i class="fa-solid fa-location-dot"></i>Strawberry, AR 72469, USA</div>
-              <div className='icon'><i class="fa-solid fa-phone"></i>+ 1 870-625-7364</div>
-              <div className='icon'><i class="fa-regular fa-clock"></i>06:30 am - 22:00 pmr</div>
+              <div className='icon'><i className="fa-solid fa-location-dot"></i>Strawberry, AR 72469, USA</div>
+              <div className='icon'><i className="fa-solid fa-phone"></i>+ 1 870-625-7364</div>
+              <div className='icon'><i className="fa-regular fa-clock"></i>06:30 am - 22:00 pmr</div>
             </div>  
           </div>
           </div>
@@ -86,7 +86,7 @@ const Footer = () => {
       </div>
       <div className="bottom">
         <div className="left">Copyright &copy; <span style={{color:"red", fontWeight:700,cursor:"pointer"}}><Link to='/'>Glasso</Link></span>. All Rights Reserved </div>
-        <div className="right"><img src={cards} alt="" srcset="" /></div>
+        <div className="right"><img src={cards} alt="" srcSet="" /></div>
       </div>
     </div>
   )
