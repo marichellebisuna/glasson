@@ -53,6 +53,7 @@ export const products=[
       "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
       "content": "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from the vacation rental,",
       "category":"sunglasses",
+      "color":"blue",
       "size":"kids",
       "brand":"armani",
       "shape":"rectangle",

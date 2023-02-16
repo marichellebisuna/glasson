@@ -1,6 +1,8 @@
 .sidebar{
   background-color: #f6f6f6;
   padding: 20px; 
+  margin-right: 10px;
+
   .options{
     .title{
       display: flex;
@@ -9,38 +11,49 @@
       font-size: 1.2rem;
       text-transform: capitalize;
       padding: 10px 0;
+      cursor: pointer;
       .icons{
-        font-size: .80rem;
-        color: gray;
-         display: flex;
-          align-items: center;
-          justify-content: space-around; 
+      font-size: .80rem;
+      color: gray;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;    
+      
         i{          
           background-color: white;
           border-radius: 50%;
           padding: 6px;
+          cursor: pointer;
           &:hover{
             color:black;
           }
-        }
-       
+        }       
       }
     }
     .option{
       color: gray;
-      padding-left: 20px;
+      padding-left: 20px; 
+     width:200px;
       .inputItem{
-        padding-bottom: 5px;        
-         &:hover, &.active{
+        padding-bottom: 5px; 
+        display: block;
+        height:max-content;
+         transition: all 1s ease-out;       
+          &.hide{
+          display: none; 
+          
+        } 
+        &:hover, &.active{
         color:#ff8927;
-      }    
+        }  
+      
         input{
         margin-right: 10px;     
          cursor: pointer;         
-           &:checked + label{
-            color:#ff8927 !important;         
-            
-        }
+          &:checked + label{
+          color:#ff8927 ;        
+          
+          }
         
         }
       }      

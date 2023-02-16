@@ -45,7 +45,7 @@ const Navbar = () => {
         <div className="menu">       
           <ul className='list'>
             <Link to="/"><li className={location==="" ?'listitem active':'listitem'}>Home</li></Link>
-            <Link to="/products/:id"><li className={location==="products" ?'listitem active':'listitem'}>Products</li></Link>
+            <Link to="/products"><li className={location==="products" ?'listitem active':'listitem'}>Products</li></Link>
             <Link to="/product/:id"><li className={location==="product" ?'listitem active':'listitem'}>Product</li></Link>
             <Link to="/login"><li className={location==="login" ?'listitem active':'listitem'}>Login</li></Link>
             <Link to="/register"><li className={location==="register" ?'listitem active':'listitem'}>Register</li></Link>

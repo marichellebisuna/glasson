@@ -8,15 +8,15 @@ const Banner = () => {
   return (    
     <div className='banner'>
       <div className="box1">
-        <Link to="/products/sunglasses"><img src={banner1} alt="" srcSet="" /></Link>
+        <Link to="/products?brand=sunglasses"><img src={banner1} alt="" srcSet="" /></Link>
       </div>
      
       <div className="box2">
-      <Link to="/products/eyeglasses"><img src={banner2} alt="" srcSet="" /></Link>
+      <Link to="/products?brand=eyeglasses"><img src={banner2} alt="" srcSet="" /></Link>
       </div>
      
       <div className="box2">
-      <Link to="/products/vogue"><img src={banner3} alt="" srcSet="" /></Link>
+      <Link to="/products?brand=vogue"><img src={banner3} alt="" srcSet="" /></Link>
       </div>     
        
     </div>

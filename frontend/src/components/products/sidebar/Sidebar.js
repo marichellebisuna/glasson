@@ -5,7 +5,13 @@ import {products} from "../../../data"
 const Sidebar = () => {
 const [maxPrice, setMaxPrice] = useState(2000)
 const [selectedSub, setSelectedSub] = useState([])
-const [selected, setSelected] = useState(false)
+const [showShape, setShowShape] = useState(true)
+const [showBrand, setShowBrand] = useState(true)
+
+const [showColor, setShowColor] = useState(true)
+
+const [showSize, setShowSize] = useState(true)
+
 
 const tempShape=new Set(products.map(product =>product.shape))
 const shapes = Array.from(tempShape)
@@ -28,22 +34,21 @@ const handleChange = (e) =>{
     ? [...selectedSub, value] 
     : selectedSub.filter(item=>item !==value)
   )
-  setSelected( selectedSub ? true : false)
 }
  console.log(selectedSub)
   return (
     <div className='sidebar'>
      
       <div className="options">        
-        <div className="title">
+        <div className="title" onClick={()=>setShowShape(!showShape)}>
           Shape 
-          <div className="icons">
-          <i className="fa-solid fa-plus"></i> <i className="fa-solid fa-minus"></i>
+          <div className="icons" onClick={()=>setShowShape(!showShape)}>
+            {showShape ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
         <div className="option">
         {shapes?.map((shape, i)=>
-          <div className={"inputItem"} key={i}>
+          <div className={showShape?"inputItem":"inputItem hide"} key={i}>
           <input type="checkbox" name="shape" id={shape} value={shape} onChange={handleChange} />
           <label htmlFor='rectangle'>{shape}</label>
         </div>
@@ -51,15 +56,15 @@ const handleChange = (e) =>{
         </div>
       </div>
       <div className="options">
-        <div className="title">
+        <div className="title" onClick={()=>setShowBrand(!showBrand)}>
           brand 
-          <div className="icons">
-          <i className="fa-solid fa-plus"></i> <i className="fa-solid fa-minus"></i>
+          <div className="icons" onClick={()=>setShowBrand(!showBrand)}>
+            {showBrand ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
         <div className="option">
         {brand?.map((b, i)=>
-          <div className="inputItem" key={i}>
+          <div className={showBrand?"inputItem":"inputItem hide"} key={i}>
           <input type="checkbox" name="brand" id={b} value={b} onChange={handleChange}/>
           <label htmlFor='rectangle'>{b}</label>
         </div>
@@ -67,15 +72,15 @@ const handleChange = (e) =>{
        </div> 
       </div>
       <div className="options">
-        <div className="title">
+        <div className="title" onClick={()=>setShowColor(!showColor)}>
           color 
-          <div className="icons">
-          <i className="fa-solid fa-plus"></i> <i className="fa-solid fa-minus"></i>
+          <div className="icons" onClick={()=>setShowColor(!showColor)}>
+            {showColor ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
         <div className="option">
         {color?.map((c, i)=>
-          <div className="inputItem" key={i}>
+          <div className={showColor?"inputItem":"inputItem hide"} key={i}>
           <input type="checkbox" name="color" id={c} value={c} onChange={handleChange}/>
           <label htmlFor='rectangle'>{c}</label>
         </div>
@@ -83,15 +88,15 @@ const handleChange = (e) =>{
        </div> 
       </div>
       <div className="options">
-      <div className="title">
+      <div className="title" onClick={()=>setShowSize(!showSize)}>
           Size 
-          <div className="icons">
-          <i className="fa-solid fa-plus"></i> <i className="fa-solid fa-minus"></i>
+          <div className="icons" onClick={()=>setShowSize(!showSize)}>
+            {showSize ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
         <div className="option">
         {size?.map((item, i)=>
-          <div className="inputItem" key={i}>
+          <div className={showSize?"inputItem":"inputItem hide"} key={i}>
           <input type="checkbox" name="size" id={item} value={item} onChange={handleChange}/>
           <label htmlFor='rectangle'>{item}</label>
         </div>
