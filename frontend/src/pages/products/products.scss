@@ -100,7 +100,9 @@
       position: sticky;
       top:200px;
       width:350px;
-      height: max-content;  
+      height: calc(100% - 200px);  
+      //overflow-y:scroll;
+     
       margin-top: 5px;
       .tags{
         
@@ -142,6 +144,8 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
+     // overflow: hidden !important;
+      
       .pages{       
         width: 100%;        
         display: flex;

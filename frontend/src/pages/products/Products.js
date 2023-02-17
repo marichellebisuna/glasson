@@ -24,7 +24,10 @@ const Products = () => {
      </div>    
      <div className="breadcrumbs">
       <div className="container">
-          <div className="left"><Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> Shop All Products </span></div>
+          <div className="left">
+            <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
+           
+            <span style={{ color:"gray"}}> Shop All Products </span></div>
           <div className="right">
             <span style={{ color:"gray", paddingRight:"20px"}}> Showing 1-24 of 107 results </span> 
             <div className="sort">                     

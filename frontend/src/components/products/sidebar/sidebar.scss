@@ -4,6 +4,7 @@
   margin-right: 10px;
 
   .options{
+    position: relative;
     .title{
       display: flex;
       align-items: center;
@@ -33,20 +34,120 @@
     .option{
       color: gray;
       padding-left: 20px; 
-     width:200px;
+      width:200px;    
+      transition: all 1s ease-out;       
+      height: 170px; 
+      cursor: pointer;      
+      overflow: hidden;
+      transition: all 1s ease; 
+      
+      &.hide{
+        height: 0;        
+        overflow: hidden;
+      } 
       .inputItem{
         padding-bottom: 5px; 
         display: block;
-        height:max-content;
-         transition: all 1s ease-out;       
-          &.hide{
-          display: none; 
-          
-        } 
+       
         &:hover, &.active{
         color:#ff8927;
-        }  
+        }        
+        input{
+        margin-right: 10px;     
+         cursor: pointer;         
+          &:checked + label{
+          color:#ff8927 ;        
+          
+          }
+        
+        }
+      }      
+    }
+    .brand-option{
+      color: gray;
+      padding-left: 20px; 
+      width:200px;    
+      transition: all 1s ease-out;       
+      height: 130px; 
+      cursor: pointer;      
+      overflow: hidden;
+      transition: all 1s ease; 
       
+      &.hide{
+        height: 0;        
+        overflow: hidden;
+      } 
+      .inputItem{
+        padding-bottom: 5px; 
+        display: block;
+       
+        &:hover, &.active{
+        color:#ff8927;
+        }        
+        input{
+        margin-right: 10px;     
+         cursor: pointer;         
+          &:checked + label{
+          color:#ff8927 ;        
+          
+          }
+        
+        }
+      }      
+    }
+    .color-option{
+      color: gray;
+      padding-left: 20px; 
+      width:200px;    
+      transition: all 1s ease-out;       
+      height: 80px;       
+      cursor: pointer;      
+      overflow: hidden;
+      transition: all 1s ease; 
+      
+      &.hide{
+        height: 0;        
+        overflow: hidden;
+      } 
+      .inputItem{
+        padding-bottom: 5px; 
+        display: block;
+       
+        &:hover, &.active{
+        color:#ff8927;
+        }        
+        input{
+        margin-right: 10px;     
+         cursor: pointer;         
+          &:checked + label{
+          color:#ff8927 ;        
+          
+          }
+        
+        }
+      }      
+    }
+    .size-option{
+      color: gray;
+      padding-left: 20px; 
+      width:200px;    
+      transition: all 1s ease-out;       
+      height: 150px;       
+      cursor: pointer;      
+      overflow: hidden;
+      transition: all 1s ease; 
+      
+      &.hide{
+        height: 0;        
+        overflow: hidden;
+      } 
+      .inputItem{
+        padding-bottom: 5px; 
+        display: block;
+       
+        &:hover, &.active{
+        color:#ff8927;
+        }        
         input{
         margin-right: 10px;     
          cursor: pointer;         

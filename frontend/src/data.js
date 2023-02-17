@@ -705,3 +705,43 @@ export const products=[
 
 
 ]
+export const product={
+    "title": "armani ex 541250",
+    "images": [
+        {
+          "id": "11",
+          "url": "https://clearly.scene7.com/is/image/clearly/oakley-ox3245-53-satin-black-front-angle?fmt=jpg&wid=1140&cropN=-0.15,0.165,1.3,0.72"
+        },
+        {
+          "id": "22",
+          "url": "https://clearly.scene7.com/is/image/clearly/oakley-ox3245-53-satin-black-metric-angle?fmt=jpg&wid=1140&cropN=-0.15,0.165,1.3,0.72"
+        },
+        {
+          "id": "33",
+          "url": "https://clearly.scene7.com/is/image/clearly/oakley-ox3245-53-satin-black-side-angle?fmt=jpg&wid=1140&cropN=-0.15,0.165,1.3,0.72"
+        },
+        {
+          "id": "44",
+          "url": "https://clearly.scene7.com/is/image/clearly/oakley-ox3245-53-satin-black-front-angle-tint-grey?fmt=jpg&wid=1140&cropN=-0.15,0.165,1.3,0.72"
+        },
+        {
+          "id": "55",
+          "url": "https://clearly.scene7.com/is/image/clearly/oakley-ox3245-53-satin-black-top-angle?fmt=jpg&wid=1140&cropN=-0.15,0.165,1.3,0.72"
+        }
+      ],
+    "checked": false,
+    "inStock": 500,
+    "sold": 0,      
+    "price": 5,
+    "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
+    "content": "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from the vacation rental,",
+    "category":"sunglasses",
+    "color":"blue",
+    "size":"kids",
+    "brand":"armani",
+    "shape":"rectangle",
+    "rating":5,
+    "tags":["furniture", "equipment"],
+    "sku":"MX-862sm",
+    "numOfReviews":10
+}

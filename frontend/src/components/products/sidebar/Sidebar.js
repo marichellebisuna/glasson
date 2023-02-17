@@ -43,12 +43,12 @@ const handleChange = (e) =>{
         <div className="title" onClick={()=>setShowShape(!showShape)}>
           Shape 
           <div className="icons" onClick={()=>setShowShape(!showShape)}>
-            {showShape ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
+            {!showShape ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
-        <div className="option">
+        <div className={showShape?"option":"option hide"}>
         {shapes?.map((shape, i)=>
-          <div className={showShape?"inputItem":"inputItem hide"} key={i}>
+          <div className="inputItem" key={i}>
           <input type="checkbox" name="shape" id={shape} value={shape} onChange={handleChange} />
           <label htmlFor='rectangle'>{shape}</label>
         </div>
@@ -59,12 +59,12 @@ const handleChange = (e) =>{
         <div className="title" onClick={()=>setShowBrand(!showBrand)}>
           brand 
           <div className="icons" onClick={()=>setShowBrand(!showBrand)}>
-            {showBrand ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
+            {!showBrand ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
-        <div className="option">
+        <div className={showBrand?"brand-option":"brand-option hide"}>
         {brand?.map((b, i)=>
-          <div className={showBrand?"inputItem":"inputItem hide"} key={i}>
+          <div className="inputItem" key={i}>
           <input type="checkbox" name="brand" id={b} value={b} onChange={handleChange}/>
           <label htmlFor='rectangle'>{b}</label>
         </div>
@@ -75,12 +75,12 @@ const handleChange = (e) =>{
         <div className="title" onClick={()=>setShowColor(!showColor)}>
           color 
           <div className="icons" onClick={()=>setShowColor(!showColor)}>
-            {showColor ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
+            {!showColor ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
-        <div className="option">
+        <div className={showColor?"color-option":"color-option hide"}>
         {color?.map((c, i)=>
-          <div className={showColor?"inputItem":"inputItem hide"} key={i}>
+          <div className="inputItem" key={i}>
           <input type="checkbox" name="color" id={c} value={c} onChange={handleChange}/>
           <label htmlFor='rectangle'>{c}</label>
         </div>
@@ -91,12 +91,12 @@ const handleChange = (e) =>{
       <div className="title" onClick={()=>setShowSize(!showSize)}>
           Size 
           <div className="icons" onClick={()=>setShowSize(!showSize)}>
-            {showSize ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
+            {!showSize ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
-        <div className="option">
+        <div className={showSize?"size-option":"size-option hide"}>
         {size?.map((item, i)=>
-          <div className={showSize?"inputItem":"inputItem hide"} key={i}>
+          <div className="inputItem" key={i}>
           <input type="checkbox" name="size" id={item} value={item} onChange={handleChange}/>
           <label htmlFor='rectangle'>{item}</label>
         </div>
