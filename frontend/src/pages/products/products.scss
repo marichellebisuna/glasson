@@ -142,10 +142,9 @@
       flex:4;
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
-     // overflow: hidden !important;
-      
+      justify-content: center !important;
+      flex-direction: column;     
+    
       .pages{       
         width: 100%;        
         display: flex;
@@ -162,13 +161,14 @@
             color:black;     
             }  
           }
-        .line{
-          width:0px;
-          height:15px;
-          border: solid lightgray 1px ;      
-        }       
+          .line{
+            width:0px;
+            height:15px;
+            border: solid lightgray 1px ;      
+          }       
       }
-    
+     
+     
     }
   }
 }

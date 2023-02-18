@@ -6,7 +6,7 @@ import { Link} from 'react-router-dom'
 import { useState } from 'react'
 import ProductCard from '../../components/products/productcard/ProductCard'
 import {products} from '../../data'
-import Deal from '../../components/hotdeals/singlehotdeal/Deal'
+import Hotdeals from '../../components/hotdeals/Hotdeals'
 
 
 const Products = () => {
@@ -63,6 +63,8 @@ const Products = () => {
         </div>       
         <div className="right">     
 
+
+
           <ProductCard productItems={productItems}/>  
           <div className="pages">         
               <div className="page">1</div>
@@ -76,8 +78,9 @@ const Products = () => {
               <div className="page"><i class="fa-solid fa-arrow-right"></i></div>
           </div> 
           
-          <Singledeal/> 
-                  
+         
+            <Singledeal/> 
+                         
         </div>
      </div>  
     
