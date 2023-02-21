@@ -62,10 +62,9 @@ const Products = () => {
           </div>
         </div>       
         <div className="right">     
-
-
-
-          <ProductCard productItems={productItems}/>  
+       
+          <ProductCard productItems={products} />  
+        
           <div className="pages">         
               <div className="page">1</div>
               <div className="line"></div>
@@ -77,13 +76,9 @@ const Products = () => {
               <div className="line"></div>
               <div className="page"><i class="fa-solid fa-arrow-right"></i></div>
           </div> 
-          
-         
-            <Singledeal/> 
-                         
+            <Singledeal/>                          
         </div>
-     </div>  
-    
+     </div>    
       
     </div>
   )

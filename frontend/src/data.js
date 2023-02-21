@@ -60,7 +60,9 @@ export const products=[
       "rating":5,
       "tags":["furniture", "equipment"],
       "sku":"MX-862sm",
-      "numOfReviews":10
+      "numOfReviews":10,      
+"createdAt":
+"2021-07-04T00:54:06.891+00:00"
   },
   {
     "title": "wedding invitation",
@@ -100,7 +102,8 @@ export const products=[
       "rating":4,
       "tags":["furniture", "equipment"],
       "sku":"Ch-256xl",
-      "numOfReviews":10
+      "numOfReviews":10,
+      "createdAt":"2021-07-04T00:54:06.892+00:00"
   },
   {
     "title": "laptop",
@@ -138,9 +141,10 @@ export const products=[
       "brand":"prado",
       "shape":"round",
       "rating":3,
-      "tags":["furniture", "equipment"],
+      "tags":["cabinet", "equipment"],
       "sku":"WB-963md",
-      "numOfReviews":10
+      "numOfReviews":10,      
+      "createdAt":"2021-07-04T00:55:02.096+00:00"
   },
   {
     "title": "animal2",
@@ -180,7 +184,8 @@ export const products=[
     "rating":5,
     "tags":["furniture", "equipment"],
     "sku":"MX-862sm",
-    "numOfReviews":10
+    "numOfReviews":10,
+    "createdAt":"2021-07-04T00:54:06.892+00:00"
 },
 {
   "title": "wedding invitation2",
@@ -220,7 +225,8 @@ export const products=[
     "rating":4,
     "tags":["furniture", "equipment"],
     "sku":"Ch-256xl",
-    "numOfReviews":10
+    "numOfReviews":10,    
+    "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
   "title": "laptop2",
@@ -260,7 +266,8 @@ export const products=[
     "rating":3,
     "tags":["furniture", "equipment"],
     "sku":"WB-963md",
-    "numOfReviews":10
+    "numOfReviews":10,    
+    "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
     "title": "animal3",
@@ -300,7 +307,8 @@ export const products=[
     "rating":5,
     "tags":["furniture", "equipment"],
     "sku":"MX-862sm",
-    "numOfReviews":10
+    "numOfReviews":10,
+    "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
   "title": "wedding invitation3",
@@ -340,7 +348,8 @@ export const products=[
     "rating":4,
     "tags":["furniture", "equipment"],
     "sku":"Ch-256xl",
-    "numOfReviews":10
+    "numOfReviews":10,
+    "createdAt":"2021-07-04T01:00:28.067+00:00"
 },
 {
   "title": "laptop3",
@@ -380,7 +389,8 @@ export const products=[
     "rating":3,
     "tags":["furniture", "equipment"],
     "sku":"WB-963md",
-    "numOfReviews":10
+    "numOfReviews":10,
+    "createdAt":"2022-03-22T10:06:20.863+00:00"
 }
 ,
   {
@@ -421,7 +431,8 @@ export const products=[
       "rating":4,
       "tags":["furniture", "equipment"],
       "sku":"Ch-256xl",
-      "numOfReviews":10
+      "numOfReviews":10,
+      "createdAt":"2022-03-22T10:06:20.863+00:00"
   },
   {
     "title": "laptop",
@@ -461,7 +472,9 @@ export const products=[
       "rating":3,
       "tags":["furniture", "equipment"],
       "sku":"WB-963md",
-      "numOfReviews":10
+      "numOfReviews":10,
+      "createdAt":"2022-03-22T10:06:20.862+00:00"
+
   },
   {
     "title": "animal2",
@@ -501,7 +514,8 @@ export const products=[
     "rating":5,
     "tags":["furniture", "equipment"],
     "sku":"MX-862sm",
-    "numOfReviews":10
+    "numOfReviews":10,  
+    "createdAt":"2022-03-22T10:06:20.858+00:00"
 },
 {
   "title": "wedding invitation2",
@@ -541,7 +555,8 @@ export const products=[
     "rating":4,
     "tags":["furniture", "equipment"],
     "sku":"Ch-256xl",
-    "numOfReviews":10
+    "numOfReviews":10,
+    "createdAt":"2022-03-22T10:06:20.864+00:00"
 },
 {
   "title": "laptop2",
@@ -581,7 +596,8 @@ export const products=[
     "rating":3,
     "tags":["furniture", "equipment"],
     "sku":"WB-963md",
-    "numOfReviews":10
+    "numOfReviews":10,    
+    "createdAt":"2022-03-22T10:06:20.857+00:00"
 },
 {
     "title": "animal3",
@@ -621,7 +637,9 @@ export const products=[
     "rating":5,
     "tags":["furniture", "equipment"],
     "sku":"MX-862sm",
-    "numOfReviews":10
+    "numOfReviews":10,
+    
+"createdAt":"2022-03-22T10:06:20.862+00:00"
 },
 {
   "title": "wedding invitation3",
@@ -661,7 +679,8 @@ export const products=[
     "rating":4,
     "tags":["furniture", "equipment"],
     "sku":"Ch-256xl",
-    "numOfReviews":10
+    "numOfReviews":10,    
+    "createdAt":"2022-03-22T10:06:20.858+00:00"
 },
 {
     "title": "laptop3",
@@ -700,7 +719,8 @@ export const products=[
     "rating":3,
     "tags":["furniture", "equipment"],
     "sku":"WB-963md",
-    "numOfReviews":10
+    "numOfReviews":10,    
+    "createdAt":"2022-03-22T10:06:20.863+00:00"
 }
 
 
@@ -743,5 +763,6 @@ export const product={
     "rating":5,
     "tags":["furniture", "equipment"],
     "sku":"MX-862sm",
-    "numOfReviews":10
+    "numOfReviews":10,
+    "createdAt":"2022-03-22T10:06:20.863+00:00"
 }

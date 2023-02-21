@@ -140,11 +140,9 @@
     .right{   
       width:100%;        
       flex:4;
-      display: flex;
-      align-items: center;
-      justify-content: center !important;
-      flex-direction: column;     
-    
+      display: flex;   
+      flex-direction: column;  
+     
       .pages{       
         width: 100%;        
         display: flex;

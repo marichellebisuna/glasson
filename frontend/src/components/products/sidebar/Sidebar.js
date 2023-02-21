@@ -33,9 +33,8 @@ const handleChange = (e) =>{
     isChecked 
     ? [...selectedSub, value] 
     : selectedSub.filter(item=>item !==value)
-  )
-}
- console.log(selectedSub)
+  )}
+ 
   return (
     <div className='sidebar'>
      
