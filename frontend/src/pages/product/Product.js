@@ -12,6 +12,9 @@ const Product = () => {
   const [ filteredProducts, setFilteredProducts ] = useState([])
   const [ relatedProducts, setRelatedProducts ] = useState([])
   const [ tab, setTab ] = useState("tab1")
+  const [ index, setindex ] = useState(0)
+  const [ active, setActive ] = useState(0)
+
 
   const tempSize=new Set(products.map(product=>product.size))
   let sizes = Array.from(tempSize)
@@ -34,14 +37,12 @@ const Product = () => {
       </div>
       <div className="top">
         <div className="left">
-          <img src={item.images[0].url} alt="" srcSet="" />          
+          <img src={item.images[index].url} alt="" srcSet="" />          
         </div>
         <div className="middle">
-            <div className="image"><img src={item.images[0].url} alt="" srcSet="" /></div>
-            <div className="image"><img src={item.images[1].url} alt="" srcSet="" /></div>
-            <div className="image"><img src={item.images[2].url} alt="" srcSet="" /></div>
-            <div className="image">    <img src={item.images[3].url} alt="" srcSet="" /></div>
-            <div className="image"><img src={item.images[4].url} alt="" srcSet="" /> </div>
+          {item.images.map((image,id)=> <div className={id===active ?"image active":"image"} onClick={()=>setindex(id)}><img src={image.url} alt="" srcSet="" onClick={()=>setActive(id)}/></div>
+          )}
+         
           </div>
         <div className="right">
           <div className="blue">
