@@ -11,21 +11,41 @@ const productItems = ({productItems}) => {
         {productItems.map((productItems, i)=>( 
           <div className='product' >    
             <div className="top" >
-             <Link to={`/product/${i}`}>   
+              <Link to={`/product/${i}`}>   
               <img src={productItems.images[0].url} alt="" srcSet="" />
-            </Link>
+              </Link>
+              {productItems.discount > 0 &&
+               <div className="top-discount">-{productItems.discount}% </div>
+              }             
             </div>
             <div className="bottom">
-            <Link to={`/product/${i}`} style={{
-           textDecoration: 'none'
-          }}><div className="title">{productItems.title}</div></Link>
-              <div className="prices">
-                <div className="discount">
-                ${(productItems.price).toFixed(2)} 
-                </div>
-                <div className="before">
-                  ${(productItems.price-(productItems.price *.40)).toFixed(2)}</div>
+              <div className="title"><Link to={`/product/${i}`} style={{
+              textDecoration: 'none'
+              }}>{productItems.title}</Link>
               </div>
+              <hr/>
+              <div className="last-bottom">
+                <div className="diff-prices">
+                  <div className="discount">
+                  ${(productItems.price).toFixed(2)} 
+                  </div>
+                  {productItems.discount>0 && 
+                  <div className="before">
+                    ${(productItems.price-(productItems.price *productItems.discount)).toFixed(2)}
+                  </div>
+                  }
+                  
+                </div>
+                <div className="rate-stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-regular fa-star-half-stroke"></i>
+                </div>
+              </div>
+             
             </div>
             <div className="hover">
               <div className="icon active" ><i className="fa-regular fa-heart"></i></div>

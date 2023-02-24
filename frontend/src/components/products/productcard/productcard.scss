@@ -2,28 +2,45 @@
   display: flex; 
   align-items: center;
   justify-content:center;  
-   margin: 5px 0;
-   gap:20px;
-   flex-wrap: wrap !important;
-   flex-direction: row !important;
+  //margin: 5px ;
+  gap:10px;
+  flex-wrap: wrap !important;
+  flex-direction: row !important;
+  
   .product{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0 5px;
+  align-items: center;  
   border: 1px lightgray solid;
   position: relative; 
-  width:235px; 
+  width:300px; 
   margin-bottom: 30px;
   .top{   
-    width:230px;
+    //width:100%;
     height:250px;
     background-color: #f6f6f6;
     cursor: pointer;
+    position: relative;
+    margin: 30px;
     img{
       width:100%;
       height:100%;
       object-fit: contain;
+    }
+    .top-discount{
+      color:white;
+      background-color: #ff8927;
+      padding: 2px 5px;
+      border-radius: 5%;
+      position: absolute;
+      top:10px;
+      right:10px;
+     
+    } 
+    &:hover{
+      .discount{
+        display: none;
+      }
     }
   }
   .bottom{
@@ -32,12 +49,25 @@
       flex-direction: column;
         justify-content: center;
         align-items: center;
+        width:100%;
       cursor: pointer;
       .title{
         font-weight: 700;
         text-transform: capitalize;    
       }
-      .prices{
+      hr{
+        margin: 40px 0 10px 0;
+        width:90%;
+        background-color: lightgray;
+        border: none;
+        height: 1px;
+      }
+      .last-bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width:90%;
+        .diff-prices{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -47,10 +77,14 @@
         padding: 10px 0;
         font-size: 1.1rem;
         .before{
-          text-decoration: line-through;
-          font-size: 1rem;
+          text-decoration: line-through;          
         }
       }
+      .rate-stars{
+        color:#ff8927;        
+      }
+      }
+      
     }
 
   .hover{
@@ -67,7 +101,7 @@
         justify-content: center;
         gap:10px;
         position: absolute;
-        top:20px;
+        top:40px;
         .icon{
           background-color: #eaeff3;
           padding: 15px;
@@ -79,6 +113,12 @@
             color:white;
           }       
         }
+      }
+      .top-discount{
+        display: none;
+      }
+      .last-bottom{
+        display: flex;
       }
     }
  

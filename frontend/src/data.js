@@ -46,12 +46,13 @@ export const products=[
             "url": "https://assets.sunglasshut.com/is/image/LuxotticaRetail/8056597259835__STD__shad__qt.png?impolicy=SGH_bgtransparent"
           }
         ],
+      "discount":20,
       "checked": false,
       "inStock": 500,
       "sold": 0,      
       "price": 5,
       "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
-      "content": "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from the vacation rental,",
+      "content": "A friendly atmosphere and natural delights await your visit to the town of Wells! Stay at this well-equipped 1-bath studio and enjoy easy access to several beaches, including Wells Beach and Drakes Island Beach, as well as Rachel Carson National Wildlife Refuge - the best spot for wildlife viewing just 8 miles away. Not to mention, with the downtown area just 10 minutes from the vacation rental.",
       "category":"sunglasses",
       "color":"blue",
       "size":"kids",
@@ -66,6 +67,7 @@ export const products=[
   },
   {
     "title": "wedding invitation",
+    "discount":20,
       "images": [
           {
               "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
@@ -107,6 +109,7 @@ export const products=[
   },
   {
     "title": "laptop",
+    "discount":0,
       "images": [
           {
               "id": "nextjs_media/u8qltexka25minj2rj46",
@@ -148,6 +151,7 @@ export const products=[
   },
   {
     "title": "animal2",
+    "discount":0,
     "images": [
         {
             "id": "nextjs_media/pb8fnxyickqqe9krov82",
@@ -189,6 +193,7 @@ export const products=[
 },
 {
   "title": "wedding invitation2",
+  "discount":20,
     "images": [
         {
             "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
@@ -230,6 +235,7 @@ export const products=[
 },
 {
   "title": "laptop2",
+  "discount":0,
     "images": [
         {
             "id": "nextjs_media/u8qltexka25minj2rj46",
@@ -271,6 +277,7 @@ export const products=[
 },
 {
     "title": "animal3",
+    "discount":0,
     "images": [
         {
             "id": "nextjs_media/pb8fnxyickqqe9krov82",
@@ -312,6 +319,7 @@ export const products=[
 },
 {
   "title": "wedding invitation3",
+  "discount":20,
     "images": [
         {
             "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
@@ -353,6 +361,7 @@ export const products=[
 },
 {
   "title": "laptop3",
+  "discount":20,
     "images": [
         {
             "id": "nextjs_media/u8qltexka25minj2rj46",
@@ -395,6 +404,7 @@ export const products=[
 ,
   {
     "title": "wedding invitation",
+    "discount":0,
       "images": [
           {
               "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
@@ -436,6 +446,7 @@ export const products=[
   },
   {
     "title": "laptop",
+    "discount":0,
       "images": [
           {
               "id": "nextjs_media/u8qltexka25minj2rj46",
@@ -478,6 +489,7 @@ export const products=[
   },
   {
     "title": "animal2",
+    "discount":0,
     "images": [
         {
             "id": "nextjs_media/pb8fnxyickqqe9krov82",
@@ -519,6 +531,7 @@ export const products=[
 },
 {
   "title": "wedding invitation2",
+  "discount":20,
     "images": [
         {
             "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
@@ -560,6 +573,7 @@ export const products=[
 },
 {
   "title": "laptop2",
+  "discount":0,
     "images": [
         {
             "id": "nextjs_media/u8qltexka25minj2rj46",
@@ -601,6 +615,7 @@ export const products=[
 },
 {
     "title": "animal3",
+    "discount":0,
     "images": [
         {
             "id": "nextjs_media/pb8fnxyickqqe9krov82",
@@ -643,6 +658,7 @@ export const products=[
 },
 {
   "title": "wedding invitation3",
+  "discount":20,
     "images": [
         {
             "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
@@ -684,6 +700,7 @@ export const products=[
 },
 {
     "title": "laptop3",
+    "discount":0,
     "images": [
         {
             "id": "nextjs_media/u8qltexka25minj2rj46",
