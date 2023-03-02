@@ -8,6 +8,7 @@ import Product from './pages/product/Product';
 import Products from './pages/products/Products';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import Checkout from './pages/checkout/Checkout';
 import Layout from './components/layout/Layout';
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/checkout",
+        element: <Checkout />,
       },
     ]
 

@@ -26,7 +26,17 @@ const Product = () => {
   setRelatedProducts(products.filter((product)=>product.tags.includes(item.tags[0])))
  }, []) 
 
-
+ const handleIncrease = (i) =>{  
+  setQty(qty + 1)
+  }
+  const handleDecrease = (i) =>{
+    if(qty > 1){
+      
+    setQty(qty - 1)
+      }
+      else
+      setQty(qty)
+    }
   return (
     <div className='product'>      
       <div className="breadcrumbs">
@@ -65,9 +75,9 @@ const Product = () => {
             <div className="desc">{product.content}</div>
             <div className="container">
               <div className="quantity">
-                <div className="minus"><i className="fa-solid fa-minus"></i></div>
+                <div className="minus" onClick={()=>handleDecrease(qty)}><i className="fa-solid fa-minus"></i></div>
                 <div className="qty">{qty}</div>
-                <div className="plus"><i className="fa-solid fa-plus"></i></div>
+                <div className="plus" onClick={()=>handleIncrease(qty)}><i className="fa-solid fa-plus"></i></div>
               </div>
               <button type="submit"><i className="fa-solid fa-cart-shopping"></i>add to cart</button>
             </div>  
@@ -100,23 +110,31 @@ const Product = () => {
           </div> 
           <div className="orange">
             <div className="container">
-              <i className="fa-brands fa-twitter"></i>
+              <div className="icon" style={{borderRight:"solid 1px white"}}>
+               <i className="fa-brands fa-twitter"></i>  
+              </div>             
               <div className="line"></div>
-              <i className="fa-brands fa-facebook-f"></i>
-              <div className="line"></div>
-
-              <i className="fa-brands fa-google-plus-g"></i>
-              <div className="line"></div>
-
-              <i className="fa-brands fa-pinterest-p"></i>
+              <div className="icon" style={{borderRight:"solid 1px white"}}>
+                <i className="fa-brands fa-facebook-f"></i>
+              </div>
+              
+              {/* <div className="line"></div> */}
+              <div className="icon" style={{borderRight:"solid 1px white"}}>
+                <i className="fa-brands fa-google-plus-g"></i>
+              </div>
+              
+              {/* <div className="line"></div> */}
+              <div className="icon">
+                <i className="fa-brands fa-pinterest-p"></i>
+              </div>
+              
             </div>
           </div>
         </div>
       </div>
 
       <div className="tabs" >     
-        {/* <div className="container"> */}
-          
+        {/* <div className="container"> */}         
         
        
           <div className="tab"  onClick={()=>setTab("tab1")}>
@@ -196,7 +214,7 @@ const Product = () => {
             </div>
             {tab==="tab3" &&  
             <div className="information" >
-              <div className="top">
+              <div className="to">
                 <div className="star">
                   <i class="fa-solid fa-star"></i>
                   <i class="fa-solid fa-star"></i>

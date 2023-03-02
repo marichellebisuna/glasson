@@ -6,11 +6,11 @@ const productItems = ({productItems}) => {
   // const [user, setUser] = useState(true)
 
   return (     
-     <div className="product-card" style={{flexWrap:"wrap"}}>
+     <div className="product-card">
        {/* {user ?   */}       
         {productItems.map((productItems, i)=>( 
           <div className='product' >    
-            <div className="top" >
+            <div className="top">
               <Link to={`/product/${i}`}>   
               <img src={productItems.images[0].url} alt="" srcSet="" />
               </Link>

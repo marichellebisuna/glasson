@@ -1,0 +1,305 @@
+.checkout{
+ width:90vw;
+ margin: 0 auto; 
+ .breadcrumbs{   
+  width: 100%;
+  //margin: 10px auto;
+  padding: 10px 90px;
+  position: sticky;
+  top:115px;
+  z-index: 1;
+  background-color: white;
+  z-index: 2;
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid lightgray;
+    border-top: 1px solid lightgray;      
+    .left{
+    text-transform: capitalize;     
+    a{
+        text-decoration: none;
+        color:rgb(73, 72, 72);            
+        &:hover{
+        color:inherit;        
+        }
+      }     
+    }     
+  }    
+  }
+  .process{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width:100%;
+    height:90px;
+    background-color:#ff8927;  
+   margin: 50px 0 20px 0;
+   
+    .step{
+       position: relative;
+       span{
+        color:white;
+        text-transform: uppercase;
+        font-size: 2rem; 
+        z-index: 99999;
+        
+       }
+       .number{
+      position: absolute;
+      top:-15px;
+      right:-40px;
+      color: gray;
+      font-size: 3.5rem;
+      font-weight: 700;
+      opacity: 0.3;
+     &.active{
+          color:lightgray;
+        }
+    }
+    }
+    
+  }
+  .box{
+    table{
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;     
+      width: 100%;
+      border: solid 1px lightgray;
+      
+      tr{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width:100%;
+        padding: 20px 0;
+        &:first-child{
+          border-bottom: solid 1px lightgray;        
+          padding: 10px 0;           
+            td{
+            font-weight: 500;
+             text-transform: uppercase;
+           }          
+        }
+        td{  
+          display: flex;
+          align-items: center;
+          justify-content: space-around;  
+          width: 100%;
+          text-transform: capitalize;     
+          a{
+            text-decoration: none;
+            color:inherit;
+            &:hover{
+              color: gray;
+            }
+          }    
+           .x{           
+            border: solid 1px black;
+            padding: 5px 10px;
+            
+
+           
+          } 
+          .close{
+            cursor: pointer !important;
+            color: gray;
+             &:hover{
+              color: black;
+            }
+          }  
+       
+          img{
+          width:150px;
+          height:150px;
+          object-fit: contain;
+          background-color: #f6f6f6;
+          }         
+        .quantity{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+           border: solid 1px lightgray; 
+          .qty{
+            padding: 5px 15px 5px 20px;
+          }
+          .func{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            color: gray;
+           .option{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border:solid 1px white;
+
+            padding: 5px;
+            &:hover{
+              color:white;
+              border:solid 1px black;
+              background-color: black;
+            }
+           }
+                      
+            
+          }
+        }
+        }
+        
+      }
+    }
+  }
+  .buttons{   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 40px 0;
+    button{
+      text-transform: uppercase;
+      padding: 10px 20px;
+      font-weight: 700;
+      cursor: pointer;
+      &.outline{
+        border:solid 1px #1891ac;          
+        color:#1891ac;
+        background-color: white;
+        &:hover{
+          border:solid 1px #1891ac;          
+          color:white;
+          background-color: #1891ac;
+        }
+      }
+      &.block{
+        border:solid 1px #1891ac;          
+        color:white;
+        background-color: #1891ac;
+        &:hover{
+          border:solid 1px #1891ac;          
+          color:#1891ac;
+          background-color: white;
+        }
+      }
+    }
+    
+  }
+  .details{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;   
+    gap:10px;
+    margin: 40px 0;    
+    .detail{      
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-direction: column;
+      flex:1;
+      background-color: #f6f6f6;
+      padding: 20px;
+      height: 100%;
+    .text{
+      margin: 10px 0;
+    }
+      &.coupon{          
+        height:220px;
+        padding: 30px 0;
+       
+      }
+      h2{
+        text-transform: capitalize;
+      }
+      hr{
+        width:100%;
+        border: none;
+        background-color: gray;
+        opacity: .50;
+        height: 1px;
+        margin: 20px 0;
+      }
+      .options{
+        display: flex;
+        align-items: center;
+        width: 80%;
+        .label{
+          width: 130px;   
+        }
+        select{
+          display: flex;
+          align-items: flex-start;          
+          margin:  20px;
+          padding: 10px ;
+          border: solid 1px lightgray;
+          border-radius: 3px;
+          cursor: pointer;  
+          width:200px;            
+        }      
+      }    
+      button{
+        text-transform: uppercase;
+        padding: 20px 40px;
+        font-weight: 700;
+        cursor: pointer;
+        &.outline{
+          border:solid 1px #1891ac;          
+          color:#1891ac;
+          background-color: transparent;
+          margin-top: 20px;
+          &:hover{
+            border:solid 1px #1891ac;          
+            color:white;
+            background-color: #1891ac;
+          }
+        }
+        &.block{
+          border:solid 1px #1891ac;          
+          color:white;
+          background-color: #1891ac;
+          margin: 10px 0;        
+
+          &:hover{
+            border:solid 1px #1891ac;          
+            color:#1891ac;
+            background-color: transparent;
+          }
+        }
+        &.orange{
+          background-color: #ff8927;
+          color:white;
+          border:solid 1px #ff8927;  
+          margin: 20px 0;        
+          &:hover{
+                   
+            color:#ff8927;
+            background-color: transparent;
+          }
+        }
+      }      
+      input{
+        width:400px;
+        padding: 20px;
+        border:solid 1px #1891ac;          
+        font-size: 1.2rem;
+        margin-bottom: 20px;
+      }
+      .sub{
+        width:100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .price{
+          color:#ff8927;
+          font-weight: 500;
+        }
+        .total{
+          font-weight: 700;
+          font-size: 1.2rem;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
