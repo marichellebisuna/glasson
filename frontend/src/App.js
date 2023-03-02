@@ -9,6 +9,7 @@ import Products from './pages/products/Products';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import Checkout from './pages/checkout/Checkout';
+import Wishlist from './pages/wishlist/Wishlist';
 import Layout from './components/layout/Layout';
 
 const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout",
         element: <Checkout />,
+      },
+      {
+        path: "/wishlist",
+        element: <Wishlist />,
       },
     ]
 
