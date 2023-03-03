@@ -45,7 +45,7 @@ const Checkout = () => {
         <tr key={index}>
           <td ><img src={i.images[0].url} alt="" srcset="" /></td>
           <td> <Link to={`/product/${i}`}> {i.title}</Link></td>
-          <td>${i.price}</td>
+          <td><span className="blue">${i.price}</span></td>
           <td>
             <div className="quantity">                
               <div className="qty">{qty}</div>
@@ -56,7 +56,7 @@ const Checkout = () => {
               </div>                
             </div>
           </td>
-          <td>${(i.price * qty).toFixed(2)}</td>
+          <td><span className="blue">${(i.price * qty).toFixed(2)}</span></td>
           <td ><span className='close'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
         </tr>
         )}

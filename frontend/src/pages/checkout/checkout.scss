@@ -99,10 +99,7 @@
           }    
            .x{           
             border: solid 1px black;
-            padding: 5px 10px;
-            
-
-           
+            padding: 5px 10px;            
           } 
           .close{
             cursor: pointer !important;
@@ -110,7 +107,11 @@
              &:hover{
               color: black;
             }
-          }  
+          } 
+          .blue{
+            color:#1891ac;
+            font-weight: 700;
+          } 
        
           img{
           width:150px;
