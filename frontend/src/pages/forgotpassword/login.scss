@@ -34,17 +34,6 @@
           margin-left: 10px;
         }
       }
-      .text{
-        text-transform: capitalize;
-        a{
-          text-decoration: none;
-          color:inherit;
-          &:hover{
-            color:black;
-            text-decoration: underline;
-          }
-        }      
-      }
     }
     button{
       width:100%;

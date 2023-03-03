@@ -8,6 +8,7 @@ import Product from './pages/product/Product';
 import Products from './pages/products/Products';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
+import ForgotPassword from './pages/forgotpassword/ForgotPassword';
 import Checkout from './pages/checkout/Checkout';
 import Wishlist from './pages/wishlist/Wishlist';
 import Layout from './components/layout/Layout';
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register />,
+      },
+      {
+        path: "/forgotpassword",
+        element: <ForgotPassword />,
       },
       {
         path: "/checkout",

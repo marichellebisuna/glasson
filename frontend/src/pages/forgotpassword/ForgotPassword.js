@@ -1,10 +1,10 @@
 import './login.scss'
 import { Link} from 'react-router-dom'
 
-const Login = () => {
+const ForgotPassword = () => {
   return (
-    <div className="login">
-      <h1>Login</h1>
+    <div className="forgotpassword">
+      <h1>Forgot Password</h1>
       <div className="container">
         <label>Username or email address*</label>
         <input type="email" name="" id="" />
@@ -15,7 +15,7 @@ const Login = () => {
             <input type="checkbox" name="" id="" />
             <label>Remember me</label>
           </div>
-          <div className="text"><Link to="/forgotpassword">Forgot your password?</Link></div>
+          <div className="text"><Link to="/forgotpassword"></Link>Forgot your password?</div>
         </div>
        <button type="submit">Login</button>
       </div>
@@ -23,4 +23,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default ForgotPassword
