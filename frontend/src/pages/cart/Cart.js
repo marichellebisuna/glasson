@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom'
-import './checkout.scss'
+import './cart.scss'
 import {cart} from '../../data'
 import { useState } from 'react'
 
-const Checkout = () => {
+const Cart = () => {
   const [qty, setQty] = useState(1)
-  
+  const [payment, setPayment] = useState("paypal")
+
+  console.log(payment)
   return (
-    <div className="checkout"><div className="breadcrumbs">
+    <div className="cart"><div className="breadcrumbs">
     <div className="breadcrumbs">
       <div className="container">
         <div className="left"><Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <Link to="/products">Shops </Link>
@@ -18,12 +20,12 @@ const Checkout = () => {
     <div className="process">
       <div className="step">
         <span>shopping cart</span> 
-        <div className="number">01</div>
+        <div className="number active">01</div>
       </div>        
       
       <div className="step">
         <span>checkout</span> 
-        <div className="number active">02</div>       
+        <div className="number ">02</div>       
       </div>
 
       <div className="step">
@@ -70,7 +72,7 @@ const Checkout = () => {
     <div className="detail">
       <h2>estimate shipping</h2>
       <hr />
-      <div className='text'>Enter your destination to get shipping</div>
+      <div className='text'>Enter your destination to get shipping estimate</div>
       <div className="options">
         <div className="label">Country:</div>
           <select id="country" name="country">
@@ -345,43 +347,67 @@ const Checkout = () => {
       </div>
       <div className="options">
         <div className="label">zip code*:</div>
-          <select name="" id="">    
-            <option value="">Select option</option>
-            <option  value="us" className="active">2770</option>    
-            <option  value="australia" className="active">2146</option>               
-            <option  value="philippines" className="active">2000</option> 
-          </select> 
+        <input  name="" id="" />        
       </div>
       <button className='outline'>get a quote</button>
     </div>
     <div className="detail coupon">
       <input type="text" name="" id="" placeholder='Coupon Code'/>
+      <div className="text">Coupon code will be applied on the checkout page</div>
       <button className='block'>apply coupon</button>     
     </div>
     <div className="detail">
-      <h2>cart totals</h2>
-      <hr />
-      <div className='sub'>
-        <div className="text">Sub Total:</div>
-        <div className="price">$460.00</div>
+      <div className="top">
+        <h2>cart totals</h2>
+        <hr />
+        <div className='sub'>
+          <div className="text">Sub Total:</div>
+          <div className="price">$460.00</div>
+        </div>
+        <div className='sub'>
+          <div className="text">Shipping:</div>
+          <div className="price">$9.00</div>
+        </div>
+        <hr />
+        <div className='sub'>
+          <div className="total">Total:</div>
+          <div className="price">$469.00</div>
+        </div>  
+        <div className='text'>       
+            <div className="detail">Tax included and shipping calculated at checkout.</div>
+            <div className="terms">
+              <input type="checkbox" name="" id="" />
+              <label>I agree with Terms & Conditions</label>
+            </div>    
+        </div>
+        <div className="how">
+          <div className="text">How you'll pay</div>
+         <div className="pay">
+          <div className="payment">
+            <input type="radio" name="payment" id="" onClick={(e)=>setPayment("mastercard")}/>
+            <img src="https://www.nicepng.com/png/detail/5-50082_free-credit-card-visa-and-master-card-png.png" alt="" srcset="" />
+          </div>
+           <div className="payment">
+            <input type="radio" name="payment" id="" onClick={(e)=>setPayment("paypal")}/>
+            <img src="https://pngimg.com/uploads/paypal/small/paypal_PNG2.png"alt="" srcset="" />
+          </div>
+         </div>
+          
+        </div>
+        <button className='orange'>{`proceed to ${payment}`}</button>  
       </div>
-      <div className='sub'>
-        <div className="text">Shipping:</div>
-        <div className="price">$9.00</div>
+     
+      <div className="bottom">
+      <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcset="" />
       </div>
-      <hr />
-      <div className='sub'>
-        <div className="total">Total:</div>
-        <div className="price">$469.00</div>
-      </div>
-      <div className='text'>Checkout with multiple address</div>
-      <button className='orange'>proceed to checkout</button>     
+        
 
     </div>
+   
    </div>
     </div>
   </div>
   )
 }
 
-export default Checkout;
+export default Cart;
