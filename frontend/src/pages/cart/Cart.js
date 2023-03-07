@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const Cart = () => {
   const [qty, setQty] = useState(1)
-  const [payment, setPayment] = useState("paypal")
+  const [payment, setPayment] = useState("")
 
   console.log(payment)
   return (
@@ -372,38 +372,11 @@ const Cart = () => {
         <div className='sub'>
           <div className="total">Total:</div>
           <div className="price">$469.00</div>
-        </div>  
-        <div className='text'>       
-            <div className="detail">Tax included and shipping calculated at checkout.</div>
-            <div className="terms">
-              <input type="checkbox" name="" id="" />
-              <label>I agree with Terms & Conditions</label>
-            </div>    
-        </div>
-        <div className="how">
-          <div className="text">How you'll pay</div>
-         <div className="pay">
-          <div className="payment">
-            <input type="radio" name="payment" id="" onClick={(e)=>setPayment("mastercard")}/>
-            <img src="https://www.nicepng.com/png/detail/5-50082_free-credit-card-visa-and-master-card-png.png" alt="" srcset="" />
-          </div>
-           <div className="payment">
-            <input type="radio" name="payment" id="" onClick={(e)=>setPayment("paypal")}/>
-            <img src="https://pngimg.com/uploads/paypal/small/paypal_PNG2.png"alt="" srcset="" />
-          </div>
-         </div>
-          
-        </div>
-        <button className='orange'>{`proceed to ${payment}`}</button>  
-      </div>
+        </div>      
      
-      <div className="bottom">
-      <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcset="" />
+        <button className='orange'><Link to="/checkout/shipping-details">proceed to checkout</Link></button>
       </div>
-        
-
-    </div>
-   
+    </div>   
    </div>
     </div>
   </div>

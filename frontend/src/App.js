@@ -10,6 +10,7 @@ import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import ForgotPassword from './pages/forgotpassword/ForgotPassword';
 import Cart from './pages/cart/Cart';
+import ShippingDetails from './pages/checkout/ShippingDetails'; 
 import Wishlist from './pages/wishlist/Wishlist';
 import Layout from './components/layout/Layout';
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: "/cart",
         element: <Cart />,
+      },
+      {
+        path: "/checkout/shipping-details",
+        element: <ShippingDetails />,
       },
       {
         path: "/wishlist",
