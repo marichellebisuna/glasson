@@ -914,3 +914,14 @@ export const cart=[
    
    
 ]
+export const user={
+    firstName: "John",
+    lastName: "Doe",
+    address: "123 hatherton rd",
+    city:"tregear",
+    state:"nsw",
+    postcode:2770,
+    country:"australia", 
+    phone:"0425401357",
+
+}

@@ -6,7 +6,7 @@ import { useState } from 'react'
 const ShippingDetails = () => {
   const [qty, setQty] = useState(1)
   const [payment, setPayment] = useState()
-
+  const [coupon, setCoupon] = useState(0)
   return (
     <div className="shippingdetails"><div className="breadcrumbs">
     <div className="breadcrumbs">
@@ -103,7 +103,7 @@ const ShippingDetails = () => {
             </div>
             <div className="full" >            
               <div className="name"> 
-                <div className="label" style={{paddingBottom:"10px"}}>Country Code     
+                <div className="label" style={{paddingBottom:"10px"}}>Phone Number*     
                 </div>
                 <select style={{width:"130px"}} id="phone" name="phone">              
                   <option value="home" >Home</option>                
@@ -112,8 +112,8 @@ const ShippingDetails = () => {
                 </select> 
               </div>          
               <div className="name" style={{paddingTop:"10px"}}>
-                <div className="label">Phone number</div>
-                <input style={{width:"280px"}} type="text" name="" id="" />
+                
+                <input style={{width:"280px",marginTop:"28px"}} type="text" name="" id="" />
               </div>            
             </div>  
           <hr style={{width:"100%", opacity:"0.3"}}/>
@@ -125,9 +125,9 @@ const ShippingDetails = () => {
         
           </div>  
                 
-          <div className="bottom" >
+          {/* <div className="bottom" >
           <img src="https://simplymemorialcards.ie/wp-content/uploads/2018/10/secure.png" alt="" srcset="" />
-          </div>  
+          </div>   */}
         
       </div>
     
@@ -143,6 +143,12 @@ const ShippingDetails = () => {
             <div className="text">Shipping:</div>
             <div className="price">$9.00</div>
           </div>
+          {
+          coupon>0 && <div className='sub'>
+          <div className="text">Coupon:</div>
+          <div className="price">$9.00</div>
+        </div>
+        }
           <hr />
           <div className='sub'>
             <div className="total">Estimated Total:</div>
@@ -170,16 +176,21 @@ const ShippingDetails = () => {
             
           </div> */}
           {/* {payment && <button className='orange'>{`proceed to ${payment}`}</button> } */}
-          <button className='orange'>Next Step</button> 
+          <button className='orange'><Link to="/checkout/payment">Next Step</Link></button> 
         </div>
       
-        <div className="bottom">
+        <div className="bottom" >
         <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcset="" />
         </div>
-          
-  {payment && <button className='orange'>{`proceed to ${payment}`}</button>  }
+
+        <div className="coupon">
+          <input type="text" name="" id="" placeholder='Coupon Code'/>
+          <div className="text">Coupon code will be applied on the checkout page</div>
+          <button className='block'>apply coupon</button>     
+        </div>  
+ 
       </div>
-     
+      
     </div>
     </div>
   </div>

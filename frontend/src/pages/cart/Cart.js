@@ -5,6 +5,7 @@ import { useState } from 'react'
 
 const Cart = () => {
   const [qty, setQty] = useState(1)
+  const [coupon, setCoupon] = useState(0)
   const [payment, setPayment] = useState("")
 
   console.log(payment)
@@ -368,6 +369,12 @@ const Cart = () => {
           <div className="text">Shipping:</div>
           <div className="price">$9.00</div>
         </div>
+        {
+          coupon>0 && <div className='sub'>
+          <div className="text">Coupon:</div>
+          <div className="price">$9.00</div>
+        </div>
+        }        
         <hr />
         <div className='sub'>
           <div className="total">Total:</div>

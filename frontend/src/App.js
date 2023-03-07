@@ -13,6 +13,7 @@ import Cart from './pages/cart/Cart';
 import ShippingDetails from './pages/checkout/ShippingDetails'; 
 import Wishlist from './pages/wishlist/Wishlist';
 import Layout from './components/layout/Layout';
+import Payment from './pages/checkout/Payment';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
       {
         path: "/checkout/shipping-details",
         element: <ShippingDetails />,
+      },
+      {
+        path: "/checkout/payment",
+        element: <Payment />,
       },
       {
         path: "/wishlist",
