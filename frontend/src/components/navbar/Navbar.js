@@ -2,6 +2,7 @@ import './navbar.scss'
 import logo from '../../media/logo.png'
 import {Link, useLocation} from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import {cart} from '../../../src/data'
 
 const Navbar = () => {
   const location = useLocation().pathname.split("/")[1]
@@ -40,21 +41,30 @@ const Navbar = () => {
         </div>
       </div>    
       <div className="middle">
-        <div className="logo"><Link to="/"> <img src={logo} alt="" srcSet="" /></Link>
+        <div className="logo-img"><Link to="/"> <img src={logo} alt="" srcSet="" /></Link>
         </div>
-        <div className="menu">       
-          <ul className='list'>
+        <div className="nav-menu">       
+          <ul className='list-menu'>
             <Link to="/"><li className={location==="" ?'listitem active':'listitem'}>Home</li></Link>
             <Link to="/products"><li className={location==="products" ?'listitem active':'listitem'}>Products</li></Link>
             <Link to="/product/:id"><li className={location==="product" ?'listitem active':'listitem'}>Product</li></Link>
             <Link to="/login"><li className={location==="login" ?'listitem active':'listitem'}>Login</li></Link>
             <Link to="/register"><li className={location==="register" ?'listitem active':'listitem'}>Register</li></Link>
           </ul>
-          <div className="icons">
-          <i className="fa-regular fa-user"></i> 
+          <div className="menu-icons">
+          <i className="fa-regular fa-user"></i>    
+          <div className="wish">
+            <Link to="/wishlist">
+            <div className="outline"><i class="fa-regular fa-heart"></i></div>
+            <div className="solid"><i class="fa-solid fa-heart"></i></div>
+            </Link>
+            <div className="number">{cart.length}</div>
+          </div>   
+           
+         
           <div className="cart">
           <i className="fa-solid fa-cart-shopping"></i>
-          <div className="number">0</div>
+          <div className="number">{cart.length}</div>
           </div>           
           
           </div>
