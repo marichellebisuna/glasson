@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import './productcard.scss'
-
+import {product} from '../../../data'
 const productItems = ({productItems}) => {
   // const [user, setUser] = useState(true)
 
@@ -10,7 +10,7 @@ const productItems = ({productItems}) => {
        {/* {user ?   */}       
         {productItems.map((productItems, i)=>( 
           <div className='product' >    
-            <div className="top">
+            <div className="top-img">
               <Link to={`/product/${i}`}>   
               <img src={productItems.images[0].url} alt="" srcSet="" />
               </Link>
@@ -18,7 +18,7 @@ const productItems = ({productItems}) => {
                <div className="top-discount">-{productItems.discount}% </div>
               }             
             </div>
-            <div className="bottom">
+            <div className="bottom-card">
               <div className="title"><Link to={`/product/${i}`} style={{
               textDecoration: 'none'
               }}>{productItems.title}</Link>
@@ -58,6 +58,7 @@ const productItems = ({productItems}) => {
             </div>       
           </div> 
        ))} 
+      
       
      {/* : <Navigate to='/login' />}    */}
        </div>

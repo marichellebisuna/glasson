@@ -768,6 +768,7 @@ export const product={
       ],
     "checked": false,
     "inStock": 500,
+    "discount":20,
     "sold": 0,      
     "price": 5,
     "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
