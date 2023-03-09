@@ -1,16 +1,15 @@
 .cart{
  width:90vw;
  margin: 0 auto; 
- .breadcrumbs{   
-  width: 100%;
-  //margin: 10px auto;
-  padding: 10px 90px;
+ .breadcrumbs-cart{   
+  width: 100%;  
+  padding: 10px 0px;
   position: sticky;
   top:115px;
   z-index: 1;
   background-color: white;
   z-index: 2;
-  .container{
+  .container-cart{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -36,7 +35,7 @@
     width:100%;
     height:90px;
     background-color:#ff8927;  
-   margin: 50px 0 20px 0;
+    margin: 50px 0 20px 0;
    
     .step{
        position: relative;
@@ -68,8 +67,7 @@
       flex-wrap: wrap;
       align-items: center;     
       width: 100%;
-      border: solid 1px lightgray;
-      
+      border: solid 1px lightgray;      
       tr{
         display: flex;
         align-items: center;
@@ -111,14 +109,41 @@
           .blue{
             color:#1891ac;
             font-weight: 700;
-          } 
-       
-          img{
-          width:150px;
-          height:150px;
-          object-fit: contain;
-          background-color: #f6f6f6;
-          }         
+          }       
+          
+          &.images-items{
+            display: flex;
+            &:hover{
+              .image1{
+                display: none;
+              }
+              .image2{
+                display: flex;
+              }
+            }
+            .image1{        
+            height:150px;
+            width:150px;
+            border: solid 1px lightgray;        
+            display: flex;
+            img{
+                width:100%;
+                height:100%;
+                object-fit: contain;
+              }
+            }       
+            .image2{        
+              height:150px;
+              width:150px;
+              border: solid 1px lightgray;          
+              display: none;
+               img{
+                   width:100%;
+                   height:100%;
+                   object-fit: contain;
+                 }
+             }  
+           }       
         .quantity{
           display: flex;
           align-items: center;
@@ -137,15 +162,13 @@
             align-items: center;
             cursor: pointer;
             border:solid 1px white;
-
             padding: 5px;
             &:hover{
               color:white;
               border:solid 1px black;
               background-color: black;
             }
-           }
-                      
+           }                   
             
           }
         }
@@ -263,8 +286,7 @@
       text-transform: uppercase;
       padding: 20px 40px;
       font-weight: 700;
-      margin-bottom: 10px;
-      
+      margin-bottom: 10px;      
       cursor: pointer;
       &.outline{
         border:solid 1px #1891ac;          

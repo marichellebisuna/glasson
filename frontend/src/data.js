@@ -785,91 +785,91 @@ export const product={
     "createdAt":"2022-03-22T10:06:20.863+00:00"
 }
 export const cart=[  
-       {
-        "title": "wedding invitation",
-        "discount":20,
-          "images": [
-              {
-                  "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
-                  "url": "https://clearly.scene7.com/is/image/clearly/clearly-basics-gander-51-silver-metric-angle?$cdp-thumb-lg$&cropN=0,0.165,1,0.72&fmt=avif"
-              },
-              {
-                  "id": "nextjs_media/k2pjwtpzolcieioacnu2",
-                  "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278591/nextjs_media/k2pjwtpzolcieioacnu2.jpg"
-              },
-              {
-                  "id": "nextjs_media/qbh6auephsy5leaapsu1",
-                  "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278592/nextjs_media/qbh6auephsy5leaapsu1.jpg"
-              },
-              {
-                  "id": "nextjs_media/gnsgrxorl5utlnxygjn6",
-                  "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278594/nextjs_media/gnsgrxorl5utlnxygjn6.jpg"
-              },
-              {
-                  "id": "nextjs_media/w8qj2rlrhh1es8wxhcui",
-                  "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278596/nextjs_media/w8qj2rlrhh1es8wxhcui.jpg"
-              }
-          ],
-          "checked": false,
-          "inStock": 300,
-          "sold": 10,     
-          "price": 55,
-          "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
-          "content": "Tousled whatever blue bottle fanny pack viral waistcoat twee listicle gluten-free before they sold out vexillologist. Fanny pack gluten-free vexillologist beard truffaut microdosing. Try-hard hot chicken VHS squid. \n Banh mi cornhole pinterest brooklyn, schlitz gluten-free pitchfork tattooed helvetica ugh freegan. Kickstarter hexagon cred keytar chicharrones crucifix vexillologist blue bottle snackwave tilde tousled photo booth williamsburg fanny pack. Meditation taiyaki freegan post-ironic kogi unicorn bitters hoodie enamel pin paleo +1 mustache cold-pressed. \n Snackwave williamsburg tote bag schlitz art party. Ennui cardigan umami, gluten-free keffiyeh succulents chillwave tilde kitsch air plant selvage fashion axe raw denim echo park. Forage pork belly gentrify, tumblr snackwave man braid whatever try-hard iPhone ramps art party chicharrones plaid pour-over pickled. \n Venmo mlkshk banjo heirloom twee everyday carry. Cred fashion axe forage tilde hella single-origin coffee palo santo, post-ironic PBR&B cardigan selvage. Leggings freegan raw denim, pop-up kale chips tattooed mixtape 8-bit deep v cronut butcher tilde.",
-          "category":"eyeglasses",
-          "color":"blue",
-          "size":"extra-small",
-          "brand":"massa",
-          "shape":"square",
-          "rating":4,
-          "tags":["furniture", "equipment"],
-          "sku":"Ch-256xl",
-          "numOfReviews":10,
-          "createdAt":"2021-07-04T00:54:06.892+00:00"
-      },
-      {
-        "title": "laptop",
-        "discount":0,
-          "images": [
-              {
-                  "id": "nextjs_media/u8qltexka25minj2rj46",
-                  "url": "https://assets.sunglasshut.com/is/image/LuxotticaRetail/8056597243612__002.png?impolicy=SGH_bgtransparent&width=640"
-              },
-              {
-                  "id": "nextjs_media/wb5osprab71emsxp3ibm",
-                  "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605318910/nextjs_media/wb5osprab71emsxp3ibm.jpg"
-              },
-              {
-                  "id": "nextjs_media/nelvbtwdbk1vjvhufort",
-                  "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605318911/nextjs_media/nelvbtwdbk1vjvhufort.jpg"
-              },
-              {
+    {
+    "title": "wedding invitation",
+    "discount":20,
+        "images": [
+            {
+                "id": "nextjs_media/jdi9qo0oiinwik8uxzxn",
+                "url": "https://clearly.scene7.com/is/image/clearly/clearly-basics-gander-51-silver-metric-angle?$cdp-thumb-lg$&cropN=0,0.165,1,0.72&fmt=avif"
+            },
+            {
+                "id": "nextjs_media/k2pjwtpzolcieioacnu2",
+                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278591/nextjs_media/k2pjwtpzolcieioacnu2.jpg"
+            },
+            {
                 "id": "nextjs_media/qbh6auephsy5leaapsu1",
                 "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278592/nextjs_media/qbh6auephsy5leaapsu1.jpg"
             },
-              {
-                  "id": "nextjs_media/bnyeto9vaz40yfts92we",
-                  "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605318913/nextjs_media/bnyeto9vaz40yfts92we.jpg"
-              }
-          ],
-          "checked": false,
-          "inStock": 153,
-          "sold": 80,      
-          "price": 25,
-          "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
-          "content": "Tousled whatever blue bottle fanny pack viral waistcoat twee listicle gluten-free before they sold out vexillologist. Fanny pack gluten-free vexillologist beard truffaut microdosing. Try-hard hot chicken VHS squid. \n Banh mi cornhole pinterest brooklyn, schlitz gluten-free pitchfork tattooed helvetica ugh freegan. Kickstarter hexagon cred keytar chicharrones crucifix vexillologist blue bottle snackwave tilde tousled photo booth williamsburg fanny pack. Meditation taiyaki freegan post-ironic kogi unicorn bitters hoodie enamel pin paleo +1 mustache cold-pressed. \n Snackwave williamsburg tote bag schlitz art party. Ennui cardigan umami, gluten-free keffiyeh succulents chillwave tilde kitsch air plant selvage fashion axe raw denim echo park. Forage pork belly gentrify, tumblr snackwave man braid whatever try-hard iPhone ramps art party chicharrones plaid pour-over pickled. \n Venmo mlkshk banjo heirloom twee everyday carry. Cred fashion axe forage tilde hella single-origin coffee palo santo, post-ironic PBR&B cardigan selvage. Leggings freegan raw denim, pop-up kale chips tattooed mixtape 8-bit deep v cronut butcher tilde.",
-          "category":"vogue",
-          "color":"red",
-          "size":"small",
-          "brand":"prado",
-          "shape":"round",
-          "rating":3,
-          "tags":["cabinet", "equipment"],
-          "sku":"WB-963md",
-          "numOfReviews":10,      
-          "createdAt":"2021-07-04T00:55:02.096+00:00"
-      },
-      {
+            {
+                "id": "nextjs_media/gnsgrxorl5utlnxygjn6",
+                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278594/nextjs_media/gnsgrxorl5utlnxygjn6.jpg"
+            },
+            {
+                "id": "nextjs_media/w8qj2rlrhh1es8wxhcui",
+                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278596/nextjs_media/w8qj2rlrhh1es8wxhcui.jpg"
+            }
+        ],
+        "checked": false,
+        "inStock": 300,
+        "sold": 10,     
+        "price": 55,
+        "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
+        "content": "Tousled whatever blue bottle fanny pack viral waistcoat twee listicle gluten-free before they sold out vexillologist. Fanny pack gluten-free vexillologist beard truffaut microdosing. Try-hard hot chicken VHS squid. \n Banh mi cornhole pinterest brooklyn, schlitz gluten-free pitchfork tattooed helvetica ugh freegan. Kickstarter hexagon cred keytar chicharrones crucifix vexillologist blue bottle snackwave tilde tousled photo booth williamsburg fanny pack. Meditation taiyaki freegan post-ironic kogi unicorn bitters hoodie enamel pin paleo +1 mustache cold-pressed. \n Snackwave williamsburg tote bag schlitz art party. Ennui cardigan umami, gluten-free keffiyeh succulents chillwave tilde kitsch air plant selvage fashion axe raw denim echo park. Forage pork belly gentrify, tumblr snackwave man braid whatever try-hard iPhone ramps art party chicharrones plaid pour-over pickled. \n Venmo mlkshk banjo heirloom twee everyday carry. Cred fashion axe forage tilde hella single-origin coffee palo santo, post-ironic PBR&B cardigan selvage. Leggings freegan raw denim, pop-up kale chips tattooed mixtape 8-bit deep v cronut butcher tilde.",
+        "category":"eyeglasses",
+        "color":"blue",
+        "size":"extra-small",
+        "brand":"massa",
+        "shape":"square",
+        "rating":4,
+        "tags":["furniture", "equipment"],
+        "sku":"Ch-256xl",
+        "numOfReviews":10,
+        "createdAt":"2021-07-04T00:54:06.892+00:00"
+    },
+    {
+    "title": "laptop",
+    "discount":0,
+        "images": [
+            {
+                "id": "nextjs_media/u8qltexka25minj2rj46",
+                "url": "https://assets.sunglasshut.com/is/image/LuxotticaRetail/8056597243612__002.png?impolicy=SGH_bgtransparent&width=640"
+            },
+            {
+                "id": "nextjs_media/wb5osprab71emsxp3ibm",
+                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605318910/nextjs_media/wb5osprab71emsxp3ibm.jpg"
+            },
+            {
+                "id": "nextjs_media/nelvbtwdbk1vjvhufort",
+                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605318911/nextjs_media/nelvbtwdbk1vjvhufort.jpg"
+            },
+            {
+            "id": "nextjs_media/qbh6auephsy5leaapsu1",
+            "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605278592/nextjs_media/qbh6auephsy5leaapsu1.jpg"
+        },
+            {
+                "id": "nextjs_media/bnyeto9vaz40yfts92we",
+                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605318913/nextjs_media/bnyeto9vaz40yfts92we.jpg"
+            }
+        ],
+        "checked": false,
+        "inStock": 153,
+        "sold": 80,      
+        "price": 25,
+        "description": "Pepper jack pepper jack everyone loves. Boursin lancashire babybel ricotta swiss port-salut stilton cheese slices. ",
+        "content": "Tousled whatever blue bottle fanny pack viral waistcoat twee listicle gluten-free before they sold out vexillologist. Fanny pack gluten-free vexillologist beard truffaut microdosing. Try-hard hot chicken VHS squid. \n Banh mi cornhole pinterest brooklyn, schlitz gluten-free pitchfork tattooed helvetica ugh freegan. Kickstarter hexagon cred keytar chicharrones crucifix vexillologist blue bottle snackwave tilde tousled photo booth williamsburg fanny pack. Meditation taiyaki freegan post-ironic kogi unicorn bitters hoodie enamel pin paleo +1 mustache cold-pressed. \n Snackwave williamsburg tote bag schlitz art party. Ennui cardigan umami, gluten-free keffiyeh succulents chillwave tilde kitsch air plant selvage fashion axe raw denim echo park. Forage pork belly gentrify, tumblr snackwave man braid whatever try-hard iPhone ramps art party chicharrones plaid pour-over pickled. \n Venmo mlkshk banjo heirloom twee everyday carry. Cred fashion axe forage tilde hella single-origin coffee palo santo, post-ironic PBR&B cardigan selvage. Leggings freegan raw denim, pop-up kale chips tattooed mixtape 8-bit deep v cronut butcher tilde.",
+        "category":"vogue",
+        "color":"red",
+        "size":"small",
+        "brand":"prado",
+        "shape":"round",
+        "rating":3,
+        "tags":["cabinet", "equipment"],
+        "sku":"WB-963md",
+        "numOfReviews":10,      
+        "createdAt":"2021-07-04T00:55:02.096+00:00"
+    },
+    {
         "title": "animal2",
         "discount":0,
         "images": [
@@ -910,10 +910,7 @@ export const cart=[
         "sku":"MX-862sm",
         "numOfReviews":10,
         "createdAt":"2021-07-04T00:54:06.892+00:00"
-    },
- 
-   
-   
+    }, 
 ]
 export const user={
     firstName: "John",

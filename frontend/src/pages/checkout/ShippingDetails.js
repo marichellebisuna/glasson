@@ -137,7 +137,7 @@ const ShippingDetails = () => {
           <hr />
           <div className='sub'>
             <div className="text">Subtotal:</div>
-            <div className="price">$460.00</div>
+            <div className="price">$85.00</div>
           </div>
           <div className='sub'>
             <div className="text">Shipping:</div>
@@ -152,30 +152,9 @@ const ShippingDetails = () => {
           <hr />
           <div className='sub'>
             <div className="total">Estimated Total:</div>
-            <div className="price">$469.00</div>
+            <div className="price">$94.00</div>
           </div>  
-          {/* <div className='text'>       
-              <div className="detail">Tax included and shipping calculated at checkout.</div>
-              <div className="terms">
-                <input type="checkbox" name="" id="" />
-                <label>I agree with Terms & Conditions</label>
-              </div>    
-          </div> */}
-          {/* <div className="how">
-            <div className="text">How you'll pay</div>
-          <div className="pay">
-            <div className="payment">
-              <input type="radio" name="payment" id="" onClick={(e)=>setPayment("mastercard")}/>
-              <img src="https://www.nicepng.com/png/detail/5-50082_free-credit-card-visa-and-master-card-png.png" alt="" srcset="" />
-            </div>
-            <div className="payment">
-              <input type="radio" name="payment" id="" onClick={(e)=>setPayment("paypal")} />
-              <img src="https://pngimg.com/uploads/paypal/small/paypal_PNG2.png"alt="" srcset="" />
-            </div>
-          </div>
-            
-          </div> */}
-          {/* {payment && <button className='orange'>{`proceed to ${payment}`}</button> } */}
+          
           <button className='orange'><Link to="/checkout/payment">Next Step</Link></button> 
         </div>
       

@@ -3,11 +3,14 @@ import logo from '../../media/logo.png'
 import {Link, useLocation} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import {cart} from '../../../src/data'
+import SideCart from './SideCart'
 
 const Navbar = () => {
   const location = useLocation().pathname.split("/")[1]
 
   const [active, setActive] = useState(false)
+  const [show, setShow] = useState(false)
+
 
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false)
@@ -21,6 +24,7 @@ const Navbar = () => {
     }
   }, [])
   
+ 
   
   return (
     <div className='navbar'>  
@@ -44,28 +48,30 @@ const Navbar = () => {
         <div className="logo-img"><Link to="/"> <img src={logo} alt="" srcSet="" /></Link>
         </div>
         <div className="nav-menu">       
-          <ul className='list-menu'>
-            <Link to="/"><li className={location==="" ?'listitem active':'listitem'}>Home</li></Link>
-            <Link to="/products"><li className={location==="products" ?'listitem active':'listitem'}>Products</li></Link>
-            <Link to="/product/:id"><li className={location==="product" ?'listitem active':'listitem'}>Product</li></Link>
-            <Link to="/login"><li className={location==="login" ?'listitem active':'listitem'}>Login</li></Link>
-            <Link to="/register"><li className={location==="register" ?'listitem active':'listitem'}>Register</li></Link>
-          </ul>
-          <div className="menu-icons">
-          <i className="fa-regular fa-user"></i>    
-          <div className="wish">
-            <Link to="/wishlist">
-            <div className="outline"><i class="fa-regular fa-heart"></i></div>
-            <div className="solid"><i class="fa-solid fa-heart"></i></div>
-            </Link>
-            <div className="number">{cart.length}</div>
-          </div>   
+          <div className='list-menu'>
+            <Link to="/"><div className={location==="" ?'listitem active':'listitem'}>Home</div></Link>
+            <Link to="/products"><div className={location==="products" ?'listitem active':'listitem'}>Products</div></Link>
+            <Link to="/product/:id"><div className={location==="product" ?'listitem active':'listitem'}>Product</div></Link>
+            <Link to="/login"><div className={location==="login" ?'listitem active':'listitem'}>Login</div></Link>
+            <Link to="/register"><div className={location==="register" ?'listitem active':'listitem'}>Register</div></Link>
+             <div className="menu-icons">
+                <i className="fa-regular fa-user"></i>    
+                <div className="wish">
+                  <Link to="/wishlist">
+                  <div className="outline"><i class="fa-regular fa-heart"></i></div>
+                  <div className="solid"><i class="fa-solid fa-heart"></i></div>
+                  </Link>
+                  <div className="number">{cart.length}</div>
+                </div>  
+                <div className="cart-icon" onClick={()=>setShow(!show)}>                  
+                  <i className="fa-solid fa-cart-shopping"></i>                
+                  <div className="number">{cart.length}</div>
+                </div>  
+              </div>
+         
            
          
-          <div className="cart">
-          <i className="fa-solid fa-cart-shopping"></i>
-          <div className="number">{cart.length}</div>
-          </div>           
+         
           
           </div>
         </div>
@@ -97,7 +103,10 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <SideCart setShow={setShow} show={show}/>
+    {/* {show && <SideCart setShow={setShow} show={show}/>} */}
     </div>
+    
   )
 }
 

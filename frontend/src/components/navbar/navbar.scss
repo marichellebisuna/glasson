@@ -63,20 +63,19 @@
     align-items: center;
     justify-content: space-between;
     width: 90vw;
-    margin:0 auto;
-    
+    margin:0 auto;   
     .logo-img{
       cursor: pointer;      
     }
-    .nav-menu{
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .nav-menu{    
        text-transform: uppercase;
-       width:720px;
-       color: gray;            
-       ul{
+       width:740px;
+       color: gray;   
+             
+       .list-menu{
         display: flex;
+        align-items: center;
+        justify-content: center;
         list-style: none;  
         gap:20px;    
         margin-right: 70px;
@@ -92,18 +91,20 @@
           color: gray;;
           cursor: pointer;
         }
-       }
-      .menu-icons{
+         .menu-icons{
+          margin-left: 50px;
         cursor: pointer;
         display: flex;
         align-items: center;
-        justify-content: center;        
-        & :hover{
+        justify-content: center;     
+          
+        &:hover{
           color: rgb(55, 54, 54);
         }
-        .cart{
-          position: relative;
-          margin-left: 20px;          
+        .cart-icon{
+          position: relative;          
+          margin-left: 10px;
+         
           .number{
             display: flex;
             align-items: center;
@@ -118,10 +119,11 @@
             border-radius: 50%;
             padding: 4px 7px;             
         }
-        } 
+        }
         .wish{
           position: relative;          
           margin-left: 10px;
+          z-index: 1;
           &:hover{
             .outline{
               display: none;
@@ -144,7 +146,7 @@
             justify-content: center;
             position: absolute;
             top:-10px;
-            left:15px;
+            left:10px;
             font-size: .75rem;
             background-color: 
             #1891ac;
@@ -154,6 +156,8 @@
         }
         }        
       }
+       }
+     
     }   
   }
   
