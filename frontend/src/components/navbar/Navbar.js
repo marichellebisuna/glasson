@@ -24,7 +24,6 @@ const Navbar = () => {
     }
   }, [])
   
- 
   
   return (
     <div className='navbar'>  
@@ -58,8 +57,8 @@ const Navbar = () => {
                 <i className="fa-regular fa-user"></i>    
                 <div className="wish">
                   <Link to="/wishlist">
-                  <div className="outline"><i class="fa-regular fa-heart"></i></div>
-                  <div className="solid"><i class="fa-solid fa-heart"></i></div>
+                  <div className="outline"><i className="fa-regular fa-heart"></i></div>
+                  <div className="solid"><i className="fa-solid fa-heart"></i></div>
                   </Link>
                   <div className="number">{cart.length}</div>
                 </div>  
@@ -68,11 +67,6 @@ const Navbar = () => {
                   <div className="number">{cart.length}</div>
                 </div>  
               </div>
-         
-           
-         
-         
-          
           </div>
         </div>
         
@@ -104,7 +98,7 @@ const Navbar = () => {
         </div>
       </div>
       <SideCart setShow={setShow} show={show}/>
-    {/* {show && <SideCart setShow={setShow} show={show}/>} */}
+   
     </div>
     
   )

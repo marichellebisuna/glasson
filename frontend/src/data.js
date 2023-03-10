@@ -923,3 +923,26 @@ export const user={
     phone:"0425401357",
 
 }
+export const slide=[
+    {
+    bg:"rgb(246, 246, 147)",
+    img:"guy",
+    brand:"massa dapibus",
+    title:"carbonate 100% glasses",
+    desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nunc arcu, mattis vel odio eget, vehicula porta nisi. Vestibulum condimentum dictum erat, in accumsan sem."
+    },
+    {
+    bg:"rgb(243, 187, 196)",
+    img:"boy",
+    brand:"brand 2",
+    title:"carbonate 100% glasses",
+    desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nunc arcu, mattis vel odio eget, vehicula porta nisi. Vestibulum condimentum dictum erat, in accumsan sem."
+    },
+    {
+    bg:"rgb(178, 241, 178)",
+    img:"girl",
+    brand:"brand3",
+    title:"carbonate 100% glasses",
+    desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nunc arcu, mattis vel odio eget, vehicula porta nisi. Vestibulum condimentum dictum erat, in accumsan sem."
+    }
+]

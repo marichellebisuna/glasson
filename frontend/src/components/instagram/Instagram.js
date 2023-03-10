@@ -10,23 +10,23 @@ const Instagram = () => {
   return (    
     <div className='instagram'>
       <div className="box">
-        <img src={insta1} alt="" srcset="" />
+        <img src={insta1} alt="" srcSet="" />
       </div>
      
       <div className="box">
-         <img src={insta2} alt="" srcset="" />
+         <img src={insta2} alt="" srcSet="" />
       </div>
      
       <div className="box">
-        <img src={insta3} alt="" srcset="" />
+        <img src={insta3} alt="" srcSet="" />
       </div>
       
       <div className="box">
-        <img src={insta4} alt="" srcset="" />
+        <img src={insta4} alt="" srcSet="" />
       </div>
       
       <div className="box">
-        <img src={insta5} alt="" srcset="" />
+        <img src={insta5} alt="" srcSet="" />
       </div>
       
       

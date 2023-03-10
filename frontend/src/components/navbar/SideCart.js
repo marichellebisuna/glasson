@@ -18,7 +18,7 @@ const SideCart = ({setShow, show}) => {
       <div className={show?"content":"content hide"}>
         <div className="title">
           <div className="text">Shopping Cart</div>
-          <i class="fa-solid fa-xmark" onClick={()=>setShow(!show)}></i>
+          <i className="fa-solid fa-xmark" onClick={()=>setShow(!show)}></i>
         </div>
         <div className="items">
           <Advert/>
@@ -30,8 +30,8 @@ const SideCart = ({setShow, show}) => {
           cart.map((i, index)=>
             <div className="contain" key={index}>
              <div className="images-items">
-                <div className="image1" key={i}><Link to={`/product/${i}`}><img src={i.images[0].url} alt="" srcset="" /></Link></div>
-                <div className="image2" key={i}><Link to={`/product/${i}`}><img src={i.images[1].url} alt="" srcset="" /></Link></div>
+                <div className="image1" key={i}><Link to={`/product/${i}`}><img src={i.images[0].url} alt="" srcSet="" /></Link></div>
+                <div className="image2" key={i}><Link to={`/product/${i}`}><img src={i.images[1].url} alt="" srcSet="" /></Link></div>
              </div>
                 
               
@@ -43,7 +43,7 @@ const SideCart = ({setShow, show}) => {
                 </div>
                 <div className="row">
                   <div className="price">Free postage</div>
-                  <div className="trash"><i class="fa-solid fa-trash"></i></div>
+                  <div className="trash"><i className="fa-solid fa-trash"></i></div>
                 </div>
               </div>
             </div>            

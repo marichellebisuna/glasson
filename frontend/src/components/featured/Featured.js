@@ -9,8 +9,7 @@ const Featured = () => {
   const tempCategory=new Set(products.map(product=>product.category))
   let categories = Array.from(tempCategory)
   categories = ["all", ...categories]
-  console.log(categories)
-  console.log(productItems)
+
 
   const handleProducts=(category)=>{
         let tempProducts = [...products]

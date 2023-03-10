@@ -3,7 +3,7 @@ import './advert.scss'
 const Advert = () => {
   return (
   <div className="advert">
-    <img src="https://cdn.shopify.com/s/files/1/0081/3305/0458/files/banner-1-mb-min@2x.jpg?v=1632459215" alt="" srcset="" />
+    <img src="https://cdn.shopify.com/s/files/1/0081/3305/0458/files/banner-1-mb-min@2x.jpg?v=1632459215" alt="" srcSet="" />
     <div className="details">
       <div className="detail">
         <h1>Before you leave...</h1>
