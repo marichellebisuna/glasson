@@ -63,8 +63,7 @@
       }     
     }
   }
- }
-  
+ }  
   .middle{
     display: flex;
     align-items: center;
@@ -78,9 +77,8 @@
     .nav-menu{    
        text-transform: uppercase;
        width:740px;
-       color: gray;   
-          
-        @include mobile{       
+       color: gray;  
+       @include mobile{       
           display: flex;     
           align-items: center;  
           justify-content: flex-end; 
@@ -96,7 +94,11 @@
         justify-content: center;          
         gap:20px;    
         margin-right: 70px;
-        text-decoration: none;   
+        text-decoration: none;  
+        @include tablets{       
+          margin-right: 0px;
+          margin-left: 5px;           
+        } 
         @include mobile{       
           display:none;             
         }       
@@ -107,22 +109,20 @@
           color: gray;
           cursor: pointer;
           text-decoration: none;     
-        &.active {
-          font-weight: 700;
-          color: rgb(55, 54, 54);
+          &.active {
+            font-weight: 700;
+            color: rgb(55, 54, 54);
+          }
+          &:hover{
+            color: black;
+          }          
+        }        
         }
-        &:hover{
-          color: black;
-        }
-        
-        }
-        
-        }
-       
-       
-         .menu-icons{
+        .menu-icons{
           margin-left: 50px;
-          
+          @include tablets{      
+            margin-left: 25px;           
+          }           
         cursor: pointer;
         display: flex;
         align-items: center;
@@ -201,8 +201,7 @@
        }
      
     }   
-  }
-  
+  }  
   .bottom{
     width:90vw;
     margin:0 auto;
@@ -210,26 +209,45 @@
     display: flex;
     align-items: center;
     justify-content: center;     
-    padding-bottom: 10px;
-   
+    padding-bottom: 10px;   
+    @include tablets{               
+      width:100vw; 
+      padding: 0 20px;
+      padding-bottom: 10px;  
+    }     
     .container{   
       display: flex;  
      .search{       
       display: flex;
       align-items: center;
       justify-content: center;       
-      border: 1px solid lightgray;        
+      border: 1px solid lightgray; 
+      @include laptops{               
+        width:550px;            
+
+      }    
+      @include tablets{       
+        width:450px;            
+     }  
+      @include mobile{       
+        width:370px;             
+      }  
       .categories{
         position: relative;          
         select {         
-          border: none !important;  
+          border: none !important;           
           padding-left: 20px;        
           outline: none;         
           scroll-behavior: smooth;         
           cursor: pointer;   
           padding-right: 70px;           
           z-index: 1; 
-          font-weight: 700;                  
+          font-weight: 700;    
+          @include mobile{       
+            padding-right: 10px;           
+            padding-left: 10px;        
+           
+          }                
         } 
           .button{
         position: absolute;
@@ -266,28 +284,36 @@
       display: flex;
       align-items: center;
       justify-content: left;
-      margin-left: 20px;
+      margin-left: 20px; 
+      @include tablets{               
+        font-size: 0.7rem; 
+        margin-left: 10px; 
+      }     
+      @include mobile{       
+        display:none;             
+      }
       .icon{
-        font-size: 2rem;      
+        font-size: 2rem;  
+        @include tablets{               
+          font-size: 1.5rem;  
+
+        } 
       }
       .hotline{ 
-        padding-left: 20px;     
+        padding-left: 20px; 
+        @include tablets{               
+          padding-left: 10px; 
+        }  
         .text{
         color: rgb(55, 54, 54);
         font-weight: 500;
-      }
+          @include tablets{  
+          font-size: 0.7rem;                     
+          }        
+        }
       }
     }
     
     
   }
-}
-@media screen and (max-width: 480px){
-  
-}
-@media screen and (max-width: 768px){
-  
-}
-@media screen and (max-width: 1024px){
-  
 }

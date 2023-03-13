@@ -2,4 +2,14 @@
   @media(max-width: 480px){
     @content
   }
-}
+};
+@mixin tablets{
+  @media(max-width: 768px){
+    @content
+  }
+};
+@mixin laptops{
+  @media(max-width: 1024px){
+    @content
+  }
+};
