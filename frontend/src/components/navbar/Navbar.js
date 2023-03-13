@@ -4,13 +4,14 @@ import {Link, useLocation} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import {cart} from '../../../src/data'
 import SideCart from './SideCart'
+import Sidemenu from './Sidemenu'
 
 const Navbar = () => {
   const location = useLocation().pathname.split("/")[1]
 
   const [active, setActive] = useState(false)
   const [show, setShow] = useState(false)
-
+  const [showMenu, setShowMenu] = useState(false)
 
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false)
@@ -22,8 +23,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", isActive);
     }
-  }, [])
-  
+  }, [])   
   
   return (
     <div className='navbar'>  
@@ -48,11 +48,14 @@ const Navbar = () => {
         </div>
         <div className="nav-menu">       
           <div className='list-menu'>
-            <Link to="/"><div className={location==="" ?'listitem active':'listitem'}>Home</div></Link>
-            <Link to="/products"><div className={location==="products" ?'listitem active':'listitem'}>Products</div></Link>
-            <Link to="/product/:id"><div className={location==="product" ?'listitem active':'listitem'}>Product</div></Link>
-            <Link to="/login"><div className={location==="login" ?'listitem active':'listitem'}>Login</div></Link>
-            <Link to="/register"><div className={location==="register" ?'listitem active':'listitem'}>Register</div></Link>
+            <div className="menus">
+              <Link to="/"><div className={location==="" ?'listitem active':'listitem'}>Home</div></Link>
+              <Link to="/products"><div className={location==="products" ?'listitem active':'listitem'}>Products</div></Link>
+              <Link to="/product/:id"><div className={location==="product" ?'listitem active':'listitem'}>Product</div></Link>
+              <Link to="/login"><div className={location==="login" ?'listitem active':'listitem'}>Login</div></Link>
+              <Link to="/register"><div className={location==="register" ?'listitem active':'listitem'}>Register</div></Link>
+            </div>
+           
              <div className="menu-icons">
                 <i className="fa-regular fa-user"></i>    
                 <div className="wish">
@@ -67,6 +70,10 @@ const Navbar = () => {
                   <div className="number">{cart.length}</div>
                 </div>  
               </div>
+              <div className="hamburger" onClick={()=>setShowMenu(true)}>
+                <i class="fa-solid fa-bars"></i>
+              </div>
+              
           </div>
         </div>
         
@@ -98,7 +105,7 @@ const Navbar = () => {
         </div>
       </div>
       <SideCart setShow={setShow} show={show}/>
-   
+    <Sidemenu setShowMenu={setShowMenu} showMenu={showMenu}/>
     </div>
     
   )

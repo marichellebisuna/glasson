@@ -1,0 +1,60 @@
+@import "../../global.scss";
+.sidemenu{  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:480px;
+  height: 100%;
+  position:fixed;
+  right:480px;
+  top:0;
+  z-index: 1;
+  transition: all 1s ease;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  &.close{
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  }
+  .sides{
+  width:480px;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto ; 
+     a{
+        text-decoration: none;
+      }
+    .listitem{
+      color: gray;
+      cursor: pointer;
+      background-color: white;
+      width:480px;
+      height:189px;
+      margin: auto;
+      margin-top: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;   
+      &:hover{
+        background-color: #f6f6f6;
+      }
+
+    &.active {
+      font-weight: 700;
+      color: rgb(55, 54, 54);
+    }
+    &:hover{
+      color: black;
+    }
+    .item{
+      width:480px;
+      margin: auto;
+      height:100%
+    }
+    }
+  }
+}
