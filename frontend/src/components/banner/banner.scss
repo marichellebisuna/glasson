@@ -1,20 +1,52 @@
+@import "../../global.scss";
 .banner{
   width:90vw;  
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
- 
+ @include mobile{
+  display: none;  
+ }
+
   .box1{
      width:800px;
     height:800px;
     overflow: hidden;
     cursor: pointer;
+    @include tablets{
+      width:700px;
+      height:400px;
+    }
+    @include laptops{
+      width:700px;
+      height:400px;
+    }
+    @include desktops{
+      width:700px;
+      height:400px;
+    }
+    @include extra-large-screen{
+      width:700px;
+      height:400px;
+    }
     img{
     width:100%;
     height:100%;
     object-fit: cover;      
     transition: all 1s ease;
+    @include tablets{
+      object-position: left top;  
+    }
+    @include laptops{
+      object-position: left bottom;  
+    }
+    @include desktops{
+      object-position: left bottom;  
+    }
+    @include extra-large-screen{
+      object-position: left bottom;  
+    }
      &:hover{
       transform: scale(1.05);      
     }
@@ -22,14 +54,42 @@
   }
   .box2{
     width:400px;
-   height:800px;
+   height:800px; 
    overflow: hidden;
    cursor: pointer;
+   @include tablets{
+    width:400px;
+    height:400px;
+   }
+   @include laptops{
+    width:400px;
+    height:400px;
+  }
+  @include desktops{
+    width:400px;
+    height:400px;
+  }
+  @include extra-large-screen{
+    width:700px;
+    height:400px;
+  }
    img{
    width:100%;
    height:100%;
    object-fit: cover;      
    transition: all 1s ease;
+   @include tablets{
+    object-position: left top;  
+  }
+  @include laptops{
+    object-position: left bottom;  
+  }
+  @include desktops{
+    object-position: left bottom;  
+  }
+  @include extra-large-screen{
+    object-position: left bottom;  
+  }
     &:hover{
      transform: scale(1.05);      
    }

@@ -16,9 +16,11 @@
  }
   @include tablets{       
     justify-content:center;   
+    margin-bottom: 0;
   }
   @include mobile{       
     justify-content:center;   
+    
   }
   .product{
   display: flex;
@@ -32,6 +34,7 @@
   @include laptops{ 
     width:290px;             
   }
+ 
   &:hover{
       -webkit-box-shadow: 8px 10px 17px -4px rgba(163,163,163,0.86); 
       box-shadow: 8px 10px 17px -4px rgba(163,163,163,0.86);
