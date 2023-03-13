@@ -13,3 +13,13 @@
     @content
   }
 };
+@mixin desktops{
+  @media(max-width: 1200px){
+    @content
+  }
+};
+@mixin extra-large-screen{
+  @media(min-width: 1201px){
+    @content
+  }
+};

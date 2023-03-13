@@ -1,4 +1,6 @@
  import Hotdeals from '../../components/hotdeals/Hotdeals'
+ import Deal from '../../components/hotdeals/singlehotdeal/Deal'
+
 import Services from '../../components/services/Services'
 import Featured from '../../components/featured/Featured'
 import Instagram from '../../components/instagram/Instagram'
@@ -12,6 +14,8 @@ const Home = () => {
     <div>     
      <Hero />
      <Services />
+     <Deal/> 
+    
      <Hotdeals/> 
      <Featured />
      <Banner />
