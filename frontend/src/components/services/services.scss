@@ -1,3 +1,5 @@
+@import "../../global.scss";
+
 .services{
   width:60vw;
   margin:30px auto;
@@ -6,12 +8,22 @@
   display: flex;
   align-items: center;
   justify-content:space-evenly;
+  @include laptops{       
+  width:80vw;      
+  }
+  @include tablets{       
+    width:80vw;
+  }
+  @include mobile{       
+    width:95vw;  
+  }
   .service{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 20px 0;
+    flex:1;   
     .icon{
       color:#1991ac;
       font-size: 1.5rem;
@@ -21,7 +33,10 @@
       text-transform: uppercase;
       font-weight: 700;
       font-size: .9rem;
-      padding-bottom: 5px;
+      padding-bottom: 5px;      
+    }
+    .desc{     
+      text-align: center;
     }
   }
   .line{
