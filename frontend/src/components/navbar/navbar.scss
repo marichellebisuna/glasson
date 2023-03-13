@@ -52,8 +52,7 @@
       & :hover{
           color: rgb(55, 54, 54);
         }
-      .email, .times{
-       
+       .times{       
         @include mobile{       
           display:none;             
         }
