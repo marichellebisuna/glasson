@@ -1,3 +1,5 @@
+@import "../../../global.scss";
+
 .product-card{
   display: flex; 
   align-items: center;
@@ -6,6 +8,18 @@
   flex-wrap: wrap;
   flex-direction: row;
   width:100%;  
+  @include extra-large-screen{ 
+    justify-content:center; 
+ }
+   @include desktops{ 
+    justify-content:center; 
+ }
+  @include tablets{       
+    justify-content:center;   
+  }
+  @include mobile{       
+    justify-content:center;   
+  }
   .product{
   display: flex;
   flex-direction: column;
@@ -15,6 +29,9 @@
   position: relative; 
   width:320px;  
   margin: 10px 0;
+  @include laptops{ 
+    width:290px;             
+  }
   &:hover{
       -webkit-box-shadow: 8px 10px 17px -4px rgba(163,163,163,0.86); 
       box-shadow: 8px 10px 17px -4px rgba(163,163,163,0.86);

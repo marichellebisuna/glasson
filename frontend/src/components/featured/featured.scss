@@ -1,9 +1,12 @@
+@import "../../global.scss";
+
 .featured{
   width: 90vw;
   margin: 50px auto;
   display: flex;
   align-items: center;
   flex-direction: column;
+  
   h1{
     font-size: 3rem;
   }
@@ -11,10 +14,15 @@
     padding: 30px 0;
     color: gray;
     height:50px;
+   
     ul{
       list-style: none;
       display: flex;
-      gap:50px;
+      gap:50px;      
+      @include mobile{ 
+        padding-left: 0;      
+      
+      }
       li{
        text-transform: capitalize;
         &.active{
