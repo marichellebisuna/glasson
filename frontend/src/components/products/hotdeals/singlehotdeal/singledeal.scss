@@ -11,6 +11,7 @@
       justify-content: center;   
       gap:30px;     
       flex:1; 
+      //background-color: rgba(250, 235, 215, 0.396);
       @include extra-large-screen{    
         gap:10px; 
         align-items: center;          
@@ -28,6 +29,12 @@
         justify-content: flex-start;   
         margin-left: 10px;      
       } 
+      @include tablets{  
+        display: flex ; 
+        align-items: center; 
+        justify-content: center;     
+      
+      }
       @include mobile{    
         flex-direction: column;  
       }
@@ -198,8 +205,11 @@
         justify-content: flex-start;   
         margin-left: 10px;      
       } 
+      @include tablets{    
+        display: none; 
+      }
       @include mobile{    
-        flex-direction: column;  
+        display: none; 
       }
       .image-here{
       display: flex;
