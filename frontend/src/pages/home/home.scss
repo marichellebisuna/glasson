@@ -8,19 +8,38 @@
   .deals{
     display: flex;
     align-items: center;
-    justify-content: center;   
-    
+    justify-content: space-around;       
     width:90vw;
     height:400px;    
     margin: 50px 10px;
     padding-bottom:50px ;
     -webkit-box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
     box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+    
+    @include desktops{   
+      align-items: center; 
+      justify-content: flex-start;   
+      padding-left: 20px;       
+    } 
+    @include laptops{    
+      gap:20px; 
+      align-items: center; 
+      justify-content: flex-start;   
+      padding-left: 15px;      
+    } 
     @include tablets{       
     flex-direction: column;
     }
     @include mobile{    
       height:max-content; 
+    }
+    .right{
+      @include tablets{    
+        display: none;
+      } 
+      @include mobile{    
+        display: none;
+      } 
     }
   }
   

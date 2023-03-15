@@ -49,79 +49,92 @@ const Products = () => {
   
   return (
     <div className="products">
-     <div className="hero-img">
-      <img src={lady} alt="" srcSet="" />
-     </div>    
-     <div className="breadcrumbs">
-      <div className="container">
-          <div className="left">
-            <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
-           
-            <span style={{ color:"gray"}}> Shop All Products </span>
-          </div>
-          <div className="middle" onClick={()=>setShowSidebar(!showSidebar)}><i class="fa-solid fa-sliders"></i></div>
-          <div className="right">
-            <span style={{ color:"gray", paddingRight:"20px"}}> Showing 1-24 of 107 results </span> 
-            <div className="sort">                     
-              <select name="" id="">            
-                <option value="" className="active">SORT BY</option>                  
-                <option value="best" onChange={(e)=>setSort("best")}style={{ color:"orange"}}>Best Selling</option>
-                <option value="az" onChange={(e)=>setSort("az")}>Alphabetically, A-Z</option>
-                <option value="za" onChange={(e)=>setSort("za")}>Alphabetically, Z-A</option>
-                <option value="low" onChange={(e)=>setSort("low")}>Price, low to high</option>
-                <option value="high" onChange={(e)=>setSort("high")}>Price, high to low</option>
-                <option value="new" onChange={(e)=>setSort("new")}>Date, new to old</option>
-                <option value="old" onChange={(e)=>setSort("old")}>Date, old to new</option>                
-              </select>    
-              <div className="button"><i className="fa-solid fa-angle-down"></i></div> 
-            </div>
-          </div>
+      <div className="hero-img">
+        <img src={lady} alt="" srcSet="" />
       </div>    
-     </div>
-      <div className="contents">
-        <div className="left">
-          <Sidebar active={active}/>
-          <div className={activeTag? "tags":"tags hide"}>
-            <div className="title">Tags</div>
-            <div className="tag-item">
-              {brand?.map((b, i)=>
-              <Link to={`/products?brand=${b}`}>
-              <div className="tag" key={i}>{b}</div>
-              </Link>
-              )} 
+      <div className="breadcrumbs">
+        <div className="container">
+            <div className="left">
+              <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
+            
+              <span style={{ color:"gray"}}> Shop All Products </span>
             </div>
-                      
-          </div>
-        </div>       
-        <div className="right">     
-          <div className="card">
-            <ProductCard productItems={products} /> 
-          </div>
+            <div className="middle" onClick={()=>setShowSidebar(!showSidebar)}><i class="fa-solid fa-sliders"></i></div>
+            <div className="right">
+              <span style={{ color:"gray", paddingRight:"20px"}}> Showing 1-24 of 107 results </span> 
+              <div className="sort">                     
+                <select name="" id="">            
+                  <option value="" className="active">SORT BY</option>                  
+                  <option value="best" onChange={(e)=>setSort("best")}style={{ color:"orange"}}>Best Selling</option>
+                  <option value="az" onChange={(e)=>setSort("az")}>Alphabetically, A-Z</option>
+                  <option value="za" onChange={(e)=>setSort("za")}>Alphabetically, Z-A</option>
+                  <option value="low" onChange={(e)=>setSort("low")}>Price, low to high</option>
+                  <option value="high" onChange={(e)=>setSort("high")}>Price, high to low</option>
+                  <option value="new" onChange={(e)=>setSort("new")}>Date, new to old</option>
+                  <option value="old" onChange={(e)=>setSort("old")}>Date, old to new</option>                
+                </select>    
+                <div className="button"><i className="fa-solid fa-angle-down"></i></div> 
+              </div>
+            </div>
+        </div>    
+      </div>
+        <div className="contents">
+          <div className="left">
+            <Sidebar active={active}/>
+            <div className={activeTag? "tags":"tags hide"}>
+              <div className="title">Tags</div>
+              <div className="tag-item">
+                {brand?.map((b, i)=>
+                <Link to={`/products?brand=${b}`}>
+                <div className="tag" key={i}>{b}</div>
+                </Link>
+                )} 
+              </div>
+                        
+            </div>
+          </div>       
+          <div className="right">     
+            <div className="card">
+              <ProductCard productItems={products} /> 
+            </div>
+                    
+            <div className="pages">         
+                <div className="page">1</div>
+                <div className="line"></div>
+                <div className="page">2</div>
+                <div className="line"></div>
+                <div className="page">3</div>
+                <div className="line"></div>
+                <div className="page">4</div>
+                <div className="line"></div>
+                <div className="page"><i class="fa-solid fa-arrow-right"></i></div>
+            </div>
+
+            <div className="deals">
+              <div className="left">
+                <Singledeal/>
+              </div>
+              <div className="right">
+                <Singledeal/>
+              </div>                    
+            </div>     
                   
-          <div className="pages">         
-              <div className="page">1</div>
-              <div className="line"></div>
-              <div className="page">2</div>
-              <div className="line"></div>
-              <div className="page">3</div>
-              <div className="line"></div>
-              <div className="page">4</div>
-              <div className="line"></div>
-              <div className="page"><i class="fa-solid fa-arrow-right"></i></div>
+
+                                      
           </div>
-
-          <div className="double-deal"><Singledeal/> <Singledeal/></div>    
-                 
-
-                                     
-        </div>
-     </div> 
-     <div className="outer-page">
-      <Pages/> 
-     </div>
-     
-     <div className="single-deal"><Deal/> </div>     
-     <SideOption setShowSidebar={setShowSidebar} showSidebar={showSidebar}/>   
+      </div> 
+      <div className="outer-page">
+        <Pages/> 
+      </div>     
+      <div className="single-deal">
+              <div className="left">
+                <Singledeal/>
+              </div>
+              <div className="right">
+                <Singledeal/>
+              </div>                    
+            </div>        
+      <SideOption setShowSidebar={setShowSidebar} showSidebar={showSidebar}/>   
     </div>
   )
 }

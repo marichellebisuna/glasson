@@ -13,7 +13,13 @@ const Home = () => {
      <Hero />
      <Services />    
      <div className="deals">
-        <Singledeal/>       
+        <div className="left">
+          <Singledeal/>
+        </div>
+        <div className="right">
+          <Singledeal/>
+        </div>
+               
      </div>       
      <Featured />
      <Banner />
