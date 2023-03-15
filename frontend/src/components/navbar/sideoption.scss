@@ -1,26 +1,41 @@
-@import "../../../global.scss";
+@import "../../global.scss";
 
-.sidebar{
+.sideoption{
   background-color: #f6f6f6;
-  padding: 20px; 
-  margin-right: 10px;
-  width:330px;
-  height:95vh;
-  flex:1;
+  padding: 20px;   
+  width:50vw;
   overflow-y: scroll;
-  
-  &.active{
-    position: fixed;
-     top:10px; 
-     width:330px;              
+  position:fixed;  
+  top:0;
+  bottom:0;
+  z-index: 99999;
+  transition: all 1s ease;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  &.hidden{  
+  transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  }
+  @include extra-large-screen(){       
+    display: none;
+  }
+  @include desktops{       
+    display: none;
+    
+  }
+  @include laptops{ 
+    display: none;
+              
+  }
+  @include tablets{       
+    display: none;
+        
   }
   @include mobile{       
-    display: none;  
-    margin-top: 20px;            
+    display: block;              
   }
   .options{
-    position: relative;
-   
+    position: relative;   
     .title{
       display: flex;
       align-items: center;
@@ -34,8 +49,15 @@
       color: gray;
       display: flex;
       align-items: center;
-      justify-content: space-around;    
-      
+      justify-content: space-around;
+      &:hover{
+        color:black;
+      }    
+      &.close{
+        text-decoration: underline;       
+        cursor: pointer;
+        
+      }
         i{          
           background-color: white;
           border-radius: 50%;

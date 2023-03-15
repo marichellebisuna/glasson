@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './featured.scss'
-import ProductCard from '../products/productcard/ProductCard'
+import ProductCard from '../featured/productcard/ProductCard'
 import {products} from "../../data"
 
 const Featured = () => {

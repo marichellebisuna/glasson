@@ -1,45 +1,40 @@
 @import "../../../global.scss";
-.deal{
+
+.hotdeals{
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-direction: row !important;
-  width:100%;
+  justify-content: space-around;
+  width:90vw;
   height:400px;
-  margin: 50px auto;
-  padding:50px 100px;
-  -webkit-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
-  -moz-box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
-  box-shadow: 0px 0px 15px 1px rgba(0,0,0,0.09);
-  
+  margin: 50px auto;  
+  padding: auto;
+  -webkit-box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+  box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39); 
   @include laptops{       
-    display: none;
+    font-size: .7rem;  
+    padding-right:  30px;   
   }
-  @include tablets{       
-    display: none;   
-  }
-  @include desktops{       
-      display: none;
-  }
-  @include extra-large-screen{       
-    display: none;
-  }
-  @include mobile{       
-    display: flex; 
-    height:650px;
-    margin-top: 0;
-    padding-top: 0;
-  }
-    .single{
+    @include tablets{       
+      flex-direction: column;
+      height:700px;
+      margin: auto;      
+      padding:20px 0;       
+    }
+    @include mobile{       
+       //display: none;
+    }
+    .left, .right{
     display: flex;
     align-items: center;
-    justify-content: center;   
-     gap:50px;
-     @include mobile{       
-      flex-direction: column;
-      gap:0;   
-      height:400px;  
-      
+    justify-content: center;      
+    height:100%; 
+    @include laptops{       
+      width: 450px;
+     padding-left: 10px;
+    }
+    @include tablets{      
+    height:150px;    
+    
     }
       .image-here{
       display: flex;
@@ -48,7 +43,6 @@
       justify-content: center;
       cursor: pointer;
       height: 450px;
-        
       &:hover{
          .icons{  
         opacity: 1;   
@@ -81,6 +75,10 @@
         border-radius: 50%;
         background-color: #f6f6f6;
         margin:10px 30px;
+        @include laptops{       
+        width:150px;
+        height:150px;        
+      }
         img{
           width:100%;
           height:100%;
@@ -92,12 +90,16 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        @include laptops{       
+          font-size: .7rem;      
+        }
           .title{
             text-transform: uppercase;
             color:#1991ab;
             font-weight: 500;
             padding: 10px 0;
             font-size: 1.10rem;
+            
           }
           .price{
             .strike{
@@ -107,7 +109,7 @@
             }
           }
           .rating{
-            color:red;
+            color:#ff8927;  
             padding: 10px 0;
           }
         }
@@ -117,7 +119,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        text-align: center;          
+      
         .timer{ 
         display: flex;
         align-items: center;
@@ -149,7 +151,9 @@
         .title{
           padding: 10px 0;
           text-transform: uppercase;
-       
+          @include laptops{       
+            font-size: .7rem;       
+          }
         }
         .desc{
           text-transform: uppercase;

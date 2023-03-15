@@ -1,3 +1,27 @@
+@import "../../global.scss";
+
 .home{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  .deals{
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    
+    width:90vw;
+    height:400px;    
+    margin: 50px 10px;
+    padding-bottom:50px ;
+    -webkit-box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+    box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+    @include tablets{       
+    flex-direction: column;
+    }
+    @include mobile{    
+      height:max-content; 
+    }
+  }
   
 }

@@ -1,8 +1,9 @@
 import './sidebar.scss'
 import {useState} from 'react'
 import {products} from "../../../data"
+import { Link } from 'react-router-dom'
 
-const Sidebar = () => {
+const Sidebar = ({active}) => {
 const [maxPrice, setMaxPrice] = useState(2000)
 const [selectedSub, setSelectedSub] = useState([])
 const [showShape, setShowShape] = useState(true)
@@ -11,6 +12,7 @@ const [showBrand, setShowBrand] = useState(true)
 const [showColor, setShowColor] = useState(true)
 
 const [showSize, setShowSize] = useState(true)
+
 
 
 const tempShape=new Set(products.map(product =>product.shape))
@@ -36,8 +38,23 @@ const handleChange = (e) =>{
   )}
  
   return (
-    <div className='sidebar'>
-     
+    <div className={active ?'sidebar active' :"sidebar"}>
+      <div className="options">        
+        <div className="title" onClick={()=>setShowShape(!showShape)}>
+          Shape 
+          <div className="icons" onClick={()=>setShowShape(!showShape)}>
+            {!showShape ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
+          </div>
+        </div>
+        <div className={showShape?"option":"option hide"}>
+        {shapes?.map((shape, i)=>
+          <div className="inputItem" key={i}>
+          <input type="checkbox" name="shape" id={shape} value={shape} onChange={handleChange} />
+          <label htmlFor='rectangle'>{shape}</label>
+        </div>
+         )}
+        </div>
+      </div>
       <div className="options">        
         <div className="title" onClick={()=>setShowShape(!showShape)}>
           Shape 
@@ -114,6 +131,17 @@ const handleChange = (e) =>{
         </div>
       </div>
      
+      {/* <div className="tags">
+            <div className="title">Tags</div>
+            <div className="tag-item">
+              {brand?.map((b, i)=>
+              <Link to={`/products?brand=${b}`}>
+              <div className="tag" key={i}>{b}</div>
+              </Link>
+              )} 
+            </div>
+                      
+          </div> */}
      
     </div>
   )

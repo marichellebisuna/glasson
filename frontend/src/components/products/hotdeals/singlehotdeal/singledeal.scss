@@ -1,0 +1,348 @@
+@import "../../../../global.scss";
+
+  .container-deal{
+    display: flex;
+    align-items: center;
+    justify-content: center;          
+    width:100%;    
+     .left{            
+      display: flex ; 
+      align-items: center; 
+      justify-content: center;   
+      gap:30px;     
+      flex:1; 
+      @include extra-large-screen{    
+        gap:10px; 
+        align-items: center;          
+        margin-left: 10px;      
+      } 
+      @include desktops{    
+        gap:10px; 
+        align-items: center; 
+        justify-content: flex-start;   
+        margin-left: 10px;      
+      } 
+      @include laptops{    
+        gap:10px; 
+        align-items: center; 
+        justify-content: flex-start;   
+        margin-left: 10px;      
+      } 
+      @include mobile{    
+        flex-direction: column;  
+      }
+      .image-here{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;      
+      cursor: pointer;
+      height: 450px;       
+           
+      @include mobile{    
+        height:100%;  
+      }
+      &:hover{
+        .icons{  
+        opacity: 1;   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        font-weight: 300;
+        color: rgb(101, 98, 98);
+        padding-bottom: 10px;   
+        overflow: hidden;        
+        }
+      }
+       .icons{
+        opacity: 0; 
+        height: 30px;  
+        color: rgb(101, 98, 98);
+        .icon{
+          &:hover{
+            color:black;
+          }
+        }
+      }
+        .image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:200px;
+        height:200px;
+        border-radius: 50%;
+        background-color: #f6f6f6;   
+           
+        img{
+          width:100%;
+          height:100%;
+          object-fit: contain;
+        }
+        }
+        .details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+          .title{
+            text-transform: uppercase;
+            color:#1991ab;
+            font-weight: 500;
+            padding: 10px 0;
+            font-size: 1.10rem;            
+          }
+          .price{
+            .strike{
+              font-size: .90rem;
+              color: gray;
+              text-decoration:line-through ;
+            }
+          }
+          .rating{
+            color:red;
+            padding: 10px 0;
+          }
+        }
+      }
+      .count-down{
+        display: flex;
+        flex-direction: column;
+        align-items: center ;
+        justify-content: center ; 
+        
+        @include laptops{    
+          width:200px;
+          } 
+        .timer{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;      
+        gap:10px; 
+        @include laptops{    
+          gap:5px; 
+
+          }         
+          .time{
+            .blue{
+              color:#1991ab; 
+              font-weight:700; 
+              font-size:1.2rem;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 1px solid lightgray;
+            padding:10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+            box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+        }
+        }
+        hr {
+          margin: 20px 0px;          
+          width:150px;
+          border: 0.5px solid lightgray;         
+        }
+        .title{        
+          padding: 0px 0 10px 0;
+          text-transform: uppercase;
+          font-size: 1.10rem;
+           @include laptops{   
+          text-align: center;
+          }          
+         
+        }
+        .desc{
+          text-transform: uppercase;
+          @include laptops{   
+            text-align: center;
+            } 
+        }
+        button{
+          color:white;
+          background-color: black;
+          padding: 10px 35px;
+          text-transform: uppercase;
+          margin-top: 20px;
+          cursor: pointer;
+          &:hover{
+            color:black;
+          background-color: white;
+          border-color: black;          
+          }
+        }
+      }
+    } 
+    .right{            
+      display: flex ; 
+      align-items: center; 
+      justify-content: center;   
+      gap:30px;     
+      flex:1; 
+      @include extra-large-screen{    
+        gap:10px; 
+        align-items: center;          
+        margin-left: 10px;      
+      } 
+      @include desktops{    
+        gap:10px; 
+        align-items: center; 
+        justify-content: flex-start;   
+        margin-left: 10px;      
+      } 
+      @include laptops{    
+        gap:10px; 
+        align-items: center; 
+        justify-content: flex-start;   
+        margin-left: 10px;      
+      } 
+      @include mobile{    
+        flex-direction: column;  
+      }
+      .image-here{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;      
+      cursor: pointer;
+      height: 450px;       
+           
+      @include mobile{    
+        height:100%;  
+      }
+      &:hover{
+        .icons{  
+        opacity: 1;   
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:10px;
+        font-weight: 300;
+        color: rgb(101, 98, 98);
+        padding-bottom: 10px;   
+        overflow: hidden;        
+        }
+      }
+       .icons{
+        opacity: 0; 
+        height: 30px;  
+        color: rgb(101, 98, 98);
+        .icon{
+          &:hover{
+            color:black;
+          }
+        }
+      }
+        .image{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:200px;
+        height:200px;
+        border-radius: 50%;
+        background-color: #f6f6f6;   
+           
+        img{
+          width:100%;
+          height:100%;
+          object-fit: contain;
+        }
+        }
+        .details{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+          .title{
+            text-transform: uppercase;
+            color:#1991ab;
+            font-weight: 500;
+            padding: 10px 0;
+            font-size: 1.10rem;            
+          }
+          .price{
+            .strike{
+              font-size: .90rem;
+              color: gray;
+              text-decoration:line-through ;
+            }
+          }
+          .rating{
+            color:red;
+            padding: 10px 0;
+          }
+        }
+      }
+      .count-down{
+        display: flex;
+        flex-direction: column;
+        align-items: center ;
+        justify-content: center ; 
+        
+        @include laptops{    
+          width:200px;
+          } 
+        .timer{ 
+        display: flex;
+        align-items: center;
+        justify-content: center;      
+        gap:10px; 
+        @include laptops{    
+          gap:5px; 
+
+          }         
+          .time{
+            .blue{
+              color:#1991ab; 
+              font-weight:700; 
+              font-size:1.2rem;
+            }
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            border: 1px solid lightgray;
+            padding:10px;
+            border-radius: 10px;
+            -webkit-box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+            box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
+        }
+        }
+        hr {
+          margin: 20px 0px;          
+          width:150px;
+          border: 0.5px solid lightgray;         
+        }
+        .title{        
+          padding: 0px 0 10px 0;
+          text-transform: uppercase;
+          font-size: 1.10rem;
+           @include laptops{   
+          text-align: center;
+          }          
+         
+        }
+        .desc{
+          text-transform: uppercase;
+          @include laptops{   
+            text-align: center;
+            } 
+        }
+        button{
+          color:white;
+          background-color: black;
+          padding: 10px 35px;
+          text-transform: uppercase;
+          margin-top: 20px;
+          cursor: pointer;
+          &:hover{
+            color:black;
+          background-color: white;
+          border-color: black;          
+          }
+        }
+      }
+    } 
+}

@@ -1,0 +1,41 @@
+@import "../../../global.scss";
+
+.outer-pages{       
+  width: 400px;        
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid lightgray 1px ;
+  padding: 20px 10px;
+  margin: 30px auto;  
+  
+  @include extra-large-screen(){       
+    display: none;
+  }
+  @include desktops{       
+    display: none;
+  }
+  @include laptops{ 
+       display: none;       
+  }
+  @include tablets{       
+       display: none; 
+  }
+  @include mobile{       
+     display: flex;    
+  }          
+    .outer-page{
+    cursor: pointer;    
+    color:gray; 
+    
+   
+    &:hover{
+    color:black;     
+    }  
+    }
+    .line{
+      width:0px;
+      height:15px;
+      border: solid lightgray 1px ;      
+    }       
+}

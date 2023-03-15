@@ -1,4 +1,4 @@
-@import "../../../global.scss";
+@import "../../../../global.scss";
 .deal{
   display: flex;
   align-items: center;
@@ -27,10 +27,12 @@
   @include mobile{       
     display: flex; 
     height:650px;
-    margin-top: 0;
+    width:440px;
+    margin: 0 auto;
     padding-top: 0;
+    
   }
-    .single{
+    .left{
     display: flex;
     align-items: center;
     justify-content: center;   

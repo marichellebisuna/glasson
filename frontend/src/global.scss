@@ -23,6 +23,12 @@
     @content
   }
 };
+@include extra-large-screen(){       
+  
+}
+@include desktops{       
+  
+}
 @include laptops{ 
             
 }

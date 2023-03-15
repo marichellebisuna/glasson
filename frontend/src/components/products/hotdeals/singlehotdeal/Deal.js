@@ -1,10 +1,10 @@
 import './deal.scss'
-import blue from '../../../assets/product/blue.png'
+import blue from '../../../../assets/product/blue.png'
 
 const Deal = () => {
   return (
     <div className='deal'>
-      <div className="single">
+      <div className="left">
         <div className="image-here">
         <div className="icons">
           <div className="icon"><i className="fa-solid fa-chart-simple"></i></div>

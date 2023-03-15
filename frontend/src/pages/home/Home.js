@@ -7,15 +7,17 @@ import Instagram from '../../components/instagram/Instagram'
 import Banner from '../../components/banner/Banner'
 import Hero from '../../components/hero/Hero'
 import './home.scss'
+import Singledeal from '../../components/products/hotdeals/singlehotdeal/Singledeal'
 
 const Home = () => {
 
   return (   
-    <div>     
+    <div className="home">     
      <Hero />
-     <Services />
-     <Deal/>     
-     <Hotdeals/> 
+     <Services />    
+     <div className="deals">
+        <Singledeal/>       
+     </div>       
      <Featured />
      <Banner />
      <Instagram />
