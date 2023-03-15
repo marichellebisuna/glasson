@@ -13,7 +13,13 @@
  }
    @include desktops{ 
     justify-content:center; 
+    
  }
+ @include laptops{ 
+  gap:20px;
+
+  
+}
   @include tablets{       
     justify-content:center;   
     margin-bottom: 0;

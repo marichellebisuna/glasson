@@ -2,16 +2,8 @@
 
 .products{
   width:100vw; 
-  background-color: white;  
-  @include laptops{       
-    
-  }
-  @include tablets{       
-   
-  }
-  @include mobile{       
-   
-  }
+  background-color: white; 
+
   .hero-img{     
     height:38vh; 
     margin: 0 auto;
@@ -19,8 +11,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: flex-end;
-    position: relative;
-  
+    position: relative;  
     @include laptops{       
       height:270px;    
     }
@@ -28,7 +19,7 @@
     height:200px;
     }
     @include mobile{       
-   display: none;
+    display: none;
     }
     img{
       width:100%;
@@ -56,13 +47,15 @@
     top:115px;
     z-index: 1;
     background-color: white;
+    @include desktops{       
+       padding:20px 50px ;     
+    }
     @include laptops{       
       padding: 20px ;     
     }
     @include tablets{      
       padding: 20px ;      
-    }
-   
+    }   
     @include mobile{       
       padding: 20px ; 
     }
@@ -145,8 +138,7 @@
             } 
         }
       }
-    }
-   
+    }   
     
   }
   .contents{
@@ -155,20 +147,27 @@
     width:90vw;
     margin: 10px auto;   
     gap:10px;
+    
+    @include laptops{       
+      width:95vw;   
+      margin: 0 auto;
+      gap:20px;
+    }
     .left{
       display: flex;    
       justify-content: center;  
-      flex-direction: column;      
-      //flex:1;
+      flex-direction: column;    
       position: sticky;
-      top:200px;
-      // width:350px;
+      top:200px;      
       width:330px;
-
-      height: calc(100% - 200px);  
-      //overflow-y:scroll;
-     
-      margin-top: 5px;
+      height: calc(100% - 200px); 
+      margin-top: 5px;      
+      @include laptops{       
+        width:310px;   
+      }
+      @include mobile{       
+      display: none;
+      }
       .tags{
         display: fixed;
         top:-800px;
@@ -215,42 +214,33 @@
       width:100%;         
       flex:4;
       display: flex;   
-      flex-direction: column;     
-      //background-color: aquamarine;
-      .card{
-        
-      } 
-      .page-number-top{
+      flex-direction: column;    
        
+      .page-number-top{       
         @include extra-large-screen(){       
+        margin-bottom: 30px;
+        }
+        @include desktops{       
           margin-bottom: 30px;
-          }
-          @include desktops{       
-           margin-bottom: 30px;
-          }
-          @include laptops{ 
-               display: none;       
-          }
-          @include tablets{       
-               display: none; 
-          }
-          @include mobile{       
-            display: none; 
-          }
-          
+        }
+        @include laptops{ 
+              display: none;       
+        }
+        @include tablets{       
+              display: none; 
+        }
+        @include mobile{       
+          display: none; 
+        }          
 
       }
       .deals{
         display: flex;
         align-items: center;
         justify-content: space-around;       
-        width:100%;
-        //height:400px;    
-        //margin: 50px 10px;
-        //padding-bottom:50px ;
+        width:100%;        
         -webkit-box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
-        box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
-        
+        box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);       
         @include desktops{   
           display: none; 
         } 
@@ -268,7 +258,6 @@
         }
         .right{
           flex:1;
-
           @include tablets{    
             display: none;
           } 
@@ -276,11 +265,9 @@
             display: none;
           } 
         }
-      }
+      }    
      
-     
-    }
-   
+    }   
   }
    .page-number-bottom{
     width: 100%;    
@@ -300,8 +287,7 @@
     }
     @include mobile{       
       display: flex; 
-    }
-    
+    }    
   }
   .single-deal{   
     @include extra-large-screen(){       
@@ -349,7 +335,6 @@
        box-shadow: 2px -2px 37px 1px rgba(163,163,163,0.39);
        margin: 50px 30px;
        padding-bottom:50px ;
-  }
-    
+    }    
   }
 }
