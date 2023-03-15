@@ -1,16 +1,24 @@
+@import "../../global.scss";
+
 .footer{    
   display: flex;
   flex-direction: column; 
   background-color: #f6f6f6;
   margin-top: 50px;
+ 
   .top{
     display: flex;
-    width: 70vw;
+    width: 90vw;
     margin: 40px auto;
+   
+    @include mobile{    
+      display: none; 
+    } 
     .column{
       display: flex;
       flex-direction: column;
-      flex:1;
+      flex:1;     
+     
       .title{
         text-transform: uppercase;
         font-weight: 500;
@@ -68,6 +76,9 @@
         }
       }
       .store{
+        @include tablets{       
+        padding-left: 15px;
+        }
         .details{
           color:gray;
           cursor: pointer;          
@@ -91,8 +102,21 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 70vw;
-      margin: 30px auto;
+      width: 90vw;
+      margin: 30px auto;    
+      .right{
+        @include tablets{           
+          width:400px;     
+        }        
+      }
+      
+      @include tablets{        
+        justify-content: space-around;  
+      }
+      @include mobile{  
+        flex-direction: column; 
+        gap:10px;
+      }
     .left{
       .join{
         font-size: 1.2rem;
@@ -124,7 +148,10 @@
         &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
           color: white;
           opacity: 1; /* Firefox */
-        }        
+        }   
+        @include mobile{    
+          width: 260px;  
+        }     
         } 
         button{
           color:red;
@@ -142,12 +169,17 @@
     
   }
   .bottom{
-    width: 70vw;
+    width: 90vw;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 0;
+    
+    @include mobile{       
+      flex-direction: column; 
+      gap:10px; 
+    }
     a{
       color: red;
       text-decoration: none;
