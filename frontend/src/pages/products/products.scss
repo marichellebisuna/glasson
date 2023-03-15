@@ -20,6 +20,13 @@
     align-items: flex-end;
     justify-content: flex-end;
     position: relative;
+  
+    @include laptops{       
+      height:270px;    
+    }
+    @include tablets{       
+    height:200px;
+    }
     @include mobile{       
    display: none;
     }
@@ -49,6 +56,13 @@
     top:115px;
     z-index: 1;
     background-color: white;
+    @include laptops{       
+      padding: 20px ;     
+    }
+    @include tablets{      
+      padding: 20px ;      
+    }
+   
     @include mobile{       
       padding: 20px ; 
     }
@@ -140,7 +154,7 @@
     justify-content: center;   
     width:90vw;
     margin: 10px auto;   
- gap:10px;
+    gap:10px;
     .left{
       display: flex;    
       justify-content: center;  
@@ -159,7 +173,7 @@
         display: fixed;
         top:-800px;
         left:50px;
-    z-index: 9999999999;
+        z-index: 9999999999;
         &.hide{
           display:none
         }
@@ -206,43 +220,25 @@
       .card{
         
       } 
-      .pages{       
-        width: 100%;        
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap:5px;
-        border: solid lightgray 1px ;
-        padding: 20px 500px;
-        margin: 30px auto;  
+      .page-number-top{
+       
         @include extra-large-screen(){       
-  
-        }
-        @include desktops{       
-          
-        }
-        @include laptops{ 
-             
-        }
-        @include tablets{   
-        display:none;             
-        }
-        @include mobile{       
-          display:none;   
-        }          
-          .page{
-          cursor: pointer;    
-          color:gray; 
-         
-          &:hover{
-          color:black;     
-          }  
+          margin-bottom: 30px;
           }
-          .line{
-            width:0px;
-            height:15px;
-            border: solid lightgray 1px ;      
-          }       
+          @include desktops{       
+           margin-bottom: 30px;
+          }
+          @include laptops{ 
+               display: none;       
+          }
+          @include tablets{       
+               display: none; 
+          }
+          @include mobile{       
+            display: none; 
+          }
+          
+
       }
       .deals{
         display: flex;
@@ -286,19 +282,26 @@
     }
    
   }
-  .outer-page{
+   .page-number-bottom{
+    width: 100%;    
     @include extra-large-screen(){       
-      display: none;
+    display: none;
     }
     @include desktops{       
       display: none;
     }
     @include laptops{ 
-         display: none;       
+      display: flex; 
+      width:90vw;
+      margin: 0 auto;      
     }
     @include tablets{       
-         display: none; 
+         display: flex; 
     }
+    @include mobile{       
+      display: flex; 
+    }
+    
   }
   .single-deal{   
     @include extra-large-screen(){       

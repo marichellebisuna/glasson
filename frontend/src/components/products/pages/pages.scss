@@ -1,33 +1,18 @@
 @import "../../../global.scss";
 
-.outer-pages{       
-  width: 400px;        
+.pages{       
+  width: 100%;        
   display: flex;
   align-items: center;
   justify-content: center;
+  gap:5px;
   border: solid lightgray 1px ;
-  padding: 20px 10px;
-  margin: 30px auto;  
-  
-  @include extra-large-screen(){       
-    display: none;
-  }
-  @include desktops{       
-    display: none;
-  }
-  @include laptops{ 
-       display: none;       
-  }
-  @include tablets{       
-       display: none; 
-  }
-  @include mobile{       
-     display: flex;    
-  }          
-    .outer-page{
+  padding: 20px ;  
+  margin-top: 30px;  
+         
+    .page{
     cursor: pointer;    
     color:gray; 
-    
    
     &:hover{
     color:black;     
@@ -37,5 +22,6 @@
       width:0px;
       height:15px;
       border: solid lightgray 1px ;      
-    }       
+    }  
+         
 }

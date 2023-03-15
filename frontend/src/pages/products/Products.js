@@ -24,7 +24,7 @@ const Products = () => {
   const brand = Array.from(tempBrand)
 
   const isActive = () => {
-    window.scrollY > 520 ? setActive(window.scrollY <2800 && true) : setActive(false)
+    // window.scrollY > 520 ? setActive(window.scrollY <2800 && true) : setActive(false)
   }
 
   useEffect(() => {
@@ -78,7 +78,7 @@ const Products = () => {
             </div>
         </div>    
       </div>
-        <div className="contents">
+      <div className="contents">
           <div className="left">
             <Sidebar active={active}/>
             <div className={activeTag? "tags":"tags hide"}>
@@ -98,16 +98,8 @@ const Products = () => {
               <ProductCard productItems={products} /> 
             </div>
                     
-            <div className="pages">         
-                <div className="page">1</div>
-                <div className="line"></div>
-                <div className="page">2</div>
-                <div className="line"></div>
-                <div className="page">3</div>
-                <div className="line"></div>
-                <div className="page">4</div>
-                <div className="line"></div>
-                <div className="page"><i class="fa-solid fa-arrow-right"></i></div>
+            <div className="page-number-top">        
+                <Pages/>
             </div>
 
             <div className="deals">
@@ -117,15 +109,13 @@ const Products = () => {
               <div className="right">
                 <Singledeal/>
               </div>                    
-            </div>     
-                  
-
-                                      
+            </div>                    
           </div>
       </div> 
-      <div className="outer-page">
-        <Pages/> 
-      </div>     
+       <div className="page-number-bottom"> 
+            
+          <Pages/>
+        </div>     
       <div className="single-deal">
               <div className="left">
                 <Singledeal/>
@@ -133,7 +123,8 @@ const Products = () => {
               <div className="right">
                 <Singledeal/>
               </div>                    
-            </div>        
+      </div>
+              
       <SideOption setShowSidebar={setShowSidebar} showSidebar={showSidebar}/>   
     </div>
   )
