@@ -1,3 +1,5 @@
+@import '../../global.scss';
+
 .product{
   display: flex;
   align-items: center;
@@ -6,14 +8,17 @@
   margin: 0 auto;
   gap:40px;
   .breadcrumbs{   
-  width: 100%;
-  //margin: 10px auto;
+  width: 100%;  
   padding: 10px 90px;
   position: sticky;
   top:115px;
   z-index: 1;
   background-color: white;
   z-index: 2;
+  @include mobile{      
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .container{
     display: flex;
     align-items: center;
@@ -36,22 +41,35 @@
   .top{
     display: flex;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;  
+     
     margin: 0 auto 50px auto;    
     width: 90%;
-    height:940px;
-    min-height:900px;
+    height:100%; 
+    @include laptops{      
+      flex-direction: column; 
+      gap:20px;    
+    } 
+    @include tablets{      
+      flex-direction: column; 
+      gap:20px;    
+    }   
+    @include mobile{      
+      flex-direction: column;  
+      gap:20px;    
+    }
     .left{
       display: flex;
       align-items: center;
       justify-content: center;
-      flex:2;   
+      flex:2; 
       border:lightgray solid 1px;
-           background-color: #f6f6f6;
-           height:100%;
-      img{
-        width:600px;
-        height:700px;
+      background-color: #f6f6f6;
+      height:100%;
+      width:100%;      
+      img{        
+        width:100%;
+        height:100%;
         object-fit: contain;
       }
     }
@@ -59,15 +77,38 @@
       flex:1;            
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      flex-direction: column ;          
-      height:100%;     
+      justify-content: center;
+      flex-direction: column;
+      gap:20px;         
+      height:100%;  
+      width:100%;
+      @include laptops{
+        flex-direction: row;
+      }
+      @include tablets{
+        flex-direction: row;
+      }
+      @include mobile{
+        flex-direction: row;
+      }  
       cursor: pointer;     
         .image{
           width:300px;
           height:155px;           
           border-radius: 5px;          
           padding: 0 10px;
+          @include laptops{
+            width:200px;
+            height:100px; 
+          }
+          @include tablets{
+            width:150px;
+            height:70px;          
+            }
+          @include mobile{
+          width:90px;
+          height:70px;          
+          } 
           &.active, &:hover{
             border:lightgray solid 1px;
            background-color: #f6f6f6;
@@ -80,18 +121,25 @@
         }  
     }     
     .right{     
-      flex:1.8;  
+      flex:1.5;       
       height:100%;
-
+      width:100%;
+      @include laptops{
+       // width:350px;
+      } 
       .blue{     
       background-color: #136b7f;
-      padding: 30px 40px;
+      padding: 0 40px;
+      padding-top: 20px;
+      padding-bottom: 5px;
       text-transform: capitalize;
       color:rgb(187, 184, 184);
-        .left{   
+        .crumbs{   
           display: flex;   
           align-items: center;
           justify-content: flex-start;
+          flex-wrap: wrap;
+          line-height: 30px;
           background-color: #136b7f;  
           border: none; 
           a,i{
@@ -100,7 +148,7 @@
         } 
         }        
         hr{
-          margin: 20px 0;
+          margin: 10px 0;
           border: none;
           background-color: white;
           height: 0.5px ;       
@@ -112,7 +160,7 @@
         .rating{ 
           display: flex;    
           color:white;
-          padding-top: 10px;       
+          padding-top: 5px;       
           i{
             color:rgb(246, 211, 14);
             margin-left: 5px;
@@ -129,14 +177,16 @@
       }
       .lightblue{
         background-color: #1891ac;
-        padding: 30px 40px;
+        padding: 20px 40px;
         color: white;
+       
         .desc{
           flex-wrap: wrap;
         }
         .container{
           display: flex;
-          padding: 20px 0;
+          
+          padding: 10px 0;
           .quantity{
             display: flex;
             align-items: center;
@@ -146,8 +196,8 @@
               color:black;     
               cursor: pointer;     
               transition: all 0.3s ease;
-            background-color: white;
-             &:hover{
+              background-color: white;
+              &:hover{
               background-color: black;
               color: white;
             }    
@@ -178,13 +228,31 @@
               background-color: black;
               color: white;
             }
+            @include mobile{
+            margin-left: 0;
+
+            }
             }
            
         }
         .container{
           display: flex;
-          align-items: center;
+          align-items: flex-start;
+          justify-content: flex-start;          
+          width:100%;
+          @include mobile{                
+            flex-direction: column;  
+            gap:20px;              
+          }
+          &.stock{
+            align-items: center;
+            justify-content: flex-start;  
+            flex-direction: row;  
+            
+          }
           .size{
+            display: flex;
+            align-items: center;
             text-transform: capitalize;    
             select{
               margin: 0 20px;
@@ -279,18 +347,16 @@
   .tabs{
     width:90%;      
     position: relative;   
-    
     .tab{
     display: flex;            
-    flex-direction: column;   
-    
+    flex-direction: column;       
       .tab-title{
         color:rgb(82, 81, 81);
         border-radius: 5%;        
         border:solid 1px lightgray;        
         border-bottom-right-radius: 0%;
         border-bottom-right-radius: 0%;        
-        padding: 15px 30px ;
+        padding: 15px 25px ;
         border-bottom-color: white;
         position: absolute;
         top: -49px;
@@ -312,12 +378,12 @@
         border:solid 1px lightgray;        
         border-bottom-right-radius: 0%;
         border-bottom-left-radius: 0%;
-        padding: 15px 30px ;
+        padding: 15px 25px ;
         border-bottom-color: white;
         position: absolute;
         top: -49px;
         z-index: 1;
-        left: 150px;
+        left: 149px;
         background-color: lightgray;
         font-weight: 700;
         cursor: pointer;  
@@ -335,12 +401,12 @@
         border:solid 1px lightgray;        
         border-bottom-right-radius: 0%;
         border-bottom-left-radius: 0%;
-        padding: 15px 30px ;
+        padding: 15px 25px ;
         border-bottom-color: white;
         position: absolute;
         top: -49px;
         z-index: 1;
-        left: 379px;
+        left: 300px;
         background-color:lightgray;
         font-weight: 700;
         cursor: pointer;  
@@ -364,7 +430,7 @@
         -khtml-border-radius: 5px;  
         border-top-left-radius: 0%;       
         padding: 50px;            
-        
+       
         .details{
         line-height: 2rem;
         }
@@ -377,8 +443,11 @@
         tr{
           padding: 10px 0;
           td:first-child{
-            width:200px;
+            width:200px;           
             font-weight: 500;
+            @include mobile{
+            width:150px;              
+            }
           }
           
         }
@@ -406,21 +475,29 @@
             }
           }
         }
-        .bottom{   
+        .bottom{  
+          display: flex;
+          align-items: center;
+          justify-content: center;
           width: 100%;       
           margin: 10px auto;
           border:solid 1px lightgray;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 30px;          
+          padding: 30px; 
+          
+          
+          @include tablets{
+            flex-direction: column;
+          } 
+          @include mobile{
+            flex-direction: column;
+          }      
           &:hover{
             .star{
               color:#f6d30e;
             }
           }
           .left{
-          flex: 4;
+          flex: 5;
           
           .star, .name, .date, .long{
             margin: 10px 0;
@@ -431,10 +508,9 @@
             flex-direction: row;
           }
           }
-          .right{
-            display: flex;
-            align-items: center;
-            justify-content: center; 
+          .right{            
+            text-align: right;
+            width:100%;
             flex:1;            
             a{
               color: red;

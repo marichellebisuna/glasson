@@ -10,6 +10,7 @@
     display: flex;
     width: 90vw;
     margin: 40px auto;
+    flex-wrap: wrap;
    
     @include mobile{    
       display: none; 
@@ -27,15 +28,16 @@
       .about-container{
         display: flex;
         flex-direction: column;        
-        justify-content:space-between;
+        justify-content:flex-start;
         .text{
-        padding-right: 50px !important;
+        padding-right: 50px;
         font-size: 0.9rem;
-        padding-bottom: 80px;
+        padding-bottom: 20px;        
         }      
         .left{
           display: flex;
           flex-direction: row;
+          flex-wrap: wrap;
           .social{
             display: flex;
             align-items: center;
@@ -47,6 +49,8 @@
             padding: 12px;
             color: gray;
             margin: 5px;
+            margin-left: 0;
+            margin-bottom: 50px;
             cursor: pointer;
             & :hover{
               color: rgb(55, 54, 54);

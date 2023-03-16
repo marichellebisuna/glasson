@@ -9,6 +9,7 @@ const Footer = () => {
           <div className="title">About Us</div>
           <div className="about-container">
              <div className="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet et dolor ac consequat. In feugiat leo eros, nec pretium est sollicitudin et. Donec nec imperdiet lectus. 
+             
              </div>
             <div className="left">         
               <div className="social"><i className="fa-brands fa-facebook-f"></i></div>

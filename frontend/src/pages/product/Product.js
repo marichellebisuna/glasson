@@ -56,7 +56,7 @@ const Product = () => {
           </div>
         <div className="right">
           <div className="blue">
-            <div className="left">
+            <div className="crumbs">
               <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <Link to="/products">Shops </Link>
               <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> 
               </span>
@@ -82,21 +82,21 @@ const Product = () => {
               <button type="submit"><i className="fa-solid fa-cart-shopping"></i>add to cart</button>
             </div>  
             <div className="container">
-            <div className="size">size 
-              <select name="" id="">         
-                {sizes && sizes.map(i=>
-                <option key={i} value="" className="active">{i}</option>                
-                )}
-              </select>
-            </div>
-            <div className="colors"><span>  Color </span>
-            {color && color.map(i=>
-              <div className={selected === i ? "color active": "color"} key={i} style={{backgroundColor:`${i}`}} onClick={()=>setSelected(i)}></div>                
-                )}
-            </div>
+              <div className="size">size 
+                <select name="" id="">         
+                  {sizes && sizes.map(i=>
+                  <option key={i} value="" className="active">{i}</option>                
+                  )}
+                </select>
+              </div>
+              <div className="colors"><span>  Color </span>
+              {color && color.map(i=>
+                <div className={selected === i ? "color active": "color"} key={i} style={{backgroundColor:`${i}`}} onClick={()=>setSelected(i)}></div>                
+                  )}
+              </div>
            
             </div>  
-            <div className="container">
+            <div className="container stock">
               {product.inStock} Items   
               {product.inStock > 0 ? <div className="instock">in stock</div> :  <div className="instock">out of stock</div>}
               
@@ -148,7 +148,7 @@ const Product = () => {
           </div>  
           <div className="tab" onClick={()=>setTab("tab2")}>
             <div className={tab==="tab2"?"tab-title2 active":"tab-title2"} >
-            Additional Information
+           Informations
             </div>
             {tab==="tab2" && <div className="information" style={{minHeight:tab==="tab2" ?"200px":"", overflow:tab==="tab2" && "hidden"}} onClick={()=>setTab("tab2")}>
               <div className="details">
@@ -210,7 +210,7 @@ const Product = () => {
           </div> 
           <div className="tab"   onClick={()=>setTab("tab3")}>
             <div className={tab==="tab3"?"tab-title3 active":"tab-title3"}>
-            Reviews (1)
+            Reviews 
             </div>
             {tab==="tab3" &&  
             <div className="information" >
