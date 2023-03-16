@@ -1,5 +1,7 @@
+@import "../../global.scss";
+
 .register{
-  width:30%;
+  width:600px;
   margin: 50px auto;
   display: flex;
   justify-content: flex-start;
@@ -8,7 +10,10 @@
   border: solid 1px lightgray;
   padding: 50px 50px;
   -webkit-box-shadow: 8px 10px 17px -4px rgba(163,163,163,0.86); 
-        box-shadow: 8px 10px 17px -4px rgba(163,163,163,0.86);
+  box-shadow: 8px 10px 17px -4px rgba(163,163,163,0.86);
+  @include mobile{       
+    width:90%;          
+    }
   .container{
     display: flex;
     justify-content: center;
@@ -20,7 +25,10 @@
     input[type="email"], input[type="password"]{
       width:500px;
       padding:10px;
-      border: solid 1px lightgray;      
+      border: solid 1px lightgray;  
+      @include mobile{       
+        width:350px;      
+        }    
     }
     button{
       width:100%;
