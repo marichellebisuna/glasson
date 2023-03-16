@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import './cart.scss'
 import {cart} from '../../data'
 import { useState } from 'react'
+import Table from '../../components/table/Table'
 
 const Cart = () => {
   const [qty, setQty] = useState(1)
@@ -35,7 +36,7 @@ const Cart = () => {
         </div>
         </div>
       <div className="box">
-        <table>
+        {/* <table>
           <tr>
             <td>image</td>
             <td>product name</td>
@@ -64,7 +65,8 @@ const Cart = () => {
             <td ><span className='close'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
           </tr>
           )}
-        </table>
+        </table> */}
+        <Table/>
       </div> 
       <div className="buttons">
       <button className='outline'>continue shopping</button>
