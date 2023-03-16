@@ -11,6 +11,25 @@
     z-index: 1;
     background-color: white;
     z-index: 2;
+    @include extra-large-screen(){       
+  
+    }
+    @include desktops{       
+    padding: 10px 60px;
+      
+    }
+    @include laptops{ 
+    padding: 10px 50px;
+                
+    }
+    @include tablets{       
+    padding: 10px 40px;
+          
+    }
+    @include mobile{       
+    padding: 10px 20px;
+      
+    }
     .container{
       display: flex;
       align-items: center;
