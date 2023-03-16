@@ -25,11 +25,9 @@
     input[type="email"], input[type="password"]{
       width:480px;
       padding:10px;
-      border: solid 1px lightgray;
-   
+      border: solid 1px lightgray;   
       @include mobile{       
-      width:350px;
-      
+      width:350px;      
       }
     }
     .remember{
