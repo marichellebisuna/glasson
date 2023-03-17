@@ -7,7 +7,8 @@ import Process from '../../components/process/Process'
 const ShippingDetails = () => {
   const [qty, setQty] = useState(1)
   const [payment, setPayment] = useState()
-  const [coupon, setCoupon] = useState(0)
+  const [coupon, setCoupon] = useState()
+ 
   return (
     <div className="shippingdetails"><div className="breadcrumbs">
     <div className="breadcrumbs">
@@ -19,12 +20,10 @@ const ShippingDetails = () => {
     </div>  
     
     <Process/>
-   
-    <div className="details">   
-
-      <div className="detail white"> 
+    <div className="details">
+      <div className="detail">      
+        <div className="billing">
         <div className="title"><h1>Billing details</h1></div>
-      
           <div className="options">
             <div className="full">
               <div className="name"> 
@@ -37,28 +36,32 @@ const ShippingDetails = () => {
                 <div className="label">First Name*</div>
                 <input type="text" name="" id="" />
               </div>          
-              <div className="name" style={{marginLeft:"10px"}}>
+              <div className="name" >
                 <div className="label">Last Name*</div>
                 <input type="text" name="" id="" />
               </div>            
             </div>            
             <div className="full">
-              <div className="name"> 
+              <div className="name address"> 
                 <div className="label">Address 1*</div>
-                <input style={{width:"710px"}} type="text" name="" id="" />            
+                <input  type="text" name="" id="" />            
               </div>       
             </div>
             <div className="full">
-              <div className="name"> 
+              <div className="name address"> 
                 <div className="label">Address 2 (optional - Company, Buzzer, c/o, etc.)</div>
-                <input style={{width:"710px"}} type="text" name="" id="" />            
+                <input  type="text" name="" id="" />            
               </div>       
             </div>
             <div className="full">
               <div className="name"> 
                 <div className="label" >City</div>
-                <input style={{width:"710px"}} type="text" name="" id="" />
-              </div>                         
+                <input  type="text" name="" id="" />
+              </div> 
+              <div className="name"> 
+                <div className="label" >Country</div>
+                <div className="text" style={{marginBottom:"15px", paddingLeft:"5px", marginTop:"10px"}}>Australia</div>
+              </div>                           
             </div>
             <div className="full">              
               <div className="name"> 
@@ -74,35 +77,29 @@ const ShippingDetails = () => {
                   <option value="VIC">Victoria</option>
                   <option value="WA">Western Australia</option>                                 
                 </select> 
-              </div>         
-            </div>
-            <div className="full" style={{marginTop:"10px"}}>
-              <div className="name"> 
-                <div className="label" >Country</div>
-                <div className="text" style={{marginBottom:"15px", paddingLeft:"5px", marginTop:"5px"}}>Australia</div>
-              </div>                         
-            </div>
-            <div className="full">             
-              <div className="name">
+              </div>
+              <div className="name postcode" style={{ marginTop:"10px"}}>
                 <div className="label">Postcode*</div>
-                <input style={{width:"410px"}} type="text" name="" id="" />
-              </div>            
-            </div>
-            <div className="full" >            
+                <input  type="text" name="" id="" />
+              </div> 
               <div className="name"> 
                 <div className="label" style={{paddingBottom:"10px"}}>Phone Number*     
                 </div>
-                <select style={{width:"130px"}} id="phone" name="phone">              
+                <select  id="phone" name="phone" style={{ borderRight:"solid 1px lightgray"}}>              
                   <option value="home" >Home</option>                
                   <option value="mobile">Mobile</option>
                   <option value="work">Work</option>                  
                 </select> 
               </div>          
-              <div className="name" style={{paddingTop:"10px"}}>
-                
-                <input style={{width:"280px",marginTop:"28px"}} type="text" name="" id="" />
-              </div>            
-            </div>  
+              <div className="name postcode" >   
+              <div className="label" style={{padding:"15px 0"}}> 
+                </div>             
+                <input type="text" name="" id="" />
+              </div>          
+            </div>
+           
+           
+             
           <hr style={{width:"100%", opacity:"0.3"}}/>
           
             <div className="me" style={{color:"gray"}}>
@@ -110,53 +107,83 @@ const ShippingDetails = () => {
               <label >I want to receive emails to be first to know about exclusive offers and new products.</label>
             </div>           
         
-          </div>  
-                
+          </div>                  
           {/* <div className="bottom" >
           <img src="https://simplymemorialcards.ie/wp-content/uploads/2018/10/secure.png" alt="" srcset="" />
-          </div>   */}
-        
+          </div>   */}       
+      
+        </div>
+        <div className="box">
+          <table>
+            <tr className='title'>Review Items</tr>
+            <tr>
+              <td>image</td>
+              <td>product name</td>
+              <td>price</td>
+              <td>quantity</td>
+              <td>total</td>
+              <td ><span className='x'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
+            </tr>
+            {cart.map((i,index)=>
+            <tr key={index}>
+              <td ><img src={i.images[0].url} alt="" srcset="" /></td>
+              <td> <Link to={`/product/${i}`}> {i.title}</Link></td>
+              <td><span className="blue">${i.price}</span></td>
+              <td>
+                <div className="quantity">
+                  <div className="qty">{qty}</div>
+                  {/* <div className="func">
+                    <div className="option" ><i class="fa-solid fa-angle-up"></i> </div>
+                    <div className="option" ><i class="fa-solid fa-angle-down"></i> </div>
+
+                  </div>                 */}
+                </div>
+              </td>
+              <td><span className="blue">${(i.price * qty).toFixed(2)}</span></td>
+              <td ><span className='close'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
+            </tr>
+            )}
+          </table>
+        </div>
       </div>
-    
       <div className="detail total">
         <div className="top">
           <h2>cart totals</h2>
           <hr />
           <div className='sub'>
             <div className="text">Subtotal:</div>
-            <div className="price">$85.00</div>
+            <div className="price">$460.00</div>
           </div>
           <div className='sub'>
             <div className="text">Shipping:</div>
             <div className="price">$9.00</div>
           </div>
           {
-          coupon>0 && <div className='sub'>
+          coupon && <div className='sub'>
           <div className="text">Coupon:</div>
           <div className="price">$9.00</div>
         </div>
         }
           <hr />
           <div className='sub'>
-            <div className="total">Estimated Total:</div>
-            <div className="price">$94.00</div>
-          </div>  
-          
+            <div className="total">Total:</div>
+            <div className="price">$469.00</div>
+          </div>
+
           <button className='orange'><Link to="/checkout/payment">Next Step</Link></button> 
         </div>
-      
+
         <div className="bottom" >
         <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcset="" />
         </div>
-
+        {!coupon  && 
         <div className="coupon">
           <input type="text" name="" id="" placeholder='Coupon Code'/>
           <div className="text">Coupon code will be applied on the checkout page</div>
-          <button className='block'>apply coupon</button>     
-        </div>  
- 
-      </div>
-      
+          <button className='block'>apply coupon</button>
+        </div>
+}
+      </div>      
     </div>
     </div>
   </div>
