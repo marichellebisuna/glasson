@@ -3,6 +3,7 @@ import './shippingdetails.scss'
 import {cart} from '../../data'
 import { useState } from 'react'
 import Process from '../../components/process/Process'
+import CartTotal from './CartTotal'
 
 const ShippingDetails = () => {
   const [qty, setQty] = useState(1)
@@ -53,49 +54,49 @@ const ShippingDetails = () => {
                 <input  type="text" name="" id="" />            
               </div>       
             </div>
-            <div className="full">
-              <div className="name"> 
-                <div className="label" >City</div>
-                <input  type="text" name="" id="" />
-              </div> 
+            <div className="full city">
+             
+               
+                <div className="name"> 
+                  <div className="label">State/Province/Region</div>
+                  <select style={{ borderRight:"solid 1px lightgray",marginTop:"10px"}} id="country" name="country">
+                    <option selected>Please select...</option>
+                    <option value="ACT">ACT</option>
+                    <option value="NSW">New South Wales</option>
+                    <option value="NT">Northern Territory</option>
+                    <option value="QUE">Queensland</option>
+                    <option value="SA">South Australia</option>
+                    <option value="TAS">Tasmania</option>
+                    <option value="VIC">Victoria</option>
+                    <option value="WA">Western Australia</option>                                 
+                  </select> 
+                </div>
+                <div className="name postcode" style={{ marginTop:"10px"}}>
+                  <div className="label">Postcode*</div>
+                  <input  type="text" name="" id="" />
+                </div> 
+             
               <div className="name"> 
                 <div className="label" >Country</div>
                 <div className="text" style={{marginBottom:"15px", paddingLeft:"5px", marginTop:"10px"}}>Australia</div>
               </div>                           
             </div>
-            <div className="full">              
-              <div className="name"> 
-                <div className="label">State/Province/Region</div>
-                <select style={{ borderRight:"solid 1px lightgray",marginTop:"10px"}} id="country" name="country">
-                  <option selected>Please select...</option>
-                  <option value="ACT">ACT</option>
-                  <option value="NSW">New South Wales</option>
-                  <option value="NT">Northern Territory</option>
-                  <option value="QUE">Queensland</option>
-                  <option value="SA">South Australia</option>
-                  <option value="TAS">Tasmania</option>
-                  <option value="VIC">Victoria</option>
-                  <option value="WA">Western Australia</option>                                 
-                </select> 
-              </div>
-              <div className="name postcode" style={{ marginTop:"10px"}}>
-                <div className="label">Postcode*</div>
-                <input  type="text" name="" id="" />
-              </div> 
-              <div className="name"> 
-                <div className="label" style={{paddingBottom:"10px"}}>Phone Number*     
+            <div className="full state"> 
+                <div className="name"> 
+                  <div className="label" style={{paddingBottom:"10px"}}>Phone Number*     
+                  </div>
+                  <select  id="phone" name="phone" style={{ borderRight:"solid 1px lightgray"}}>              
+                    <option value="home" >Home</option>                
+                    <option value="mobile">Mobile</option>
+                    <option value="work">Work</option>                  
+                  </select> 
+                </div>          
+                <div className="name phone" >   
+                <div className="label" style={{padding:"14px 0"}}> 
+                  </div>             
+                  <input type="text" name="" id="" />
                 </div>
-                <select  id="phone" name="phone" style={{ borderRight:"solid 1px lightgray"}}>              
-                  <option value="home" >Home</option>                
-                  <option value="mobile">Mobile</option>
-                  <option value="work">Work</option>                  
-                </select> 
-              </div>          
-              <div className="name postcode" >   
-              <div className="label" style={{padding:"15px 0"}}> 
-                </div>             
-                <input type="text" name="" id="" />
-              </div>          
+                      
             </div>
            
            
@@ -113,6 +114,8 @@ const ShippingDetails = () => {
           </div>   */}       
       
         </div>
+        <div className="totals"><CartTotal/></div>
+
         <div className="box">
           <table>
             <tr className='title'>Review Items</tr>
