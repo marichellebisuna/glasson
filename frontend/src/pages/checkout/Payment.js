@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import './payment.scss'
 import {user, cart} from '../../data'
 import { useState } from 'react'
+import Process from '../../components/process/Process'
+import CartTotal from './CartTotal'
 
 const Payment = () => {
   const [qty, setQty] = useState(1)
@@ -20,22 +22,8 @@ const Payment = () => {
       </div>
 
     </div>
-    <div className="process">
-      <div className="step">
-        <span>shopping cart</span>
-        <div className="number ">01</div>
-      </div>
-
-      <div className="step">
-        <span>checkout</span>
-        <div className="number active">02</div>
-      </div>
-
-      <div className="step">
-        <span>order completed </span>
-        <div className="number">03</div>
-      </div>
-    </div>
+   
+    <Process />
     <div className="details">
       <div className="detail">
         <div className="tabs" >
@@ -64,6 +52,7 @@ const Payment = () => {
               }
           </div>
         </div>
+        <div className="totals"><CartTotal/></div>
         <div className="shipping">
           <div className="this">
             <div className="label">Shipping Details</div>
@@ -151,7 +140,8 @@ const Payment = () => {
         </div>
 }
       </div>
-
+      
+      
     </div>
     </div>
   </div>

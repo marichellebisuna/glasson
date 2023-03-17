@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import './shippingdetails.scss'
 import {cart} from '../../data'
 import { useState } from 'react'
+import Process from '../../components/process/Process'
 
 const ShippingDetails = () => {
   const [qty, setQty] = useState(1)
@@ -16,22 +17,8 @@ const ShippingDetails = () => {
       </div>
                 
     </div>  
-    <div className="process">
-      <div className="step">
-        <span>shopping cart</span> 
-        <div className="number ">01</div>
-      </div>        
-      
-      <div className="step">
-        <span>checkout</span> 
-        <div className="number active">02</div>       
-      </div>
-
-      <div className="step">
-        <span>order completed </span>
-        <div className="number">03</div>
-      </div>
-    </div>  
+    
+    <Process/>
    
     <div className="details">   
 
@@ -76,7 +63,7 @@ const ShippingDetails = () => {
             <div className="full">              
               <div className="name"> 
                 <div className="label">State/Province/Region</div>
-                <select style={{width:"410px", borderRight:"solid 1px lightgray",marginTop:"10px"}} id="country" name="country">
+                <select style={{ borderRight:"solid 1px lightgray",marginTop:"10px"}} id="country" name="country">
                   <option selected>Please select...</option>
                   <option value="ACT">ACT</option>
                   <option value="NSW">New South Wales</option>

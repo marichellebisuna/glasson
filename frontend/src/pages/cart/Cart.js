@@ -3,6 +3,7 @@ import './cart.scss'
 import {cart} from '../../data'
 import { useState } from 'react'
 import Table from '../../components/table/Table'
+import Process from '../../components/process/Process'
 
 const Cart = () => {
   const [qty, setQty] = useState(1)
@@ -18,23 +19,8 @@ const Cart = () => {
           <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> Checkout </span></div>  
         </div>
                   
-      </div>  
-      <div className="process">
-        <div className="step">
-          <span>shopping cart</span> 
-          <div className="number active">01</div>
-        </div>        
-        
-        <div className="step">
-          <span>checkout</span> 
-          <div className="number ">02</div>       
-        </div>
-
-        <div className="step">
-          <span>order completed </span>
-          <div className="number">03</div>
-        </div>
-        </div>
+      </div> 
+      <Process/>
       <div className="box">      
         <Table/>
       </div> 
