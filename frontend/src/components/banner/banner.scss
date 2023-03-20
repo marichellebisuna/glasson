@@ -6,30 +6,22 @@
   align-items: center;
   justify-content: center;
  @include mobile{
+  display: none ;  
+ }
+ @include small{
   display: none;  
  }
-
   .box1{
      width:800px;
     height:800px;
     overflow: hidden;
     cursor: pointer;
-    @include tablets{
-      width:700px;
-      height:400px;
-    }
+   
     @include laptops{
       width:700px;
-      height:400px;
+      height:600px;
     }
-    @include desktops{
-      width:700px;
-      height:400px;
-    }
-    @include extra-large-screen{
-      width:700px;
-      height:400px;
-    }
+ 
     img{
     width:100%;
     height:100%;
@@ -57,22 +49,12 @@
    height:800px; 
    overflow: hidden;
    cursor: pointer;
-   @include tablets{
-    width:400px;
-    height:400px;
-   }
+ 
    @include laptops{
     width:400px;
-    height:400px;
+    height:600px;
   }
-  @include desktops{
-    width:400px;
-    height:400px;
-  }
-  @include extra-large-screen{
-    width:700px;
-    height:400px;
-  }
+ 
    img{
    width:100%;
    height:100%;

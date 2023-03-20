@@ -879,7 +879,7 @@ export const cart=[
             },
             {
                 "id": "nextjs_media/irfwxjz56x4xa6pdwoks",
-                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605263281/nextjs_media/irfwxjz56x4xa6pdwoks.jpg"
+                "url": "https://res.cloudinary.com/devatchannel/image/upload/v1605318913/nextjs_media/bnyeto9vaz40yfts92we.jpg"
             },
             {
               "id": "nextjs_media/wb5osprab71emsxp3ibm",
