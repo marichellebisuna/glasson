@@ -59,7 +59,7 @@ const Products = () => {
             
               <span style={{ color:"gray"}}> Shop All Products </span>
             </div>
-            <div className="middle" onClick={()=>setShowSidebar(!showSidebar)}><i class="fa-solid fa-sliders"></i></div>
+            <div className="middle" onClick={()=>setShowSidebar(!showSidebar)}><i className="fa-solid fa-sliders"></i></div>
             <div className="right">
               <span style={{ color:"gray", paddingRight:"20px"}}> Showing 1-24 of 107 results </span> 
               <div className="sort">                     

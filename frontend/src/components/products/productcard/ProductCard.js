@@ -9,7 +9,7 @@ const productItems = ({productItems}) => {
      <div className="product-card">
        {/* {user ?   */}       
         {productItems.map((productItems, i)=>( 
-          <div className='product' >    
+          <div className='product' key={i}>    
             <div className="top-img">
               <Link to={`/product/${i}`}>   
               <img src={productItems.images[0].url} alt="" srcSet="" />
@@ -37,12 +37,12 @@ const productItems = ({productItems}) => {
                   
                 </div>
                 <div className="rate-stars">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-regular fa-star-half-stroke"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-regular fa-star-half-stroke"></i>
                 </div>
               </div>
              

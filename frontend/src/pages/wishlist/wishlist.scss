@@ -52,7 +52,15 @@
  .box{
   width:90vw;
   margin: 50px auto;
-  
+  table{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;  
+    justify-content: center;  
+    width: 100%;
+    border: solid 1px lightgray;  
+   
+  }
  }
   
 }

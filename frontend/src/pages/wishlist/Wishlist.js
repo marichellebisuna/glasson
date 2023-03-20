@@ -11,12 +11,27 @@ const Wishlist = () => {
         <div className="breadcrumbs">
           <div className="container">
             <div className="left"><Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <span style={{ color:"gray"}}> Wishlist </span></div>  
-          </div>
-                
-        </div>  
+          </div>                
+        </div>         
         <div className="box">
-         <Table/>
-        </div>       
+          <table >
+            <thead>
+            <tr>
+              <td>image</td>
+              <td>product name</td>
+              <td>price</td>
+              <td>quantity</td>
+              <td>total</td>
+              <td ><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
+            </tr>
+            </thead>
+             <tbody>
+            {cart.map((item, i)=>    
+              <Table item={item} key={i}/>              
+            )}
+             </tbody>
+          </table>
+        </div>     
     </div> 
   )
 }

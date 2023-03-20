@@ -1,4 +1,4 @@
-import { useLocation } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './process.scss'
 
 const Process = () => {
@@ -7,12 +7,12 @@ const Process = () => {
   return (
     <div className="process">
       <div className="step">
-        <span>shopping cart</span> 
+        <span><Link to="/cart">shopping cart</Link></span> 
         <div className={path[1]==="cart"?"number active":"number"}>01</div>
       </div>        
       
       <div className="step">
-        <span>checkout</span> 
+        <span><Link to="/checkout/shipping-details">checkout</Link></span> 
         <div className={path[1]==="checkout" ?"number active":"number"}>02</div>       
       </div>
 

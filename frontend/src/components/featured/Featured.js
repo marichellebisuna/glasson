@@ -46,7 +46,7 @@ const Featured = () => {
        
      
       {/* <div className="text">Viewing 1-10 of 230</div>
-      <div className="plus"><i class="fa-solid fa-plus"></i></div> */}
+      <div className="plus"><i className="fa-solid fa-plus"></i></div> */}
          
       </div>
   )

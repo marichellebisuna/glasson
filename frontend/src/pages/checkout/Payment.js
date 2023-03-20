@@ -56,7 +56,7 @@ const Payment = () => {
         <div className="shipping">
           <div className="this">
             <div className="label">Shipping Details</div>
-            <div className="edit">Edit <i class="fa-solid fa-pencil"></i></div>
+            <div className="edit">Edit <i className="fa-solid fa-pencil"></i></div>
           </div>
           <div className="text">{user.firstName} {user.lastName}</div>
           <div className="text">{user.address}</div>
@@ -78,7 +78,7 @@ const Payment = () => {
               <td>price</td>
               <td>quantity</td>
               <td>total</td>
-              <td ><span className='x'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
+              <td ><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
             {cart.map((i,index)=>
             <tr key={index}>
@@ -89,14 +89,14 @@ const Payment = () => {
                 <div className="quantity">
                   <div className="qty">{qty}</div>
                   {/* <div className="func">
-                    <div className="option" ><i class="fa-solid fa-angle-up"></i> </div>
-                    <div className="option" ><i class="fa-solid fa-angle-down"></i> </div>
+                    <div className="option" ><i className="fa-solid fa-angle-up"></i> </div>
+                    <div className="option" ><i className="fa-solid fa-angle-down"></i> </div>
 
                   </div>                 */}
                 </div>
               </td>
               <td><span className="blue">${(i.price * qty).toFixed(2)}</span></td>
-              <td ><span className='close'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
+              <td ><span className='close'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
             )}
           </table>

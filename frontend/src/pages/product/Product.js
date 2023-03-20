@@ -50,7 +50,7 @@ const Product = () => {
           <img src={item.images[index].url} alt="" srcSet="" />          
         </div>
         <div className="middle">
-          {item.images.map((image,id)=> <div className={id===active ?"image active":"image"} onClick={()=>setindex(id)}><img src={image.url} alt="" srcSet="" onClick={()=>setActive(id)}/></div>
+          {item.images.map((image,id)=> <div key={id} className={id===active ?"image active":"image"} onClick={()=>setindex(id)}><img src={image.url} alt="" srcSet="" onClick={()=>setActive(id)}/></div>
           )}
          
           </div>
@@ -216,11 +216,11 @@ const Product = () => {
             <div className="information" >
               <div className="to">
                 <div className="star">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
+                  <i className="fa-solid fa-star"></i>
                 </div>
                 <div className="number">Based on 3 review</div>
               <button type="submit">write a review</button>
@@ -228,11 +228,11 @@ const Product = () => {
               <div className="bottom">
                 <div className="left">
                   <div className="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </div>
                   <div className="name">Cosmo De Milancelos</div>
                   <div className="date">
@@ -248,11 +248,11 @@ const Product = () => {
               <div className="bottom">
                 <div className="left">
                   <div className="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </div>
                   <div className="name">Cosmo De Milancelos</div>
                   <div className="date">
@@ -268,11 +268,11 @@ const Product = () => {
               <div className="bottom">
                 <div className="left">
                   <div className="star">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
+                    <i className="fa-solid fa-star"></i>
                   </div>
                   <div className="name">Cosmo De Milancelos</div>
                   <div className="date">

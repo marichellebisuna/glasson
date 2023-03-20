@@ -1,25 +1,21 @@
 @import "../../global.scss";
+thead{
+  width:100%;
 
-table{
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;     
-  width: 100%;
-  border: solid 1px lightgray;      
   tr{
+ 
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    width:100%;
-    padding: 20px 0;
+    justify-content: center;
+    margin: 0 auto;   
+    padding: 20px 0;  
     &:first-child{
       border-bottom: solid 1px lightgray;        
       padding: 10px 0;           
         td{
         font-weight: 500;
          text-transform: uppercase;
-         @include mobile{
-          
+         @include mobile{          
          font-size: 0.90rem;
          } 
        }          
@@ -30,6 +26,87 @@ table{
       justify-content: space-around;  
       width: 100%;
       text-transform: capitalize;     
+     margin: 0 70px;
+     @include desktops{
+      margin: 0 10px;
+     }
+     @include laptops{
+      margin: 0 10px;
+     }
+     @include tablets{
+      margin: 0 10px;
+     }
+     @include mobile{
+      margin: 0 5px;
+     } 
+   
+      a{
+        text-decoration: none;
+        color:inherit;
+        &:hover{
+          color: gray;
+        }
+      }    
+       .x{           
+        border: solid 1px black;
+        padding: 5px 10px;    
+        @include mobile{
+          padding: 4px 8px; 
+         font-size: 0.8rem;
+         }          
+      } 
+      .close{
+        cursor: pointer !important;
+        color: gray;
+         &:hover{
+          color: black;
+        }
+      } 
+    }}
+}
+tbody{
+  width:100%;
+
+   tr{
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    width:100%;
+    padding: 20px 0;
+   
+    &:first-child{
+      //border-bottom: solid 1px lightgray;        
+      padding: 10px 0;           
+        td{
+        font-weight: 500;
+         text-transform: uppercase;
+         @include mobile{          
+         font-size: 0.90rem;
+         } 
+       }          
+    }
+    td{  
+      display: flex;
+      align-items: center;
+      justify-content: space-around;  
+      width: 100%;
+      text-transform: capitalize;     
+     margin: 0 70px;
+     @include desktops{
+      margin: 0 10px;
+     }
+     @include laptops{
+      margin: 0 10px;
+     }
+     @include tablets{
+      margin: 0 10px;
+     }
+     @include mobile{
+      margin: 0 5px;
+     } 
+   
       a{
         text-decoration: none;
         color:inherit;
@@ -59,20 +136,24 @@ table{
       
       &.images-items{
         display: flex;
+        align-items: center;
+        justify-content: center;
+        height:150px;
+        width:150px;
+             
         &:hover{
           .image1{
-            display: none;
+            display: none;            
           }
           .image2{
-            display: flex;
+            display: flex;           
           }
         }
         .image1{        
         height:150px;
         width:150px;
         border: solid 1px lightgray;        
-        display: flex;
-        margin: 5px;
+        display: flex;       
         @include mobile{
         height:110px;
         width:110px;
@@ -130,4 +211,6 @@ table{
     }
     
   }
+
 }
+ 

@@ -125,7 +125,7 @@ const ShippingDetails = () => {
               <td>price</td>
               <td>quantity</td>
               <td>total</td>
-              <td ><span className='x'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
+              <td ><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
             {cart.map((i,index)=>
             <tr key={index}>
@@ -136,14 +136,14 @@ const ShippingDetails = () => {
                 <div className="quantity">
                   <div className="qty">{qty}</div>
                   {/* <div className="func">
-                    <div className="option" ><i class="fa-solid fa-angle-up"></i> </div>
-                    <div className="option" ><i class="fa-solid fa-angle-down"></i> </div>
+                    <div className="option" ><i className="fa-solid fa-angle-up"></i> </div>
+                    <div className="option" ><i className="fa-solid fa-angle-down"></i> </div>
 
                   </div>                 */}
                 </div>
               </td>
               <td><span className="blue">${(i.price * qty).toFixed(2)}</span></td>
-              <td ><span className='close'><i class="fa-sharp fa-solid fa-xmark"></i></span></td>
+              <td ><span className='close'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
             )}
           </table>
@@ -173,7 +173,7 @@ const ShippingDetails = () => {
             <div className="price">$469.00</div>
           </div>
 
-          <button className='orange'><Link to="/checkout/payment">Next Step</Link></button> 
+          <div className='orange'><Link to="/checkout/payment">Next Step</Link></div> 
         </div>
 
         <div className="bottom" >
@@ -183,7 +183,7 @@ const ShippingDetails = () => {
         <div className="coupon">
           <input type="text" name="" id="" placeholder='Coupon Code'/>
           <div className="text">Coupon code will be applied on the checkout page</div>
-          <button className='block'>apply coupon</button>
+          <div className='block'>apply coupon</div>
         </div>
 }
       </div>      

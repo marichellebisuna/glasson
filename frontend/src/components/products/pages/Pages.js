@@ -10,7 +10,7 @@ const Pages = () => {
     <div className="line"></div>
     <div className="page">4</div>
     <div className="line"></div>
-    <div className="page"><i class="fa-solid fa-arrow-right"></i></div>
+    <div className="page"><i className="fa-solid fa-arrow-right"></i></div>
 </div>
   )
 }

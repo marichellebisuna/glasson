@@ -14,6 +14,8 @@ import ShippingDetails from './pages/checkout/ShippingDetails';
 import Wishlist from './pages/wishlist/Wishlist';
 import Layout from './components/layout/Layout';
 import Payment from './pages/checkout/Payment';
+import Tracking from './pages/trackingorder/Tracking';
+import OrderCompleted from './pages/ordercompleted/OrderCompleted';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +45,14 @@ const router = createBrowserRouter([
       {
         path: "/forgotpassword",
         element: <ForgotPassword />,
+      },
+      {
+        path: "/trackingorder",
+        element: <Tracking />,
+      },
+      {
+        path: "/order_completed",
+        element: <OrderCompleted />,
       },
       {
         path: "/cart",

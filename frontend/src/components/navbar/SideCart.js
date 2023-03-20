@@ -30,8 +30,8 @@ const SideCart = ({setShow, show}) => {
           cart.map((i, index)=>
             <div className="contain" key={index}>
              <div className="images-items">
-                <div className="image1" key={i}><Link to={`/product/${i}`}><img src={i.images[0].url} alt="" srcSet="" /></Link></div>
-                <div className="image2" key={i}><Link to={`/product/${i}`}><img src={i.images[1].url} alt="" srcSet="" /></Link></div>
+                <div className="image1" ><Link to={`/product/${i}`}><img src={i.images[0].url} alt="" srcSet="" /></Link></div>
+                <div className="image2" ><Link to={`/product/${i}`}><img src={i.images[1].url} alt="" srcSet="" /></Link></div>
              </div>
                 
               

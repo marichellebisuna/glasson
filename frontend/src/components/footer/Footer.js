@@ -31,13 +31,18 @@ const Footer = () => {
           </ul>
         </div>
         <div className="column">
-          <div className="title">My Account</div>
+          <div className="title">Pages</div>
           <ul>
-            <li><Link to="#">My Order</Link></li>
-            <li><Link to="#">Wishlist</Link></li>
-            <li><Link to="#">My Credit</Link></li>
-            <li><Link to="#">Login</Link></li>
-            <li><Link to="#">Personal Info</Link></li>
+            <li><Link to="/cart">Cart</Link></li>
+            <li><Link to="/wishlist">Wishlist</Link></li>
+            <li><Link to="/forgotpassword">Forgot Password</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/register">Register</Link></li>
+            <li><Link to="/order_completed">Order Completed</Link></li>            
+            <li><Link to="/checkout/shipping-details">Shipping Details</Link></li>
+            <li><Link to="/trackingorder">Tracking</Link></li>
+            <li><Link to="/checkout/payment">Payment</Link></li>
+            
           </ul>
         </div>
         <div className="column">

@@ -5,7 +5,7 @@ import { useState } from 'react'
 import Table from '../../components/table/Table'
 import Process from '../../components/process/Process'
 
-const Cart = () => {
+const Cart = ({item}) => {
   const [qty, setQty] = useState(1)
   const [coupon, setCoupon] = useState(0)
   const [payment, setPayment] = useState("")
@@ -21,9 +21,25 @@ const Cart = () => {
                   
       </div> 
       <Process/>
-      <div className="box">      
-        <Table/>
-      </div> 
+      <div className="box">
+          <table >
+            <thead>
+            <tr>
+              <td>image</td>
+              <td>product name</td>
+              <td>price</td>
+              <td>quantity</td>
+              <td>total</td>
+              <td ><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
+            </tr>
+            </thead>
+             <tbody>
+            {cart.map((item, i)=>    
+              <Table item={item} key={i}/>              
+            )}
+             </tbody>
+          </table>
+        </div>     
       <div className="buttons">
       <button className='outline'>continue shopping</button>
       <button className='block'>update cart</button>
