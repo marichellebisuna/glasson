@@ -41,11 +41,11 @@
   .top{
     display: flex;
     align-items: center;
-    justify-content: center;  
-     
+    justify-content: center;       
     margin: 0 auto 50px auto;    
     width: 90%;
     height:100%; 
+    gap:0;
     @include laptops{      
       flex-direction: column; 
       gap:20px;    
@@ -79,7 +79,7 @@
       align-items: center;
       justify-content: center;
       flex-direction: column;
-      gap:20px;         
+      gap:5px;         
       height:100%;  
       width:100%;
       @include laptops{
@@ -121,13 +121,16 @@
         }  
     }     
     .right{     
-      flex:1.5;       
+      flex:1.5;    
+     
       height:100%;
       width:100%;
+  
       @include laptops{
        // width:350px;
       } 
       .blue{     
+        
       background-color: #136b7f;
       padding: 0 40px;
       padding-top: 20px;
