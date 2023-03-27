@@ -1,5 +1,4 @@
 import './tracking.scss'
-import { Link} from 'react-router-dom'
 
 const Tracking = () => {
   return (
@@ -10,8 +9,7 @@ const Tracking = () => {
         <label>Order ID</label>
         <input type="text" name="" id="" />
         <label>Billing email</label>
-        <input type="email" name="" id="" />
-        
+        <input type="email" name="" id="" />        
        <button type="submit">Track</button>
       </div>
     </div>

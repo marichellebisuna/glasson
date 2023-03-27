@@ -10,7 +10,7 @@ const Table = ({item}) => {
    <tr >
       <td className="images-items"><div className="image1" ><Link to={`/product/${item.id}`}><img src={item.images[0].url} alt="" srcSet="" /></Link></div>
             <div className="image2" ><Link to={`/product/${item.id}`}><img src={item.images[1].url} alt="" srcSet="" /></Link></div></td>
-      <td> <Link to={`/product/${item}`}> {item.title}</Link></td>
+      <td > <Link to={`/product/${item}`}> {item.title}</Link></td>
       <td><span className="blue">${item.price}</span></td>
       <td>
         <div className="quantity">                

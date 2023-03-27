@@ -1,15 +1,12 @@
 import './products.scss'
 import lady from '../../assets/hero/lady.png'
-import Sidebar from '../../components/products/sidebar/Sidebar'
-import Singledeal from '../../components/products/hotdeals/singlehotdeal/Singledeal'
+
 import { Link} from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import ProductCard from '../../components/products/productcard/ProductCard'
-import {products} from '../../data'
-import Deal from '../../components/products/hotdeals/singlehotdeal/Deal'
-import SideOption from '../../components/navbar/SideOption'
-import Pages from '../../components/products/pages/Pages'
 
+import {products} from '../../data'
+
+import {Pages, Sidebar, Singledeal, ProductCard, SideOption} from '../../components/'
 
 const Products = () => {
   const [showSidebar, setShowSidebar] = useState(false) 
@@ -24,7 +21,7 @@ const Products = () => {
   const brand = Array.from(tempBrand)
 
   const isActive = () => {
-    // window.scrollY > 520 ? setActive(window.scrollY <2800 && true) : setActive(false)
+    window.scrollY > 520 ? setActive(window.scrollY <2800 && true) : setActive(false)
   }
 
   useEffect(() => {
@@ -98,9 +95,9 @@ const Products = () => {
               <ProductCard productItems={products} /> 
             </div>
                     
-            <div className="page-number-top">        
+             <div className="page-number-top">        
                 <Pages/>
-            </div>
+            </div> 
 
             <div className="deals">
               <div className="left">

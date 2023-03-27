@@ -1,13 +1,7 @@
-import Services from '../../components/services/Services'
-import Featured from '../../components/featured/Featured'
-import Instagram from '../../components/instagram/Instagram'
-import Banner from '../../components/banner/Banner'
-import Hero from '../../components/hero/Hero'
+import {Services, Featured, Instagram, Banner, Hero, Singledeal} from '../../components/'
 import './home.scss'
-import Singledeal from '../../components/products/hotdeals/singlehotdeal/Singledeal'
 
 const Home = () => {
-
   return (   
     <div className="home">     
      <Hero />
@@ -24,8 +18,7 @@ const Home = () => {
      <Featured />
      <Banner />
      <Instagram />
-    </div> 
-    
+    </div>     
   )
 }
 

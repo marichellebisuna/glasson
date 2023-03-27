@@ -4,9 +4,10 @@
   margin:0;
   box-sizing: border-box;
   letter-spacing: 1.08px;
+  .no-top-padding{padding-top: 0 !important}
 }
 .app{
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
-  
+  .no-top-padding{padding-top: 0 !important}
 }

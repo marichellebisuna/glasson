@@ -23,7 +23,7 @@ export const instagram=[
 ]
 export const products=[
   {
-      "title": "animal",
+      "title": "oakley",
       "images": [
           {
             "id": "11",
@@ -66,7 +66,7 @@ export const products=[
 "2021-07-04T00:54:06.891+00:00"
   },
   {
-    "title": "wedding invitation",
+    "title": "clearly basic",
     "discount":20,
       "images": [
           {
@@ -108,7 +108,7 @@ export const products=[
       "createdAt":"2021-07-04T00:54:06.892+00:00"
   },
   {
-    "title": "laptop",
+    "title": "mind and central",
     "discount":0,
       "images": [
           {
@@ -150,7 +150,7 @@ export const products=[
       "createdAt":"2021-07-04T00:55:02.096+00:00"
   },
   {
-    "title": "animal2",
+    "title": "kenzo",
     "discount":0,
     "images": [
         {
@@ -192,7 +192,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.892+00:00"
 },
 {
-  "title": "wedding invitation2",
+  "title": "clearly basics",
   "discount":20,
     "images": [
         {
@@ -234,7 +234,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
-  "title": "laptop2",
+  "title": "michael kors",
   "discount":0,
     "images": [
         {
@@ -276,7 +276,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
-    "title": "animal3",
+    "title": "mind and central",
     "discount":0,
     "images": [
         {
@@ -318,7 +318,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
-  "title": "wedding invitation3",
+  "title": "derek cardigan",
   "discount":20,
     "images": [
         {
@@ -360,7 +360,7 @@ export const products=[
     "createdAt":"2021-07-04T01:00:28.067+00:00"
 },
 {
-  "title": "laptop3",
+  "title": "main and central",
   "discount":20,
     "images": [
         {
@@ -403,7 +403,7 @@ export const products=[
 }
 ,
   {
-    "title": "wedding invitation",
+    "title": "kam dhillon",
     "discount":0,
       "images": [
           {
@@ -445,7 +445,7 @@ export const products=[
       "createdAt":"2022-03-22T10:06:20.863+00:00"
   },
   {
-    "title": "laptop",
+    "title": "love",
     "discount":0,
       "images": [
           {
@@ -488,7 +488,7 @@ export const products=[
 
   },
   {
-    "title": "animal2",
+    "title": "persol",
     "discount":0,
     "images": [
         {
@@ -530,7 +530,7 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.858+00:00"
 },
 {
-  "title": "wedding invitation2",
+  "title": "reincarnate",
   "discount":20,
     "images": [
         {
@@ -572,7 +572,7 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.864+00:00"
 },
 {
-  "title": "laptop2",
+  "title": "oakley",
   "discount":0,
     "images": [
         {
@@ -614,7 +614,7 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.857+00:00"
 },
 {
-    "title": "animal3",
+    "title": "mind and central",
     "discount":0,
     "images": [
         {
@@ -657,7 +657,7 @@ export const products=[
 "createdAt":"2022-03-22T10:06:20.862+00:00"
 },
 {
-  "title": "wedding invitation3",
+  "title": "clearly basics",
   "discount":20,
     "images": [
         {
@@ -699,7 +699,7 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.858+00:00"
 },
 {
-    "title": "laptop3",
+    "title": "derek cardigan",
     "discount":0,
     "images": [
         {
@@ -786,7 +786,7 @@ export const product={
 }
 export const cart=[  
     {
-    "title": "wedding invitation",
+    "title": "oakley",
     "discount":20,
         "images": [
             {
@@ -828,7 +828,7 @@ export const cart=[
         "createdAt":"2021-07-04T00:54:06.892+00:00"
     },
     {
-    "title": "laptop",
+    "title": "clearly basics",
     "discount":0,
         "images": [
             {
@@ -870,7 +870,7 @@ export const cart=[
         "createdAt":"2021-07-04T00:55:02.096+00:00"
     },
     {
-        "title": "animal2",
+        "title": "mind and central",
         "discount":0,
         "images": [
             {

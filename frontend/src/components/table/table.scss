@@ -66,34 +66,31 @@ thead{
 }
 tbody{
   width:100%;
-
-   tr{
- 
+   tr{ 
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+    justify-content: flex-start;    
     width:100%;
     padding: 20px 0;
-   
-    &:first-child{
-      //border-bottom: solid 1px lightgray;        
-      padding: 10px 0;           
-        td{
-        font-weight: 500;
-         text-transform: uppercase;
-         @include mobile{          
-         font-size: 0.90rem;
-         } 
-       }          
-    }
+    
     td{  
       display: flex;
       align-items: center;
-      justify-content: space-around;  
+      justify-content: center;  
       width: 100%;
       text-transform: capitalize;     
      margin: 0 70px;
+    
+    
+      
+    //  &:nth-child(2) {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: flex-start;  
+    //   background-color: red;
+    //   min-width: 150px;
+    //   word-wrap: break-word;
+    //   }
      @include desktops{
       margin: 0 10px;
      }
