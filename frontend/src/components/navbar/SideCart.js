@@ -5,6 +5,7 @@ import Advert from './Advert';
 import { useEffect, useState } from 'react';
 
 const SideCart = ({setShow, show}) => {
+
   const [qty, setQty] = useState(1)
 //   const [total, setTotal] = useState(0.0);
 
@@ -22,41 +23,58 @@ const SideCart = ({setShow, show}) => {
         </div>
         <div className="items">
           <Advert/>
-         <hr/>
+          <div className="text">Shopping Cart ({cart.length})</div>
+
+         {/* <hr/> */}
           {cart.length >0 ?
          <div className="item">
           
          {
           cart.map((i, index)=>
+          <>
             <div className="contain" key={index}>
-             <div className="images-items">
-                <div className="image1" ><Link to={`/product/${i}`}><img src={i.images[0].url} alt="" srcSet="" /></Link></div>
-                <div className="image2" ><Link to={`/product/${i}`}><img src={i.images[1].url} alt="" srcSet="" /></Link></div>
-             </div>
-                
-              
-              <div className="details">                
-                <div className="title">{i.title}</div>
-                <div className="row">
-                  <div className="price">${i.price.toFixed(2)}</div>
-                <div className="qty">Qty: {qty}</div>
-                </div>
-                <div className="row">
-                  <div className="price">Free postage</div>
-                  <div className="trash"><i className="fa-solid fa-trash"></i></div>
-                </div>
+              <div className="images-items">
+                  <div className="image1" ><Link to={`/product/${i}`}><img src={i.images[0].url} alt="" srcSet="" /></Link></div>
+                  <div className="image2" ><Link to={`/product/${i}`}><img src={i.images[1].url} alt="" srcSet="" /></Link></div>
               </div>
-            </div>            
+                              
+              <div className="details">      
+                <div className="detail-row">
+                <Link to={`/product/${i}`}><div className="price">{i.title}</div></Link>
+                  <div className="trash"><i className="fa-solid fa-trash"></i></div>
+                </div>      
+                
+                <div className="detail-row">
+                  <div className="quantity">               
+                    <div className="func">
+                      <div className="option" ><i class="fa-solid fa-minus"></i></div>
+                      <div className="qty">{qty}</div>
+                      <div className="option" ><i class="fa-solid fa-plus"></i></div>
+                    </div>                
+                  </div>
+                  <div className="free">${i.price.toFixed(2)}</div>
+                  <div className="free-total">${i.price * qty}</div>
+
+                {/* <div className="qty">Qty: {qty}</div> */}
+                </div>
+                {/* <div className="detail-row"> */}
+                  {/* <div className="free">Free postage</div> */}
+                  {/* <div className="trash"><i className="fa-solid fa-trash"></i></div> */}
+                {/* </div> */}
+              </div>
+             
+            </div>  
+             <hr/>  
+             </>        
           )
          }          
          
             <div className="total">
-              <div className="total-text">subtotal</div>
-              <div className="price">AU $85.00</div>             
+              <div className="total-text">subtotal <div className="price"> $85.00</div> </div>
+                
+              <div className="trash"><i className="fa-solid fa-trash"></i></div>          
             </div>
-           <div className="reset">
-            <div className="text">reset cart
-              </div></div>
+          
             <div className="buttons">
               <Link to="/checkout/shipping-details"><button className='orange'>checkout</button></Link>
             <Link to="/cart"><button className='block'>view cart</button></Link>  

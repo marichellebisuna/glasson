@@ -10,4 +10,8 @@
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
   .no-top-padding{padding-top: 0 !important}
+  a{
+    text-decoration: none;
+    color: inherit;
+  }
 }
