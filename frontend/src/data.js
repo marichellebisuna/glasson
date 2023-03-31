@@ -784,8 +784,9 @@ export const product={
     "numOfReviews":10,
     "createdAt":"2022-03-22T10:06:20.863+00:00"
 }
-export const cart=[  
+export const cartItems=[  
     {
+    "id": 1,
     "title": "oakley",
     "discount":20,
         "images": [
@@ -828,6 +829,7 @@ export const cart=[
         "createdAt":"2021-07-04T00:54:06.892+00:00"
     },
     {
+    "id": 2,
     "title": "clearly basics",
     "discount":0,
         "images": [
@@ -870,6 +872,7 @@ export const cart=[
         "createdAt":"2021-07-04T00:55:02.096+00:00"
     },
     {
+    "id": 3,
         "title": "mind and central",
         "discount":0,
         "images": [

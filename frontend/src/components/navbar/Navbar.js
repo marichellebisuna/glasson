@@ -2,13 +2,15 @@ import './navbar.scss'
 import logo from '../../media/logo.png'
 import {Link, useLocation} from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import {cart} from '../../../src/data'
+//import {cart} from '../../../src/data'
 import SideCart from './SideCart'
 import Sidemenu from './Sidemenu'
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
   const location = useLocation().pathname.split("/")[1]
-
+const {items} = useSelector(state=>state.cart)
+console.log(items.length)
   const [active, setActive] = useState(false)
   const [show, setShow] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
@@ -63,11 +65,15 @@ const Navbar = () => {
                   <div className="outline"><i className="fa-regular fa-heart"></i></div>
                   <div className="solid"><i className="fa-solid fa-heart"></i></div>
                   </Link>
-                  <div className="number">{cart.length}</div>
+                  <div className="number">
+                    {items.length}
+                    </div>
                 </div>  
                 <div className="cart-icon" onClick={()=>setShow(!show)}>                  
                   <i className="fa-solid fa-cart-shopping"></i>                
-                  <div className="number">{cart.length}</div>
+                  <div className="number">
+                    {items.length}
+                    </div>
                 </div>  
               </div>
               <div className="hamburger" onClick={()=>setShowMenu(true)}>

@@ -1,5 +1,5 @@
 import './wishlist.scss'
-import {cart} from '../../data'
+import {cartItems} from '../../data'
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import Table from '../../components/table/Table'
@@ -26,7 +26,7 @@ const Wishlist = () => {
             </tr>
             </thead>
              <tbody>
-            {cart.map((item, i)=>    
+            {cartItems.map((item, i)=>    
               <Table item={item} key={i}/>              
             )}
              </tbody>

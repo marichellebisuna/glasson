@@ -41,7 +41,9 @@ const Featured = () => {
       </div>   
  
          <div className="product">
-          <ProductCard productItems={productItems}/>  
+       
+          <ProductCard productItems={productItems} />  
+        
       </div>  
        
      

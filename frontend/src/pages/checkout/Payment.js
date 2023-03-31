@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import './payment.scss'
-import {user, cart} from '../../data'
+import {user, cartItems} from '../../data'
 import { useState } from 'react'
 import Process from '../../components/process/Process'
 import CartTotal from './CartTotal'
@@ -80,7 +80,7 @@ const Payment = () => {
               <td>total</td>
               <td ><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
-            {cart.map((i,index)=>
+            {cartItems.map((i,index)=>
             <tr key={index}>
               <td ><img src={i.images[0].url} alt="" srcset="" /></td>
               <td> <Link to={`/product/${i}`}> {i.title}</Link></td>

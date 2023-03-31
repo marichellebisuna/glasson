@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom'
 import './cart.scss'
-import {cart} from '../../data'
 import { useState } from 'react'
 import Table from '../../components/table/Table'
 import Process from '../../components/process/Process'
+import { useSelector } from 'react-redux'
 
 const Cart = ({item}) => {
   const [qty, setQty] = useState(1)
   const [coupon, setCoupon] = useState(0)
   const [payment, setPayment] = useState("")
-
-  console.log(payment)
+  const {items} = useSelector(state=>state.cart)
+ 
   return (
     <div className="cart">
       <div className="breadcrumbs-cart">
@@ -34,8 +34,8 @@ const Cart = ({item}) => {
             </tr>
             </thead>
              <tbody>
-            {cart.map((item, i)=>    
-              <Table item={item} key={i}/>              
+            {items.map((item, i)=>    
+             ( <Table item={item} key={i}/>   )          
             )}
              </tbody>
           </table>
