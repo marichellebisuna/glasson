@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link, Navigate } from 'react-router-dom'
 import './productcard.scss'
 import {product} from '../../../data'
@@ -9,9 +9,9 @@ import {addToCart} from '../../../redux/cartSlice';
 const ProductCard = ({productItems}) => {
   // const [user, setUser] = useState(true)
   // const productList = useSelector((state)=>state.productList)
- 
 
-  //console.log(cart)
+  const {items} = useSelector((state) => state.cart)
+  console.log(items)
   // const { products} = productList;
   const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ const ProductCard = ({productItems}) => {
         {productItems.map((item, i)=>(
           <div className='product' key={i}>
             <div className="top-img">
-              <Link to={`/product/${i}`}>
+              <Link to={`/product/${item.id}`}>
               <img src={item.images[0].url} alt="" srcSet="" />
               </Link>
               {item.discount > 0 &&
@@ -30,9 +30,9 @@ const ProductCard = ({productItems}) => {
               }
             </div>
             <div className="bottom-card">
-              <div className="title"><Link to={`/product/${i}`} style={{
+              <div className="title"><Link to={`/product/${item.id}`} style={{
               textDecoration: 'none'
-              }}>{item.title}{i}</Link>
+              }}>{item.title}{item.id}</Link>
               </div>
               <hr/>
               <div className="last-bottom">
@@ -61,9 +61,9 @@ const ProductCard = ({productItems}) => {
             <div className="hover">
               <div className="icon active" ><i className="fa-regular fa-heart"></i></div>
               <div className="icon"
-               onClick={() =>
-                dispatch(addToCart({i}
-                ))}
+               onClick={ () =>
+                dispatch(addToCart(item))
+                }
               ><i className="fa-solid fa-bag-shopping"></i></div>
 
               <div className="icon"><i className="fa-solid fa-eye"></i></div>
@@ -84,3 +84,5 @@ const ProductCard = ({productItems}) => {
 }
 
 export default ProductCard
+
+

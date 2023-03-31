@@ -23,6 +23,8 @@ export const instagram=[
 ]
 export const products=[
   {
+    "id": 4,
+
       "title": "oakley",
       "images": [
           {
@@ -66,6 +68,7 @@ export const products=[
 "2021-07-04T00:54:06.891+00:00"
   },
   {
+    "id": 5,
     "title": "clearly basic",
     "discount":20,
       "images": [
@@ -108,6 +111,7 @@ export const products=[
       "createdAt":"2021-07-04T00:54:06.892+00:00"
   },
   {
+    "id": 6,
     "title": "mind and central",
     "discount":0,
       "images": [
@@ -150,6 +154,7 @@ export const products=[
       "createdAt":"2021-07-04T00:55:02.096+00:00"
   },
   {
+    "id": 7,
     "title": "kenzo",
     "discount":0,
     "images": [
@@ -192,6 +197,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.892+00:00"
 },
 {
+    "id": 8,
   "title": "clearly basics",
   "discount":20,
     "images": [
@@ -234,6 +240,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
+    "id": 9,
   "title": "michael kors",
   "discount":0,
     "images": [
@@ -276,6 +283,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
+    "id": 10,
     "title": "mind and central",
     "discount":0,
     "images": [
@@ -318,6 +326,7 @@ export const products=[
     "createdAt":"2021-07-04T00:54:06.891+00:00"
 },
 {
+    "id": 11,
   "title": "derek cardigan",
   "discount":20,
     "images": [
@@ -360,6 +369,7 @@ export const products=[
     "createdAt":"2021-07-04T01:00:28.067+00:00"
 },
 {
+    "id": 12,
   "title": "main and central",
   "discount":20,
     "images": [
@@ -403,6 +413,7 @@ export const products=[
 }
 ,
   {
+    "id": 13,
     "title": "kam dhillon",
     "discount":0,
       "images": [
@@ -445,6 +456,7 @@ export const products=[
       "createdAt":"2022-03-22T10:06:20.863+00:00"
   },
   {
+    "id": 14,
     "title": "love",
     "discount":0,
       "images": [
@@ -488,6 +500,7 @@ export const products=[
 
   },
   {
+    "id": 15,
     "title": "persol",
     "discount":0,
     "images": [
@@ -530,6 +543,7 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.858+00:00"
 },
 {
+    "id": 16,
   "title": "reincarnate",
   "discount":20,
     "images": [
@@ -572,6 +586,7 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.864+00:00"
 },
 {
+    "id": 17,
   "title": "oakley",
   "discount":0,
     "images": [
@@ -614,6 +629,8 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.857+00:00"
 },
 {
+    "id": 18,
+
     "title": "mind and central",
     "discount":0,
     "images": [
@@ -657,6 +674,8 @@ export const products=[
 "createdAt":"2022-03-22T10:06:20.862+00:00"
 },
 {
+    "id": 19,
+
   "title": "clearly basics",
   "discount":20,
     "images": [
@@ -699,6 +718,7 @@ export const products=[
     "createdAt":"2022-03-22T10:06:20.858+00:00"
 },
 {
+    "id": 20,
     "title": "derek cardigan",
     "discount":0,
     "images": [
@@ -743,6 +763,7 @@ export const products=[
 
 ]
 export const product={
+    "id": 44,
     "title": "armani ex 541250",
     "images": [
         {
@@ -788,6 +809,7 @@ export const cartItems=[
     {
     "id": 1,
     "title": "oakley",
+    "amount":1,
     "discount":20,
         "images": [
             {
@@ -831,6 +853,7 @@ export const cartItems=[
     {
     "id": 2,
     "title": "clearly basics",
+    "amount":1,
     "discount":0,
         "images": [
             {
@@ -874,6 +897,7 @@ export const cartItems=[
     {
     "id": 3,
         "title": "mind and central",
+        "amount":1,
         "discount":0,
         "images": [
             {

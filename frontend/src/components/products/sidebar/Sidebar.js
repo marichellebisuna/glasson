@@ -135,7 +135,7 @@ const handleChange = (e) =>{
             <div className="title">Tags</div>
             <div className="tag-item">
               {brand?.map((b, i)=>
-              <Link to={`/products?brand=${b}`}>
+              <Link to={`/products?brand=${b}`} key={i}>
               <div className="tag" key={i}>{b}</div>
               </Link>
               )} 

@@ -5,7 +5,7 @@ import {products} from '../data'
 export const productSlice = createSlice({
 name:'products',
 initialState:{
-  products:[],
+  products:products,
   pending:false,
   error:false
 },

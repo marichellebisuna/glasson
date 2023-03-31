@@ -84,14 +84,14 @@ const Product = () => {
             <div className="container">
               <div className="size">size 
                 <select name="" id="">         
-                  {sizes && sizes.map(i=>
-                  <option key={i} value="" className="active">{i}</option>                
+                  {sizes && sizes.map((i, index)=>
+                  <option key={index} value="" className="active">{i}</option>                
                   )}
                 </select>
               </div>
               <div className="colors"><span>  Color </span>
-              {color && color.map(i=>
-                <div className={selected === i ? "color active": "color"} key={i} style={{backgroundColor:`${i}`}} onClick={()=>setSelected(i)}></div>                
+              {color && color.map((i, index)=>
+                <div key={index} className={selected === i ? "color active": "color"} key={i} style={{backgroundColor:`${i}`}} onClick={()=>setSelected(i)}></div>                
                   )}
               </div>
            
@@ -106,7 +106,7 @@ const Product = () => {
             <div className="text"><span>Category:</span> {product.category}</div> 
             <div className="text tag"><span>Tags:</span>
             {product.tags.map((i, index)=>{
-            return <div key={i}>{(index?", ":"") + i}</div>  } )}</div>
+            return <div key={index}>{(index?", ":"") + i}</div>  } )}</div>
           </div> 
           <div className="orange">
             <div className="container">

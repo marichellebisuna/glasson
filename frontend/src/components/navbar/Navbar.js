@@ -5,12 +5,13 @@ import { useEffect, useState } from 'react'
 //import {cart} from '../../../src/data'
 import SideCart from './SideCart'
 import Sidemenu from './Sidemenu'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { getCartTotal } from '../../redux/cartSlice'
 
 const Navbar = () => {
   const location = useLocation().pathname.split("/")[1]
-const {items} = useSelector(state=>state.cart)
-console.log(items.length)
+  const {items, totalCount, totalAmount} = useSelector(state=>state.cart)
+  const dispatch = useDispatch()
   const [active, setActive] = useState(false)
   const [show, setShow] = useState(false)
   const [showMenu, setShowMenu] = useState(false)
@@ -18,6 +19,9 @@ console.log(items.length)
   const isActive = () => {
     window.scrollY > 0 ? setActive(true) : setActive(false)
   }
+  useEffect(()=>{
+dispatch(getCartTotal())
+  },[])
 
   useEffect(() => {
     window.addEventListener("scroll", isActive);
@@ -72,7 +76,7 @@ console.log(items.length)
                 <div className="cart-icon" onClick={()=>setShow(!show)}>                  
                   <i className="fa-solid fa-cart-shopping"></i>                
                   <div className="number">
-                    {items.length}
+                    {totalCount}
                     </div>
                 </div>  
               </div>
