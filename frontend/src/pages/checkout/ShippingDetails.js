@@ -54,13 +54,11 @@ const ShippingDetails = () => {
                 <input  type="text" name="" id="" />            
               </div>       
             </div>
-            <div className="full city">
-             
-               
-                <div className="name"> 
+            <div className="full city">          
+               <div className="name"> 
                   <div className="label">State/Province/Region</div>
                   <select style={{ borderRight:"solid 1px lightgray",marginTop:"10px"}} id="country" name="country">
-                    <option selected>Please select...</option>
+                    <option >Please select...</option>
                     <option value="ACT">ACT</option>
                     <option value="NSW">New South Wales</option>
                     <option value="NT">Northern Territory</option>
@@ -110,7 +108,7 @@ const ShippingDetails = () => {
         
           </div>                  
           {/* <div className="bottom" >
-          <img src="https://simplymemorialcards.ie/wp-content/uploads/2018/10/secure.png" alt="" srcset="" />
+          <img src="https://simplymemorialcards.ie/wp-content/uploads/2018/10/secure.png" alt="" srcSet="" />
           </div>   */}       
       
         </div>
@@ -118,18 +116,26 @@ const ShippingDetails = () => {
 
         <div className="box">
           <table>
+            <thead>
             <tr className='title'>Review Items</tr>
+             </thead>
+               <tbody>
             <tr>
               <td>image</td>
               <td>product name</td>
               <td>price</td>
               <td>quantity</td>
               <td>total</td>
-              <td ><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
+              <td><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
-            {cartItems.map((i,index)=>
-            <tr key={index}>
-              <td ><img src={i.images[0].url} alt="" srcset="" /></td>
+          
+           
+            {cartItems.map((i)=>
+            <tr key={i.id}>
+              <td > <div className="images-items" >
+                  <div className="image1" ><Link to={`/product/${i.id}`}><img src={i.images[0].url} alt="" srcSet="" /></Link></div>
+                  <div className="image2" ><Link to={`/product/${i.id}`}><img src={i.images[1].url} alt="" srcSet="" /></Link></div>
+              </div></td>
               <td> <Link to={`/product/${i}`}> {i.title}</Link></td>
               <td><span className="blue">${i.price}</span></td>
               <td>
@@ -146,6 +152,7 @@ const ShippingDetails = () => {
               <td ><span className='close'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
             )}
+            </tbody>
           </table>
         </div>
       </div>
@@ -177,7 +184,7 @@ const ShippingDetails = () => {
         </div>
 
         <div className="bottom" >
-        <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcset="" />
+        <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcSet="" />
         </div>
         {!coupon  && 
         <div className="coupon">

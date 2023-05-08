@@ -31,7 +31,7 @@ const CartTotal = () => {
 
           <button className='orange'>Complete Order</button>
         <div className="bottom" >
-        <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcset="" />
+        <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcSet="" />
         </div>
 
         </div>

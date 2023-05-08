@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './sideoption.scss'
-import {products} from "../../data"
+import {produkts} from "../../data"
 
 const SideOption = ({setShowSidebar, showSidebar}) => {
   const [maxPrice, setMaxPrice] = useState(2000)
@@ -13,16 +13,16 @@ const [showSort, setShowSort] = useState(true)
 
 
 
-const tempShape=new Set(products.map(product =>product.shape))
+const tempShape=new Set(produkts.map(product =>product.shape))
 const shapes = Array.from(tempShape)
 
-const tempBrand=new Set(products.map(product =>product.brand))
+const tempBrand=new Set(produkts.map(product =>product.brand))
 const brand = Array.from(tempBrand)
 
-const tempSize=new Set(products.map(product =>product.size))
+const tempSize=new Set(produkts.map(product =>product.size))
 const size = Array.from(tempSize)
 
-const tempcolor=new Set(products.map(product =>product.color))
+const tempcolor=new Set(produkts.map(product =>product.color))
 const color = Array.from(tempcolor)
 
 const handleChange = (e) =>{

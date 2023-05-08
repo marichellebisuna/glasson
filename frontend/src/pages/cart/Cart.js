@@ -34,8 +34,8 @@ const Cart = ({item}) => {
             </tr>
             </thead>
              <tbody>
-            {items.map((item, i)=>    
-             ( <Table item={item} key={i}/>   )          
+            {items.map((item)=>    
+             ( <Table item={item} key={item.id}/>   )          
             )}
              </tbody>
           </table>
@@ -52,7 +52,7 @@ const Cart = ({item}) => {
           <div className="options">
             <div className="label">Country:</div>
               <select id="country" name="country">
-              <option selected>Select option</option>
+              <option >Select option</option>
               <option value="AF">Afghanistan</option>
               <option value="AX">Aland Islands</option>
               <option value="AL">Albania</option>

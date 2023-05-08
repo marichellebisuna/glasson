@@ -71,34 +71,36 @@ const Payment = () => {
         </div>
         <div className="box">
           <table>
+            <thead>
             <tr className='title'>Review Items</tr>
+             </thead>
+               <tbody>
             <tr>
               <td>image</td>
               <td>product name</td>
               <td>price</td>
               <td>quantity</td>
               <td>total</td>
-              <td ><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
+              <td><span className='x'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
             </tr>
-            {cartItems.map((i,index)=>
-            <tr key={index}>
-              <td ><img src={i.images[0].url} alt="" srcset="" /></td>
-              <td> <Link to={`/product/${i}`}> {i.title}</Link></td>
-              <td><span className="blue">${i.price}</span></td>
-              <td>
-                <div className="quantity">
-                  <div className="qty">{qty}</div>
-                  {/* <div className="func">
-                    <div className="option" ><i className="fa-solid fa-angle-up"></i> </div>
-                    <div className="option" ><i className="fa-solid fa-angle-down"></i> </div>
-
-                  </div>                 */}
-                </div>
-              </td>
-              <td><span className="blue">${(i.price * qty).toFixed(2)}</span></td>
-              <td ><span className='close'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
-            </tr>
-            )}
+            
+          {cartItems.map((i, index)=> ( 
+          <tr key={index}>
+            <td><div className="images-items" >
+                <div className="image1" ><Link to={`/product/${i.id}`}><img src={i.images[0].url} alt="" srcSet="" /></Link></div>
+                <div className="image2" ><Link to={`/product/${i.id}`}><img src={i.images[1].url} alt="" srcSet="" /></Link></div>
+            </div></td>
+            <td><Link to={`/product/${i}`}>{i.title}</Link></td>
+            <td><span className="blue">${i.price}</span></td>
+            <td><div className="quantity">
+                <div className="qty">{qty}</div>              
+              </div>
+            </td>
+            <td><span className="blue">${(i.price * qty).toFixed(2)}</span></td>
+            <td><span className='close'><i className="fa-sharp fa-solid fa-xmark"></i></span></td>
+          </tr>)            
+          )}
+            </tbody>
           </table>
         </div>
       </div>
@@ -130,7 +132,7 @@ const Payment = () => {
         </div>
 
         <div className="bottom" >
-        <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcset="" />
+        <img src="https://www.nicepng.com/png/detail/95-954587_image-result-for-secure-checkout-safe-and-secure.png" alt="" srcSet="" />
         </div>
         {!coupon  && 
         <div className="coupon">

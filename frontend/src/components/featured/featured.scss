@@ -11,7 +11,7 @@
     font-size: 3rem;
   }
   .categories{
-    padding: 30px 0;
+    padding: 50px 0;
     color: gray;
     height:50px;
    
@@ -48,7 +48,37 @@
     }
   }  
   .product{
-    margin:15px auto; 
+    margin: auto 0; 
+    display: flex; 
+    align-items: center;
+    justify-content:flex-start;    
+    gap:20px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    @include extra-large-screen{ 
+      justify-content:center; 
+   }
+     @include desktops{ 
+      justify-content:center; 
+      
+   }
+   @include laptops{ 
+    gap:20px;
+    align-items: flex-start;
+    justify-content:flex-start;  
+  
+    
+  }
+    @include tablets{       
+      justify-content:flex-start;  
+      align-items: flex-start;
+  
+      margin-bottom: 0;
+    }
+    @include mobile{       
+      justify-content:flex-start;   
+      align-items: flex-start;
+    }
   }  
   
   .text{

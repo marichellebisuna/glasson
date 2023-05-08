@@ -21,7 +21,7 @@ export const instagram=[
   }
   
 ]
-export const products=[
+export const produkts=[
   {
     "id": 4,
 
@@ -762,7 +762,7 @@ export const products=[
 
 
 ]
-export const product={
+export const produkt={
     "id": 44,
     "title": "armani ex 541250",
     "images": [
@@ -952,6 +952,7 @@ export const user={
 }
 export const slide=[
     {
+    id:1,
     bg:"rgb(246, 246, 147)",
     img:"guy",
     brand:"massa dapibus",
@@ -959,6 +960,7 @@ export const slide=[
     desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nunc arcu, mattis vel odio eget, vehicula porta nisi. Vestibulum condimentum dictum erat, in accumsan sem."
     },
     {
+    id:2,
     bg:"rgb(243, 187, 196)",
     img:"boy",
     brand:"brand 2",
@@ -966,6 +968,7 @@ export const slide=[
     desc:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nunc arcu, mattis vel odio eget, vehicula porta nisi. Vestibulum condimentum dictum erat, in accumsan sem."
     },
     {
+    id:3,
     bg:"rgb(178, 241, 178)",
     img:"girl",
     brand:"brand3",

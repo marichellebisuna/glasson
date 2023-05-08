@@ -1,38 +1,7 @@
 @import "../../../global.scss";
 
 .product-card{
-  display: flex; 
-  align-items: center;
-  justify-content:flex-start;    
-  gap:20px;
-  flex-wrap: wrap;
-  flex-direction: row;
-  //width:100%;  
-  //background-color: antiquewhite;
-  @include extra-large-screen{ 
-    justify-content:center; 
- }
-   @include desktops{ 
-    justify-content:center; 
-    
- }
- @include laptops{ 
-  gap:20px;
-  align-items: flex-start;
-  justify-content:flex-start;  
 
-  
-}
-  @include tablets{       
-    justify-content:flex-start;  
-    align-items: flex-start;
-
-    margin-bottom: 0;
-  }
-  @include mobile{       
-    justify-content:flex-start;   
-    align-items: flex-start;
-  }
   .product{
   display: flex;
   flex-direction: column;
@@ -41,6 +10,7 @@
   border: 1px rgba(211, 211, 211, 0.479) solid;
   position: relative; 
   width:320px;  
+  height:400px;
   margin: 10px 0;
   @include laptops{ 
     width:290px;             
@@ -82,13 +52,14 @@
       align-items: center;
       justify-content:center;   
       width:100%;    
-      background-color: #f6f6f6;
-      height:300px;
+      //background-color: #f6f6f6;
+      //height:300px;
+     
       cursor: pointer;   
       img{
         width:100%;
         height: 200px;
-        object-fit: contain;        
+        object-fit:contain;        
       }
       .top-discount{
         color:white;
@@ -112,6 +83,7 @@
           font-weight: 700;
           text-transform: capitalize;  
           padding-top: 20px;  
+          padding: 0 10px;
           a{
             color:rgb(105, 101, 101)
           }

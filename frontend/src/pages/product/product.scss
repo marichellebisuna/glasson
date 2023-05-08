@@ -44,8 +44,8 @@
     justify-content: center;       
     margin: 0 auto 50px auto;    
     width: 90%;
-    height:100%; 
-    gap:0;
+    height:650px; 
+    
     @include laptops{      
       flex-direction: column; 
       gap:20px;    
@@ -65,8 +65,10 @@
       flex:2; 
       border:lightgray solid 1px;
       background-color: #f6f6f6;
-      height:100%;
-      width:100%;      
+      height:650px;
+      width:100%;   
+      padding: 20px;   
+      border-radius: 5px; 
       img{        
         width:100%;
         height:100%;
@@ -77,11 +79,11 @@
       flex:1;            
       display: flex;
       align-items: center;
-      justify-content: center;
-      flex-direction: column;
+      justify-content:flex-start;
+      flex-direction: column;      
       gap:5px;         
-      height:100%;  
-      width:100%;
+       height:100%;  
+      // width:100%;
       @include laptops{
         flex-direction: row;
       }
@@ -94,9 +96,9 @@
       cursor: pointer;     
         .image{
           width:300px;
-          height:155px;           
+          height:125px;           
           border-radius: 5px;          
-          padding: 0 10px;
+          padding:  5px;
           @include laptops{
             width:200px;
             height:100px; 
@@ -115,26 +117,22 @@
           }
           img{
               width: 100%;   
-              height: 100%;;     
+              height: 100%;    
               object-fit: contain;              
           }
         }  
     }     
     .right{     
-      flex:1.5;    
-     
-      height:100%;
+      flex:1.5;        
+      height:650px;
       width:100%;
-  
+     
       @include laptops{
        // width:350px;
       } 
-      .blue{     
-        
-      background-color: #136b7f;
-      padding: 0 40px;
-      padding-top: 20px;
-      padding-bottom: 5px;
+      .blue{   
+      background-color: #136b7f;      
+      padding: 30px 40px;
       text-transform: capitalize;
       color:rgb(187, 184, 184);
         .crumbs{   
@@ -159,6 +157,7 @@
         }   
         .title{
           color:white;
+          word-wrap: break-word;
         }  
         .rating{ 
           display: flex;    
@@ -180,9 +179,9 @@
       }
       .lightblue{
         background-color: #1891ac;
-        padding: 20px 40px;
+        padding: 30px 40px;
         color: white;
-       
+        height:285px;
         .desc{
           flex-wrap: wrap;
         }
@@ -561,7 +560,9 @@
    }
    .card{
     width:100%;   
-   
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
    }
   } 
  

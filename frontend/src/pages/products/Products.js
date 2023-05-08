@@ -4,7 +4,7 @@ import lady from '../../assets/hero/lady.png'
 import { Link} from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
-import {products} from '../../data'
+import {produkts} from '../../data'
 
 import {Pages, Sidebar, Singledeal, ProductCard, SideOption} from '../../components/'
 
@@ -16,8 +16,8 @@ const Products = () => {
 
 
   const [sort, setSort] = useState(null)
-  const [productItems, setProductItems] = useState(products)
-  const tempBrand=new Set(products.map(product =>product.brand))
+  const [productItems, setProductItems] = useState(produkts)
+  const tempBrand=new Set(produkts.map(product =>product.brand))
   const brand = Array.from(tempBrand)
 
   const isActive = () => {
@@ -82,9 +82,9 @@ const Products = () => {
               <div className="title">Tags</div>
               <div className="tag-item">
                 {brand?.map((b, i)=>
-                <Link to={`/products?brand=${b}`}>
-                <div className="tag" key={i}>{b}</div>
-                </Link>
+                
+                <div className="tag" key={i}><Link to={`/products?brand=${b}`}>{b}</Link></div>
+                
                 )} 
               </div>
                         
@@ -92,7 +92,7 @@ const Products = () => {
           </div>       
           <div className="right">     
             <div className="card">
-              <ProductCard productItems={products} /> 
+              <ProductCard productItems={produkts} /> 
             </div>
                     
              <div className="page-number-top">        

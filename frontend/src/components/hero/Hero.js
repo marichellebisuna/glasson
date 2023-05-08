@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
       <div className="hero-container"  style={{transform:`translateX(${-100 * slideIndex }vw)`}}>
         {slide.map((i)=>     
-          <div className="hero-wrapper" key={i} 
+          <div className="hero-wrapper" key={i.id} 
           // style={{backgroundColor:`${i.bg}`}}
           >             
             <div className="details">

@@ -57,7 +57,7 @@ dispatch(getCartTotal())
             <div className="menus">
               <Link to="/"><div className={location==="" ?'listitem active':'listitem'}>Home</div></Link>
               <Link to="/products"><div className={location==="products" ?'listitem active':'listitem'}>Products</div></Link>
-              <Link to="/product/:id"><div className={location==="product" ?'listitem active':'listitem'}>Product</div></Link>
+              {/* <Link to="/product/:id"><div className={location==="product" ?'listitem active':'listitem'}>Product</div></Link> */}
               <Link to="/login"><div className={location==="login" ?'listitem active':'listitem'}>Login</div></Link>
               <Link to="/register"><div className={location==="register" ?'listitem active':'listitem'}>Register</div></Link>
             </div>

@@ -1,15 +1,25 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import './featured.scss'
 import ProductCard from '../products/productcard/ProductCard'
-import {products} from "../../data"
+import { fetchProductItems} from '../../redux/productSlice'
+import {useDispatch, useSelector } from 'react-redux'
 
 const Featured = () => {
+   const {products, loading} = useSelector(state => state.items)
+  console.log(products) 
+  
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchProductItems()) 
+  }, [dispatch])
+
   const [productItems, setProductItems] = useState(products)
+  console.log(productItems) 
  
   const tempCategory=new Set(products.map(product=>product.category))
   let categories = Array.from(tempCategory)
   categories = ["all", ...categories]
-
+  console.log(categories) 
 
   const handleProducts=(category)=>{
         let tempProducts = [...products]
@@ -28,6 +38,13 @@ const Featured = () => {
       if(tab === index ) return "active" ;
        return ""
   }
+  
+ if(loading){
+  return (
+    <div><h1>Loading products....</h1></div>
+  )
+ }
+ 
   return (
     <div className='featured'>
       <h1>Featured Product</h1>
@@ -38,15 +55,13 @@ const Featured = () => {
             <div className='alink' onClick={()=>{handleProducts(category)}}>{category} </div></li>
       )}         
         </ul>
-      </div>   
- 
-         <div className="product">
-       
-          <ProductCard productItems={productItems} />  
-        
+      </div>    
+      <div className="product">
+        {productItems.map((item) => {
+        return <ProductCard key={item.id} {...item} />;
+        })}        
       </div>  
-       
-     
+            
       {/* <div className="text">Viewing 1-10 of 230</div>
       <div className="plus"><i className="fa-solid fa-plus"></i></div> */}
          
