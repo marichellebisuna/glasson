@@ -1,29 +1,23 @@
 import React, {useEffect, useState} from 'react'
 import './featured.scss'
 import ProductCard from '../products/productcard/ProductCard'
-import { fetchProductItems} from '../../redux/productSlice'
+import { fetchProductItems, fetchSingleProduct} from '../../redux/productSlice'
 import {useDispatch, useSelector } from 'react-redux'
 
 const Featured = () => {
-   const {products, loading} = useSelector(state => state.items)
-  console.log(products) 
-  
+  const {products, loading} = useSelector(state => state.items)  
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchProductItems()) 
+    // dispatch(fetchSingleProduct())
   }, [dispatch])
-
-  const [productItems, setProductItems] = useState(products)
-  console.log(productItems) 
- 
+  const [productItems, setProductItems] = useState(products)  
   const tempCategory=new Set(products.map(product=>product.category))
   let categories = Array.from(tempCategory)
   categories = ["all", ...categories]
-  console.log(categories) 
-
+  
   const handleProducts=(category)=>{
-        let tempProducts = [...products]
-   
+      let tempProducts = [...products]   
        if(category==="all"){
            return setProductItems(tempProducts)        
        }
@@ -41,7 +35,7 @@ const Featured = () => {
   
  if(loading){
   return (
-    <div><h1>Loading products....</h1></div>
+    <div className='loading'><h1>Loading products....</h1></div>
   )
  }
  

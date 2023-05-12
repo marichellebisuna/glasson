@@ -1,4 +1,8 @@
 @import '../../global.scss';
+.loading{
+  width:90%;
+  margin: 0 auto
+}
 
 .product{
   display: flex;
@@ -8,8 +12,8 @@
   margin: 0 auto;
   gap:40px;
   .breadcrumbs{   
-  width: 100%;  
-  padding: 10px 90px;
+  width: 90%;  
+  padding: 10px 0px;
   position: sticky;
   top:115px;
   z-index: 1;

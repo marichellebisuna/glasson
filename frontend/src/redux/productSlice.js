@@ -1,10 +1,19 @@
 import { createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 
+
+
 export const fetchProductItems = createAsyncThunk("products/fetchProductItems",
   async () => {
+    let headers = new Headers();
+    // headers.append("Authorization", `Bearer ${token}`);
+    headers.append("Content-Type", "application/json");
     try {         
-        const response = await fetch('https://dummyjson.com/products');
-        const data = response.json();
+        const response = await fetch('https://dummyjson.com/products', {
+          method: "get",
+          headers,
+          redirect: "follow"
+        });
+        const data = await response.json();
         console.log(data)
         return data;        
     } catch (error) {
@@ -12,17 +21,34 @@ export const fetchProductItems = createAsyncThunk("products/fetchProductItems",
     }
   });
 
-  export const fetchSingleProductItem = createAsyncThunk("products/fetchSingleProductItem",
-  async ({id}) => {
-    try {         
-        const response = await fetch(`https://dummyjson.com/products/${id}`);
-        const data = response.json();
-        console.log(data)
-        return data;        
-    } catch (error) {
-      console.error(error);
-    }
+  export const fetchSingleProduct = createAsyncThunk("products/fetchSingleProduct",
+async ({id}) => {
+  let headers = new Headers();
+  // headers.append("Authorization", `Bearer ${token}`);
+  headers.append("Content-Type", "application/json");
+  try {         
+      const response = await fetch(`https://dummyjson.com/products/${id}`, {
+    method: "get",
+    headers,
+    redirect: "follow"
+    
   });
+  console.log(response)
+
+      const data = await response.json();
+      console.log(data)
+      return data;        
+  } catch (error) {
+    console.error(error);
+  }
+
+  // return await fetch(`https://dummyjson.com/products/${id}`, {
+  //   method: "get",
+  //   headers,
+  //   redirect: "follow",
+  // }).then((res)=>res.json());
+});
+
 const productSlice = createSlice({
   name: "products",
   initialState: {
@@ -39,11 +65,13 @@ const productSlice = createSlice({
     .addCase(fetchProductItems.pending, (state, action) => {      
     state.loading = true;      
     })
-     .addCase(fetchProductItems.fulfilled, (state, action)=> {           
+     .addCase(fetchProductItems.fulfilled, (state, action)=> {      
+      console.log(action.payload.products);     
       state.loading = false; 
       state.products = action.payload.products;
       state.success = true;     
-      console.log(action.payload);
+      console.log(state.products);     
+      
     })
     .addCase(fetchProductItems.rejected, (state, action) => {
       state.message = action.error.message;
@@ -51,16 +79,16 @@ const productSlice = createSlice({
       state.loading = false;
       state.success = false; 
     })
-    .addCase(fetchSingleProductItem.pending, (state, action) => {      
+    .addCase(fetchSingleProduct.pending, (state, action) => {      
       state.loading = true;      
     })
-      .addCase(fetchSingleProductItem.fulfilled, (state, action)=> {           
-      state.loading = false; 
-      state.product = action.payload;
-      state.success = true;     
-      console.log(action.payload);
+    .addCase(fetchSingleProduct.fulfilled, (state, action)=> {           
+    state.loading = false; 
+    state.product = action.payload;
+    state.success = true;     
+    console.log( state.product);
     })
-    .addCase(fetchSingleProductItem.rejected, (state, action) => {
+    .addCase(fetchSingleProduct.rejected, (state, action) => {
       state.message = action.error.message;
       state.hasError = true;
       state.loading = false;
@@ -68,5 +96,6 @@ const productSlice = createSlice({
     })
   }})
 
+  
 
 export default productSlice.reducer;

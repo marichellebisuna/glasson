@@ -1,24 +1,47 @@
 import { Link } from 'react-router-dom'
 import './product.scss'
-  import {produkt, produkts} from '../../data'
+  import {produkt} from '../../data'
 import { useEffect, useState } from 'react'
 import ProductCard from '../../components/products/productcard/ProductCard'
-
 import { useParams } from "react-router-dom"
-import productItems from '../../components/products/productcard/ProductCard'
 import { useDispatch, useSelector } from 'react-redux'
-import { fetchProductItems, fetchSingleProductItem} from '../../redux/productSlice'
+import { fetchProductItems, fetchSingleProduct, selectProduct, selectProducts} from '../../redux/productSlice'
 
 const Product = () => { 
   const {id} = useParams();
+  console.log({id})
+
+
   const {product, loading, products} = useSelector(state => (state.items)) 
-  const dispatch = useDispatch()
+     console.log({loading, products})
+
+     const [productItem, setProductItem] = useState(products)  
+  const dispatch = useDispatch() 
+ 
+
+  // useEffect(() => {   
+  //   dispatch(fetchProductItems())    
+  // }, [dispatch])
+
+ 
+
   useEffect(() => {
-    dispatch(fetchSingleProductItem({id})) 
-    dispatch(fetchProductItems()) 
-  }, [dispatch, id])
+    dispatch(fetchSingleProduct({id}))    
+  }, [dispatch, id]) 
+
+//  useEffect(() => {   
+//   if(products.length > 0) {
+//     setProductItem(product)  
+//   }
+//   else{
+//     setProductItem(null)
+//   }
+//   }, [product])
+ 
   const [ qty, setQty ] = useState(1)
   const [ filteredNewProducts, setFilteredNewProducts ] = useState([])
+
+
   const [ relatedProducts, setRelatedProducts ] = useState([]) 
   const [ newProducts, setNewProducts ] = useState([])
   const [ tab, setTab ] = useState("tab1")
@@ -35,6 +58,7 @@ const Product = () => {
 const filterProducts=products.filter((item)=>{
 return (
 item.category.includes(product.category)
+// item.category.includes(product.category) || item.brand.includes(product.brand)
 );
 });
 const newProduct=products.filter((item)=>{
@@ -60,23 +84,31 @@ useEffect(() => {
       else
       setQty(qty)
     }
-    if (!produkt) {
+    if (!productItem) {
       return "Sorry, no matching product found.";
     }
-   
+    if(loading){
+      return (
+        <div className="loading"><h1>Loading product....</h1></div>
+      )
+     }
+    
   return (    
     <div className='product'>      
     <div className="breadcrumbs">
       <div className="container">
-          <div className="left"><Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <Link to="/products">Shops </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
-            <Link to="/products?brand=Armani">{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
+          <div className="left"><Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> 
+          {/* <Link to={`/products/category=${product.category}/brand=${product.brand}`}> */}
+          <Link to="/products">            
+            Shops </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
+            <Link to={`/products/${product.category}/${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
       </div>    
     </div>
    
     <div className="top">
       <div className="left">
         <img src={product.images[index]} alt="" srcSet="" />          
-      </div>
+      </div> 
       <div className="middle">
         {product.images.map((image,id)=> <div key={id} className={id===active ?"image active":"image"} onClick={()=>setindex(id)}><img src={image} alt="" srcSet="" onClick={()=>setActive(id)}/></div>
         )}       
@@ -85,10 +117,10 @@ useEffect(() => {
       <div className="right">
         <div className="blue">
           <div className="crumbs">
-            <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <Link to="/products">Shops </Link>
+            <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <Link to={`/products/${product.category}/${product.brand}`}>Shops </Link>
             <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> 
             </span>
-            <Link to="/products?brand=Armani">{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> {product.title} 
+            <Link to={`/products?category=${product.category}/?brand=${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> {product.title} 
           </div>         
           <hr/>
           <div className="title"><h1>{product.title}</h1></div>
@@ -129,11 +161,11 @@ useEffect(() => {
             
           </div>
           <hr/>    
-          {/* <div className="text"><span>SKU:</span> {product.sku}</div>   */}
+          <div className="text"><span>SKU:</span> {product.sku}</div>  
           <div className="text"><span>Category:</span> {product.category}</div> 
-          {/* <div className="text tag"><span>Tags:</span>
+          <div className="text tag"><span>Tags:</span>
           {product.tags?.map((i, index)=>{
-          return <div key={index}>{(index?", ":"") + i}</div>  } )}</div> */}
+          return <div key={index}>{(index?", ":"") + i}</div>  } )}</div>
         </div> 
         <div className="orange">
           <div className="container">
@@ -312,7 +344,7 @@ useEffect(() => {
     <div className="related">
       <div className="titles">
         <div className="left">Related products</div>
-        <div className="right"><Link to={`/products?tag=${product.category}`}>view all products</Link></div>
+        <div className="right"><Link to={`/products?category=${product.category}`}>view all products</Link></div>
       </div>  
       <hr/>    
       <div className="card">
@@ -325,7 +357,7 @@ useEffect(() => {
     <div className="related">
     <div className="titles">
         <div className="left">New products</div>
-        <div className="right"><Link to={`/products?tag=${newProducts}`}>view all products</Link></div>
+        <div className="right"><Link to={`/products?new=${newProducts}`}>view all products</Link></div>
       </div>
       <hr/>
       <div className="card">

@@ -1,24 +1,42 @@
 import './products.scss'
 import lady from '../../assets/hero/lady.png'
-
-import { Link} from 'react-router-dom'
+import { Link, useLocation} from 'react-router-dom'
 import { useEffect, useState } from 'react'
-
-import {produkts} from '../../data'
-
 import {Pages, Sidebar, Singledeal, ProductCard, SideOption} from '../../components/'
+import { useDispatch, useSelector } from 'react-redux'
+import { fetchProductItems } from '../../redux/productSlice'
 
 const Products = () => {
   const [showSidebar, setShowSidebar] = useState(false) 
   const [active, setActive] = useState(false)
   const [activeTag, setActiveTag] = useState(false)
-
-
-
   const [sort, setSort] = useState(null)
-  const [productItems, setProductItems] = useState(produkts)
-  const tempBrand=new Set(produkts.map(product =>product.brand))
-  const brand = Array.from(tempBrand)
+
+  const {products, loading} = useSelector(state => state.items)  
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchProductItems()) 
+  }, [dispatch])
+
+  const location = useLocation();
+  
+ 
+// useEffect(() => {
+//   const cat = location.pathname.split("/")[2];
+// if (cat){
+//  return  `http://localhost:3000/products/${cat}`
+// }
+// else
+// {
+//   "http://localhost:3000/products/:category"
+// }
+ 
+// }, [])
+
+
+
+  // const tempBrand=new Set(products.map(product =>product.brand))
+  // const brand = Array.from(tempBrand)
 
   const isActive = () => {
     window.scrollY > 520 ? setActive(window.scrollY <2800 && true) : setActive(false)
@@ -26,7 +44,6 @@ const Products = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", isActive);
-
     return () => {
       window.removeEventListener("scroll", isActive);
     }
@@ -38,7 +55,6 @@ const Products = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", isTag);
-
     return () => {
       window.removeEventListener("scroll", isTag);
     }
@@ -81,19 +97,21 @@ const Products = () => {
             <div className={activeTag? "tags":"tags hide"}>
               <div className="title">Tags</div>
               <div className="tag-item">
-                {brand?.map((b, i)=>
-                
+                {/* {brand?.map((b, i)=>                
                 <div className="tag" key={i}><Link to={`/products?brand=${b}`}>{b}</Link></div>
-                
-                )} 
+                )}  */}
+                <div className="tag" ><Link to={`/products?brand=${products.brand}`}>{products.brand}</Link></div>
               </div>
                         
             </div>
           </div>       
-          <div className="right">     
-            <div className="card">
-              <ProductCard productItems={produkts} /> 
-            </div>
+          <div className="right">   
+          {loading ?  <div className='loading'><h1>Loading products....</h1></div>:<div className="card">
+           {products.map((item) => {
+        return <ProductCard key={item.id} {...item} />;
+        })}    
+            </div> }  
+            
                     
              <div className="page-number-top">        
                 <Pages/>

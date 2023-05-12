@@ -5,7 +5,7 @@ import { useDispatch} from "react-redux";
 import {addToCart} from '../../../redux/cartSlice';
 
 const ProductCard = ({id, price, images, title, discountPercentage}) => {
-   
+
 //  const filteredProducts=items.filter((item)=>{
 //   return (
 //     category==="men's clothing" || category==="women's clothing"
@@ -13,11 +13,12 @@ const ProductCard = ({id, price, images, title, discountPercentage}) => {
 // });
 
 
+
   const dispatch = useDispatch();
 
   return (
     <div className="product-card">      
-      <div className='product' key={id}>
+      <div className='product' >
         <div className="top-img">
           <Link to={`/product/${id}`}>
           <img src={images[0]} alt="" srcSet="" />
