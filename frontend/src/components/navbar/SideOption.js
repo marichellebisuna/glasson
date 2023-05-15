@@ -82,7 +82,7 @@ const handleChange = (e) =>{
           </div>
         </div>
       </div> 
-      <div className="options">        
+      {/* <div className="options">        
         <div className="title" onClick={()=>setShowShape(!showShape)}>
           Shape 
           <div className="icons" onClick={()=>setShowShape(!showShape)}>
@@ -97,7 +97,7 @@ const handleChange = (e) =>{
         </div>
         )}
         </div>
-      </div>
+      </div> */}
       <div className="options">
         <div className="title" onClick={()=>setShowBrand(!showBrand)}>
           brand 

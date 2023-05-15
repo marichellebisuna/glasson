@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import './product.scss'
   import {produkt} from '../../data'
 import { useEffect, useState } from 'react'
@@ -16,6 +16,9 @@ const Product = () => {
      console.log({loading, products})
 
      const [productItem, setProductItem] = useState(products)  
+     const [qcategory, setQcategory] = useState()  
+     const [qbrand, setQbrand] = useState()  
+
   const dispatch = useDispatch() 
  
 
@@ -23,7 +26,7 @@ const Product = () => {
   //   dispatch(fetchProductItems())    
   // }, [dispatch])
 
- 
+
 
   useEffect(() => {
     dispatch(fetchSingleProduct({id}))    
@@ -71,7 +74,7 @@ useEffect(() => {
   //setFilteredNewProducts(products.sort((a, b)=>b.createdAt-(a.createdAt))) 
   setNewProducts(newProduct.slice(0,5)) 
   setRelatedProducts(filterProducts.slice(0,5)) 
- }, [newProduct, filterProducts]) 
+ }, []) 
 
  const handleIncrease = (i) =>{  
   setQty(qty + 1)
@@ -98,10 +101,10 @@ useEffect(() => {
     <div className="breadcrumbs">
       <div className="container">
           <div className="left"><Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> 
-          {/* <Link to={`/products/category=${product.category}/brand=${product.brand}`}> */}
-          <Link to="/products">            
+          <Link to={`/products/category=${product.category}/brand=${product.brand}`}>
+          {/* <Link to={`/products/${product.category}/${product.brand}`}>             */}
             Shops </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
-            <Link to={`/products/${product.category}/${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
+            <Link to={`/products/category=${product.category}/brand=${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
       </div>    
     </div>
    
@@ -117,10 +120,10 @@ useEffect(() => {
       <div className="right">
         <div className="blue">
           <div className="crumbs">
-            <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <Link to={`/products/${product.category}/${product.brand}`}>Shops </Link>
+            <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> <Link to={`/products/category=${product.category}/brand=${product.brand}`}>Shops </Link>
             <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> 
             </span>
-            <Link to={`/products?category=${product.category}/?brand=${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> {product.title} 
+            <Link to={`/products/category=${product.category}/brand=${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span> {product.title} 
           </div>         
           <hr/>
           <div className="title"><h1>{product.title}</h1></div>

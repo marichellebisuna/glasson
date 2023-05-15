@@ -11,6 +11,9 @@ const Featured = () => {
     dispatch(fetchProductItems()) 
     // dispatch(fetchSingleProduct())
   }, [dispatch])
+  // useEffect(() => {
+  //   setProductItems(products)
+  // }, [products])
   const [productItems, setProductItems] = useState(products)  
   const tempCategory=new Set(products.map(product=>product.category))
   let categories = Array.from(tempCategory)

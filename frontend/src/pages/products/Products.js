@@ -18,9 +18,6 @@ const Products = () => {
     dispatch(fetchProductItems()) 
   }, [dispatch])
 
-  const location = useLocation();
-  
- 
 // useEffect(() => {
 //   const cat = location.pathname.split("/")[2];
 // if (cat){
@@ -60,6 +57,35 @@ const Products = () => {
     }
   }, [])   
   
+ const location = useLocation();
+ const brand = location.pathname.split("=")[2];
+const category = location.pathname.split("/")[2];
+const category2 = category.split("=")[1];
+
+  const [ newProducts, setNewProducts ] = useState([])
+ 
+   
+ 
+  console.log(products.brand)
+
+    useEffect(() => {
+      //setFilteredNewProducts(products.sort((a, b)=>b.createdAt-(a.createdAt))) 
+      setNewProducts(products.filter((item)=>{          
+        return (
+           item.brand===brand
+          );
+        }))       
+     }, []) 
+console.log(newProducts)
+
+ const filteredProduct=products.filter((item)=>{          
+    return (
+       item.brand==={brand}
+      );
+    });
+ console.log(filteredProduct)
+
+
   return (
     <div className="products">
       <div className="hero-img">
@@ -68,9 +94,13 @@ const Products = () => {
       <div className="breadcrumbs">
         <div className="container">
             <div className="left">
-              <Link to="/">Home </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
-            
+              <Link to="/">Home </Link>
+              <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i></span>            
               <span style={{ color:"gray"}}> Shop All Products </span>
+              <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i></span> 
+              <span style={{ color:"gray"}}> {category2} </span>
+              <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i></span> 
+              <span style={{ color:"gray"}}> {brand} </span>
             </div>
             <div className="middle" onClick={()=>setShowSidebar(!showSidebar)}><i className="fa-solid fa-sliders"></i></div>
             <div className="right">
@@ -107,7 +137,10 @@ const Products = () => {
           </div>       
           <div className="right">   
           {loading ?  <div className='loading'><h1>Loading products....</h1></div>:<div className="card">
-           {products.map((item) => {
+           {/* {products.map((item) => { */}
+
+           {newProducts.map((item) => {
+
         return <ProductCard key={item.id} {...item} />;
         })}    
             </div> }  
