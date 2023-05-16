@@ -47,6 +47,7 @@
     top:115px;
     z-index: 1;
     background-color: white;
+        
     @include desktops{       
        padding:20px 50px ;     
     }
@@ -114,27 +115,37 @@
         .sort{
           position: relative; 
           padding-right: 7px;  
-                        
+          display:flex;
+          align-items: center;  
+          justify-content: center;            
           select {         
             border: none !important;  
-            outline: none;         
+            outline: none !important;         
             scroll-behavior: smooth;   
             text-transform: uppercase;      
             cursor: pointer; 
             z-index: 1; 
             font-weight: 700; 
             letter-spacing: 1.1px;   
-              color:gray;               
+              color:gray;  
+              border-color: gray !important;             
           } 
-            .button{
+            .button{            
             position: absolute;
             top:3px;
-            right:-5px;
-            background-color: white;
+            right:3px;
+            background-color: white; 
             padding-right:10px;
             margin-right:5px;
             pointer-events: none;
             font-size: 12px;
+            width:17px;
+            height:15px;
+            color:grey;
+            outline: none;  
+            &:hover{
+              color:black;
+            } 
             } 
         }
       }
@@ -145,7 +156,7 @@
     display: flex;  
     justify-content: center;   
     width:90vw;
-   // width:100%;
+   
 
     margin: 10px auto;   
     gap:10px;
@@ -171,13 +182,20 @@
       display: none;
       }
       .tags{
-        display: fixed;
-        top:-800px;
-        left:50px;
-        z-index: 9999999999;
-        &.hide{
-          display:none
+        position: absolute;
+        top:1100px;
+        left:0px;
+        
+       
+        &.active{          
+          position: fixed;
+          top:1000px;
+          left:90px;
+    
+
         }
+          
+ 
         @include mobile{
           display: none;
         }
@@ -187,7 +205,7 @@
         justify-content: space-between;
         font-size: 1.2rem;
         text-transform: capitalize;
-        padding: 30px 0;
+        padding: 20px 0 10px 0;
         }
         .tag-item{
           display: flex;
@@ -198,7 +216,7 @@
             width:max-content;
             border: solid gray 1px ;
             padding: 10px 20px;
-            margin: 8px 0;
+            //margin: 8px 0;
             text-transform: uppercase;  
             font-size: .90rem;  
             color:gray; 
@@ -233,6 +251,7 @@
         justify-content: center;
         flex-wrap: wrap;
         gap:20px;
+        padding-bottom: 50px;
       }
       .page-number-top{    
         width: 320px;        

@@ -5,14 +5,15 @@
   padding: 20px; 
   margin-right: 10px;
   width:330px;
-  height:95vh;
-  flex:1;
-  overflow-y: scroll;
-  
+  //height:1000px;            
+
+  flex:1; 
+  text-transform: capitalize;
+
   &.active{
     position: fixed;
      top:10px; 
-     width:330px;              
+           
   }
   @include mobile{       
     display: none;  
@@ -52,7 +53,7 @@
       padding-left: 20px; 
       width:200px;    
       transition: all 1s ease-out;       
-      height: 170px; 
+      height: 140px; 
       cursor: pointer;      
       overflow: hidden;
       transition: all 1s ease; 
@@ -84,7 +85,7 @@
       padding-left: 20px; 
       width:200px;    
       transition: all 1s ease-out;       
-      height: 130px; 
+      height: 670px; 
       cursor: pointer;      
       overflow: hidden;
       transition: all 1s ease; 
@@ -176,4 +177,5 @@
       }      
     }
   }
+  
 }

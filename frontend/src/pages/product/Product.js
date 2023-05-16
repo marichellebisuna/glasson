@@ -104,7 +104,7 @@ useEffect(() => {
           <Link to={`/products/category=${product.category}/brand=${product.brand}`}>
           {/* <Link to={`/products/${product.category}/${product.brand}`}>             */}
             Shops </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
-            <Link to={`/products/category=${product.category}/brand=${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
+            <Link to={`/products/category=${product.category}/brand=${product.brand.trim()}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
       </div>    
     </div>
    
