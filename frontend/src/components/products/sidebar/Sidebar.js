@@ -5,14 +5,15 @@ import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductItems } from '../../../redux/productSlice'
 
-const Sidebar = ({active}) => {
+const Sidebar = ({active, setTags, tags, handleTags, filterProducts}) => {
 const [maxPrice, setMaxPrice] = useState(2000)
-const [selectedSub, setSelectedSub] = useState([])
+const [showTagged, setShowTagged] = useState()
+
 const [showCategory, setShowCategory] = useState(true)
-const [showBrand, setShowBrand] = useState(true)
-const [activeTag, setActiveTag] = useState(false)
-const [showColor, setShowColor] = useState(true)
-const [showSize, setShowSize] = useState(true)
+const [showBrand, setShowBrand] = useState(false)
+// const [activeTag, setActiveTag] = useState(false)
+// const [showColor, setShowColor] = useState(true)
+// const [showSize, setShowSize] = useState(true)
 
 const {products, loading} = useSelector(state => state.items)  
 const dispatch = useDispatch()
@@ -24,32 +25,38 @@ const location = useLocation();
 const brandUrl = (location.pathname.split("=")[2]);
 const category = location.pathname.split("/")[2];
 const category2 = category.split("=")[1];
-const tags=[brandUrl ,category2]
-
+// setTags(brandUrl ,category2)
+// tags=[brandUrl ,category2]
+useEffect(() => {
+  setTags([brandUrl ,category2])
+}, [])
 const tempCategory=new Set(products.map(product =>product.category))
 const categories = Array.from(tempCategory)
 
 const tempBrand=new Set(products.map(product =>product.brand))
 const brand = Array.from(tempBrand)
-console.log(brand)
-const tempSize=new Set(products.map(product =>product.size))
-const size = Array.from(tempSize)
 
-const tempcolor=new Set(products.map(product =>product.color))
-const color = Array.from(tempcolor)
+// const tempSize=new Set(products.map(product =>product.size))
+// const size = Array.from(tempSize)
 
-const handleChange = (e) =>{
-  const value = e.target.value
-  const isChecked = e.target.checked
+// const tempcolor=new Set(products.map(product =>product.color))
+// const color = Array.from(tempcolor)
 
-  setSelectedSub(
-    isChecked 
-    ? [...selectedSub, value] 
-    : selectedSub.filter(item=>item !==value)
-  )}
- 
+const [selectedSub, setSelectedSub] = useState([])
+const [checked, setChecked] = useState([])
+
+// const handleChange = (e) =>{
+//   const value = e.target.value
+//   const isChecked = e.target.checked
+//   setSelectedSub(
+//     isChecked 
+//     ? [...selectedSub, value] 
+//     : selectedSub.filter(item=>item !==value)
+//   )} 
+
+
   return (
-    <div className={active ?'sidebar active' :"sidebar"}>
+   <div className={active ?'sidebar active' :"sidebar"}>
       <div className="options">        
         <div className="title" onClick={()=>setShowCategory(!showCategory)}>
           Categories 
@@ -58,12 +65,13 @@ const handleChange = (e) =>{
           </div>
         </div>
         <div className={showCategory?"option":"option hide"}>
-          {categories?.map((shape, i)=>
+          {categories?.map((category, i)=>
             <div className="inputItem" key={i}>
-            <input type="checkbox" name="shape" id={shape} value={shape} onChange={handleChange} />
-          <label htmlFor='rectangle'>{shape}</label>
+            <input type="checkbox" name="shape" id={category} value={category} onChange={e=>filterProducts(e.target.value)} />
+          <label htmlFor='rectangle'>{category}</label>
       </div>
         )}
+       
         </div>
       </div>
       <div className="options">
@@ -76,7 +84,13 @@ const handleChange = (e) =>{
         <div className={showBrand?"brand-option":"brand-option hide"}>
         {brand?.map((b, i)=>
           <div className="inputItem" key={i}>
-          <input type="checkbox" name="brand" id={b} value={b} onChange={handleChange}/>
+          <input type="checkbox" name="brand" id={b} value={b} onChange={e=>filterProducts(e.target.value)}/>
+          <label htmlFor='rectangle'>{b}</label>
+        </div>
+         )}
+          {brand?.map((b, i)=>
+          <div className="inputItem" key={i}>
+          <input type="checkbox" name="brand" id={b} value={b} onChange={e=>filterProducts(e.target.value)}/>
           <label htmlFor='rectangle'>{b}</label>
         </div>
          )}
@@ -116,7 +130,7 @@ const handleChange = (e) =>{
       </div> */}
       <div className="options">
         <div className="title">Price</div>
-        <div className="option">
+        <div className="option-price">
           <span>0</span>
           <input type="range" name="price" id="price" min={0} max={2000} 
           onChange={(e)=>setMaxPrice(e.target.value)}          
@@ -136,11 +150,11 @@ const handleChange = (e) =>{
             </div>
                       
           </div> */}
-       <div className={active? "tags active ":"tags "}>
+       <div className="tags">
           <div className="title">Tags</div>
           <div className="tag-item">            
               {tags.map((tag)=> 
-                <div className="tag" key={tag.id}><Link to={`/products?brand=${tag}`}>{tag}</Link></div>
+                <div className="tag" key={tag.id} >{tag}</div>
               )}             
           </div>                        
         </div>

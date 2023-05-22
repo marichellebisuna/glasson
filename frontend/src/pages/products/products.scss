@@ -181,54 +181,54 @@
       @include mobile{       
       display: none;
       }
-      .tags{
-        position: absolute;
-        top:1100px;
-        left:0px;
+      // .tags{
+      //   position: absolute;
+      //   top:1100px;
+      //   left:0px;
         
        
-        &.active{          
-          position: fixed;
-          top:1000px;
-          left:90px;
+      //   &.active{          
+      //     position: fixed;
+      //     top:1000px;
+      //     left:90px;
     
 
-        }
+      //   }
           
  
-        @include mobile{
-          display: none;
-        }
-        .title{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        font-size: 1.2rem;
-        text-transform: capitalize;
-        padding: 20px 0 10px 0;
-        }
-        .tag-item{
-          display: flex;
-          flex-direction: row; 
-          flex-wrap: wrap;
-          gap:10px;
-          .tag{
-            width:max-content;
-            border: solid gray 1px ;
-            padding: 10px 20px;
-            //margin: 8px 0;
-            text-transform: uppercase;  
-            font-size: .90rem;  
-            color:gray; 
-            cursor: pointer; 
-            &:hover{
-              color:black;
-              border-color: black;
-            }    
-          }
+      //   @include mobile{
+      //     display: none;
+      //   }
+      //   .title{
+      //   display: flex;
+      //   align-items: center;
+      //   justify-content: space-between;
+      //   font-size: 1.2rem;
+      //   text-transform: capitalize;
+      //   padding: 20px 0 10px 0;
+      //   }
+      //   .tag-item{
+      //     display: flex;
+      //     flex-direction: row; 
+      //     flex-wrap: wrap;
+      //     gap:10px;
+      //     .tag{
+      //       width:max-content;
+      //       border: solid gray 1px ;
+      //       padding: 10px 20px;
+      //       //margin: 8px 0;
+      //       text-transform: uppercase;  
+      //       font-size: .90rem;  
+      //       color:gray; 
+      //       cursor: pointer; 
+      //       &:hover{
+      //         color:black;
+      //         border-color: black;
+      //       }    
+      //     }
          
-        }
-      }      
+      //   }
+      // }      
     }
     .right{   
       //width:100%;         

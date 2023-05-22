@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react'
 import {Pages, Sidebar, Singledeal, ProductCard, SideOption} from '../../components/'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductItems } from '../../redux/productSlice'
-import slugify from 'slugify'
 
 const Products = () => {
   const [showSidebar, setShowSidebar] = useState(false) 
@@ -14,27 +13,12 @@ const Products = () => {
   const [sort, setSort] = useState(null)
 
   const {products, loading} = useSelector(state => state.items)  
+
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchProductItems()) 
   }, [dispatch])
 
-// useEffect(() => {
-//   const cat = location.pathname.split("/")[2];
-// if (cat){
-//  return  `http://localhost:3000/products/${cat}`
-// }
-// else
-// {
-//   "http://localhost:3000/products/:category"
-// }
- 
-// }, [])
-
-
-
-  // const tempBrand=new Set(products.map(product =>product.brand))
-  // const brand = Array.from(tempBrand)
 
   const isActive = () => {
     window.scrollY > 520 ? setActive(window.scrollY <2800 && true) : setActive(false)
@@ -52,7 +36,7 @@ const Products = () => {
 const category = location.pathname.split("/")[2];
 const category2 = category.split("=")[1];
 const [ newProducts, setNewProducts ] = useState([])
-const tags=[brand ,category2]
+
 
 useEffect(() => {
   //setFilteredNewProducts(products.sort((a, b)=>b.createdAt-(a.createdAt))) 
@@ -60,11 +44,24 @@ useEffect(() => {
     return (
         item.brand===(brand.replace("%20", " "))
       );
-    }))       
+    }))     
+      
   }, []) 
-console.log(newProducts)
 
 
+const [tags, setTags] = useState(["Apple", "smartphone"]);
+const [toCheck, setToCheck] = useState({});
+
+
+const filterProducts = (value) =>{
+  const isChecked = value
+  console.log(isChecked)
+  setToCheck((prev) => {
+    setNewProducts(products)
+    setTags(toCheck?[...tags, value]:tags.filter((item)=>item !==value)) 
+    return { ...prev, [value]: !!!prev[value] };    
+  });
+}
 
 
   return (
@@ -78,10 +75,10 @@ console.log(newProducts)
               <Link to="/">Home </Link>
               <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i></span>            
               <span style={{ color:"gray"}}> Shop All Products </span>
-              <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i></span> 
+              {/* <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i></span> 
               <span style={{ color:"gray"}}> {category2} </span>
               <span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i></span> 
-              <span style={{ color:"gray"}}> {brand.replace("%20", " ")} </span>
+              <span style={{ color:"gray"}}> {brand.replace("%20", " ")} </span> */}
             </div>
             <div className="middle" onClick={()=>setShowSidebar(!showSidebar)}><i className="fa-solid fa-sliders"></i></div>
             <div className="right">
@@ -104,24 +101,24 @@ console.log(newProducts)
       </div>
       <div className="contents">
           <div className="left">
-            <Sidebar active={active}/>
-            <div className={active? "tags active ":"tags "}>
+            <Sidebar active={active} filterProducts={filterProducts} setTags={setTags} tags={tags} />
+            {/* <div className={active? "tags active ":"tags "}>
               <div className="title">Tags</div>
-              {/* <div className="tag-item">            
+              <div className="tag-item">            
                   {tags.map((tag)=> 
                     <div className="tag" key={tag.id}><Link to={`/products?brand=${tag}`}>{tag}</Link></div>
                   )}             
-              </div>                         */}
-            </div>
+              </div>                        
+            </div> */}
           </div>       
           <div className="right">   
-          {loading ?  <div className='loading'><h1>Loading products....</h1></div>:<div className="card">
-           {/* {products.map((item) => { */}
+          {loading ?  <div className='loading'><h1>Loading products....</h1></div>:<div className="card">          
 
-           {newProducts.map((item) => {
-
-        return <ProductCard key={item.id} {...item} />;
-        })}    
+           {newProducts.filter((prod) =>
+            Object.keys(toCheck).length === 0 ? true : !!toCheck[prod.category]|| !!toCheck[prod.brand]
+          ).map((item) => {
+            return <ProductCard key={item.id} {...item} />;
+            })}    
             </div> }  
             
              {newProducts.length >3 &&

@@ -8,26 +8,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductItems, fetchSingleProduct, selectProduct, selectProducts} from '../../redux/productSlice'
 
 const Product = () => { 
-  const {id} = useParams();
-  console.log({id})
-
-
+  const id = parseInt(useParams().id);
   const {product, loading, products} = useSelector(state => (state.items)) 
-     console.log({loading, products})
-
-     const [productItem, setProductItem] = useState(products)  
-     const [qcategory, setQcategory] = useState()  
-     const [qbrand, setQbrand] = useState()  
-
+  const [productItem, setProductItem] = useState(products)   
   const dispatch = useDispatch() 
  
-
-  // useEffect(() => {   
-  //   dispatch(fetchProductItems())    
-  // }, [dispatch])
-
-
-
   useEffect(() => {
     dispatch(fetchSingleProduct({id}))    
   }, [dispatch, id]) 
@@ -42,8 +27,6 @@ const Product = () => {
 //   }, [product])
  
   const [ qty, setQty ] = useState(1)
-  const [ filteredNewProducts, setFilteredNewProducts ] = useState([])
-
 
   const [ relatedProducts, setRelatedProducts ] = useState([]) 
   const [ newProducts, setNewProducts ] = useState([])
@@ -61,7 +44,6 @@ const Product = () => {
 const filterProducts=products.filter((item)=>{
 return (
 item.category.includes(product.category)
-// item.category.includes(product.category) || item.brand.includes(product.brand)
 );
 });
 const newProduct=products.filter((item)=>{
@@ -104,18 +86,18 @@ useEffect(() => {
           <Link to={`/products/category=${product.category}/brand=${product.brand}`}>
           {/* <Link to={`/products/${product.category}/${product.brand}`}>             */}
             Shops </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span>
-            <Link to={`/products/category=${product.category}/brand=${product.brand.trim()}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
+            <Link to={`/products/category=${product.category}/brand=${product.brand}`}>{product.brand} </Link><span style={{padding:"0 20px", color:"gray", fontSize:"12px"}}> <i className="fa-solid fa-chevron-right"></i> </span><span style={{ color:"gray"}}> {product.title} </span></div>          
       </div>    
     </div>
    
     <div className="top">
-      <div className="left">
+      {/* <div className="left">
         <img src={product.images[index]} alt="" srcSet="" />          
       </div> 
       <div className="middle">
         {product.images.map((image,id)=> <div key={id} className={id===active ?"image active":"image"} onClick={()=>setindex(id)}><img src={image} alt="" srcSet="" onClick={()=>setActive(id)}/></div>
         )}       
-      </div>
+      </div> */}
 
       <div className="right">
         <div className="blue">
@@ -164,11 +146,12 @@ useEffect(() => {
             
           </div>
           <hr/>    
-          <div className="text"><span>SKU:</span> {product.sku}</div>  
+        
           <div className="text"><span>Category:</span> {product.category}</div> 
-          <div className="text tag"><span>Tags:</span>
-          {product.tags?.map((i, index)=>{
-          return <div key={index}>{(index?", ":"") + i}</div>  } )}</div>
+          <div className="text tag"><span>Tags:</span> {product.category}, {product.brand}
+          {/* {product.tags?.map((i, index)=>{
+          return <div key={index}>{(index?", ":"") + i}</div>  } )} */}
+          </div>
         </div> 
         <div className="orange">
           <div className="container">

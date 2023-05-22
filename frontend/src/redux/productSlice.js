@@ -13,8 +13,7 @@ export const fetchProductItems = createAsyncThunk("products/fetchProductItems",
           headers,
           redirect: "follow"
         });
-        const data = await response.json();
-        console.log(data)
+        const data = await response.json();      
         return data;        
     } catch (error) {
       console.error(error);
@@ -65,12 +64,11 @@ const productSlice = createSlice({
     .addCase(fetchProductItems.pending, (state, action) => {      
     state.loading = true;      
     })
-     .addCase(fetchProductItems.fulfilled, (state, action)=> {      
-      console.log(action.payload.products);     
+     .addCase(fetchProductItems.fulfilled, (state, action)=> {              
       state.loading = false; 
       state.products = action.payload.products;
       state.success = true;     
-      console.log(state.products);     
+    
       
     })
     .addCase(fetchProductItems.rejected, (state, action) => {
