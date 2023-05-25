@@ -10,10 +10,14 @@ const Products = () => {
   const [showSidebar, setShowSidebar] = useState(false) 
   const [active, setActive] = useState(false)
   const [activeTag, setActiveTag] = useState(false)
-  const [sort, setSort] = useState(null)
+  const [sort, setSort] = useState("az")
+  const [value, setValue] = useState([0, 2000])
+
 
   const {products, loading} = useSelector(state => state.items)  
+  const [ newProducts, setNewProducts ] = useState(products)    
 
+console.log(newProducts)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchProductItems()) 
@@ -32,38 +36,83 @@ const Products = () => {
   }, [])    
   
  const location = useLocation();
- const brand = (location.pathname.split("=")[2]);
+ const brand = (location.pathname.split("=")[2]).replaceAll("%20", " ");
 const category = location.pathname.split("/")[2];
 const category2 = category.split("=")[1];
-const [ newProducts, setNewProducts ] = useState([])
 
+console.log(brand)
 
 useEffect(() => {
-  //setFilteredNewProducts(products.sort((a, b)=>b.createdAt-(a.createdAt))) 
+  
   setNewProducts(products.filter((item)=>{          
     return (
-        item.brand===(brand.replace("%20", " "))
+        item.brand===(brand.replace("%20", " ")) ||  item.category===(category)
       );
     }))     
-      
+   
   }, []) 
 
-
-const [tags, setTags] = useState(["Apple", "smartphone"]);
-const [toCheck, setToCheck] = useState({});
+ 
 
 
-const filterProducts = (value) =>{
-  const isChecked = value
-  console.log(isChecked)
-  setToCheck((prev) => {
-    setNewProducts(products)
-    setTags(toCheck?[...tags, value]:tags.filter((item)=>item !==value)) 
-    return { ...prev, [value]: !!!prev[value] };    
-  });
-}
+let [categoryFilters, setcategoryFilters] = useState(new Set());
 
+  function updateFilters(checked, categoryFilter) {
+    if (checked){
+      setcategoryFilters((prev) => new Set(prev).add(categoryFilter));      
+    }
+      
+    if (!checked){
+      setcategoryFilters((prev) => {
+        const next = new Set(prev);
+        next.delete(categoryFilter);
+        return next;
+      });     
+    }
+  }
+  const min = value[0];
+  const max = value[1];
+ 
 
+      useEffect(() => {
+        const filteredProducts =
+        categoryFilters.size === 0
+          ? newProducts        
+          : products.filter((p) => categoryFilters.has(p.category) || categoryFilters.has(p.brand) && (p.price >= min && p.price <= max) )
+
+        setNewProducts(filteredProducts)
+      }, [categoryFilters])
+      //console.log(filteredProducts)
+  useEffect(() => {
+    if (sort === "az") {
+      return setNewProducts((prev) =>
+        [...prev].sort((a, b) => a.title.localeCompare(b.title))
+      );
+      
+    } 
+    else if (sort === "za") {
+      return setNewProducts((prev) =>
+        [...prev].sort((a, b) => b.title.localeCompare(a.title))
+      );
+    } 
+    else if (sort === "low") {
+      return setNewProducts((prev) =>
+        [...prev].sort((a, b) => a.price - b.price)
+      );
+    } else {
+      return setNewProducts((prev) =>
+        [...prev].sort((a, b) => b.price - a.price)
+      );
+    }
+  }, [sort]);
+console.log(sort)
+    // useEffect(() => {
+    //   setNewProducts((prev) =>
+    //     [...prev].filter(p=>p.price >= minPrice && p.price <= maxPrice)
+    // ); 
+      
+    // }, [maxPrice, minPrice]);
+    
   return (
     <div className="products">
       <div className="hero-img">
@@ -84,15 +133,15 @@ const filterProducts = (value) =>{
             <div className="right">
               <span style={{ color:"gray", paddingRight:"20px"}}> Showing 1-24 of 107 results </span> 
               <div className="sort">                     
-                <select name="" id="">            
+                <select onChange={(e) => setSort(e.target.value)}>            
                   <option value="" className="active">SORT BY</option>                  
-                  <option value="best" onChange={(e)=>setSort("best")}style={{ color:"orange"}}>Best Selling</option>
-                  <option value="az" onChange={(e)=>setSort("az")}>Alphabetically, A-Z</option>
-                  <option value="za" onChange={(e)=>setSort("za")}>Alphabetically, Z-A</option>
-                  <option value="low" onChange={(e)=>setSort("low")}>Price, low to high</option>
-                  <option value="high" onChange={(e)=>setSort("high")}>Price, high to low</option>
-                  <option value="new" onChange={(e)=>setSort("new")}>Date, new to old</option>
-                  <option value="old" onChange={(e)=>setSort("old")}>Date, old to new</option>                
+                  {/* <option value="best" style={{ color:"orange"}}>Best Selling</option> */}
+                  <option value="az" >Alphabetically, A-Z</option>
+                  <option value="za" >Alphabetically, Z-A</option>
+                  <option value="low" >Price, low to high</option>
+                  <option value="high" >Price, high to low</option>
+                  {/* <option value="new" >Date, new to old</option>
+                  <option value="old" >Date, old to new</option>                 */}
                 </select>    
                 <div className="button"><i className="fa-solid fa-angle-down"></i></div> 
               </div>
@@ -101,27 +150,24 @@ const filterProducts = (value) =>{
       </div>
       <div className="contents">
           <div className="left">
-            <Sidebar active={active} filterProducts={filterProducts} setTags={setTags} tags={tags} />
-            {/* <div className={active? "tags active ":"tags "}>
-              <div className="title">Tags</div>
-              <div className="tag-item">            
-                  {tags.map((tag)=> 
-                    <div className="tag" key={tag.id}><Link to={`/products?brand=${tag}`}>{tag}</Link></div>
-                  )}             
-              </div>                        
-            </div> */}
+          
+            <Sidebar active={active} updateFilters={updateFilters} filteredProducts={newProducts} value={value} setValue={setValue} brandItem={brand} categoryItem={category}/>
+           
           </div>       
           <div className="right">   
           {loading ?  <div className='loading'><h1>Loading products....</h1></div>:<div className="card">          
 
-           {newProducts.filter((prod) =>
-            Object.keys(toCheck).length === 0 ? true : !!toCheck[prod.category]|| !!toCheck[prod.brand]
-          ).map((item) => {
+         
+
+            {newProducts.map((item) => {
             return <ProductCard key={item.id} {...item} />;
-            })}    
+            })}  
+             
+            
+
             </div> }  
             
-             {newProducts.length >3 &&
+             {newProducts.length >8 &&
              <div className="page-number-top">        
                 <Pages/>
             </div> 
@@ -138,7 +184,7 @@ const filterProducts = (value) =>{
             </div>                    
           </div>
       </div> 
-      {newProducts.length >3 &&
+      {newProducts.length >8 &&
       <div className="page-number-bottom">             
           <Pages/>
         </div>  

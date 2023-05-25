@@ -4,9 +4,26 @@ import {useEffect, useState} from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductItems } from '../../../redux/productSlice'
+import Slider from '@mui/material/Slider';
+import { makeStyles } from '@mui/styles';
 
-const Sidebar = ({active, setTags, tags, handleTags, filterProducts}) => {
-const [maxPrice, setMaxPrice] = useState(2000)
+
+
+const Sidebar = ({active, updateFilters, filteredProducts, value, setValue}) => {
+const useStyles = makeStyles({
+  root: {
+    width: '80%',
+  },
+  thumb: {
+    color: '#000',
+  },
+  rail: {
+    color: `rgba(0, 0, 0, 0.26)`,
+  },
+  track: {
+    color: '#000',
+  },
+});
 const [showTagged, setShowTagged] = useState()
 
 const [showCategory, setShowCategory] = useState(true)
@@ -25,11 +42,7 @@ const location = useLocation();
 const brandUrl = (location.pathname.split("=")[2]);
 const category = location.pathname.split("/")[2];
 const category2 = category.split("=")[1];
-// setTags(brandUrl ,category2)
-// tags=[brandUrl ,category2]
-useEffect(() => {
-  setTags([brandUrl ,category2])
-}, [])
+
 const tempCategory=new Set(products.map(product =>product.category))
 const categories = Array.from(tempCategory)
 
@@ -54,7 +67,15 @@ const [checked, setChecked] = useState([])
 //     : selectedSub.filter(item=>item !==value)
 //   )} 
 
+const tempTags=new Set(filteredProducts.map(product=>product.category ))
+const tags = Array.from(tempTags)
+const tempBrands=new Set(filteredProducts.map(product=> product.brand))
+const brands = Array.from(tempBrands)
 
+const classes = useStyles();
+const handleChange = (event, newValue) => {
+  setValue(newValue);
+};
   return (
    <div className={active ?'sidebar active' :"sidebar"}>
       <div className="options">        
@@ -65,15 +86,18 @@ const [checked, setChecked] = useState([])
           </div>
         </div>
         <div className={showCategory?"option":"option hide"}>
-          {categories?.map((category, i)=>
+          {categories?.map((c, i)=>
             <div className="inputItem" key={i}>
-            <input type="checkbox" name="shape" id={category} value={category} onChange={e=>filterProducts(e.target.value)} />
-          <label htmlFor='rectangle'>{category}</label>
+            {/* <input type="checkbox" name="categories" id={c} value={c} onChange={e=>filterProducts(e.target.value)} /> */}
+            <input type="checkbox" name="categories" id={c} value={c}   onChange={e=>updateFilters(e.target.checked, c)} />
+          <label htmlFor='rectangle'>{c}</label>
       </div>
         )}
        
         </div>
       </div>
+
+      
       <div className="options">
         <div className="title" onClick={()=>setShowBrand(!showBrand)}>
           brand 
@@ -81,21 +105,18 @@ const [checked, setChecked] = useState([])
             {!showBrand ?<i className="fa-solid fa-plus"></i> : <i className="fa-solid fa-minus"></i>}           
           </div>
         </div>
-        <div className={showBrand?"brand-option":"brand-option hide"}>
-        {brand?.map((b, i)=>
-          <div className="inputItem" key={i}>
-          <input type="checkbox" name="brand" id={b} value={b} onChange={e=>filterProducts(e.target.value)}/>
-          <label htmlFor='rectangle'>{b}</label>
-        </div>
-         )}
+        <div className={showBrand?"brand-option":"brand-option hide"}>      
           {brand?.map((b, i)=>
-          <div className="inputItem" key={i}>
-          <input type="checkbox" name="brand" id={b} value={b} onChange={e=>filterProducts(e.target.value)}/>
+          <div className="inputItem" key={i}>       
+
+          <input type="checkbox" name="brand" id={b} value={b} onChange={e=>updateFilters(e.target.checked, b)}/>
           <label htmlFor='rectangle'>{b}</label>
         </div>
          )}
        </div> 
       </div>
+
+
       {/* <div className="options">
         <div className="title" onClick={()=>setShowColor(!showColor)}>
           color 
@@ -131,13 +152,32 @@ const [checked, setChecked] = useState([])
       <div className="options">
         <div className="title">Price</div>
         <div className="option-price">
-          <span>0</span>
-          <input type="range" name="price" id="price" min={0} max={2000} 
-          onChange={(e)=>setMaxPrice(e.target.value)}          
-          />
-          <span>{maxPrice} </span>
+          <span>{value[0]}</span>
+          {/* <input type="range" name="price" id="price" min={0} max={2000} 
+          onChange={(e)=>setValue(e.target.value)}          
+          /> */}
+          
+
+          <Slider
+        getAriaLabel={() => 'Temperature range'}
+        size="small"
+        value={value}
+        onChange={handleChange}
+        valueLabelDisplay="auto"
+        min={0}
+        max={2000}
+        disableSwap
+        classes={{
+          thumb: classes.thumb,
+          rail: classes.rail,
+          track: classes.track,
+        }}
+      />
+      <span>{value[1]} </span>
         </div>
       </div>
+
+    
      
       {/* <div className="tags">
             <div className="title">Tags</div>
@@ -153,9 +193,15 @@ const [checked, setChecked] = useState([])
        <div className="tags">
           <div className="title">Tags</div>
           <div className="tag-item">            
-              {tags.map((tag)=> 
-                <div className="tag" key={tag.id} >{tag}</div>
-              )}             
+              {/* {tags?.map((tag)=> 
+                <div className="tag" key={tag.id} >{tag.replace("%20", " ")}</div>
+              )}  */}
+               {tags.map((tag) => {
+            return <div className="tag" key={tag.id} >{tag.replace("%20", " ")}</div>
+            })}   
+                {brands.map((brand) => {
+            return <div className="tag" key={brand.id} >{brand.replace("%20", " ")}</div>
+            })}        
           </div>                        
         </div>
     </div>

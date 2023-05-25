@@ -3,8 +3,9 @@ import { Link} from 'react-router-dom'
 import './productcard.scss'
 import { useDispatch} from "react-redux";
 import {addToCart} from '../../../redux/cartSlice';
+import Rating from './Rating';
 
-const ProductCard = ({id, price, images, title, discountPercentage}) => {
+const ProductCard = ({id, price, images, title, discountPercentage, rating}) => {
 
 //  const filteredProducts=items.filter((item)=>{
 //   return (
@@ -47,12 +48,11 @@ const ProductCard = ({id, price, images, title, discountPercentage}) => {
 
             </div>
             <div className="rate-stars">
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-solid fa-star"></i>
-              <i className="fa-regular fa-star-half-stroke"></i>
+            <Rating
+            value={rating}
+            
+          />
+            
             </div>
           </div>
 
