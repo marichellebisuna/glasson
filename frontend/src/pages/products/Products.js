@@ -12,12 +12,13 @@ const Products = () => {
   const [activeTag, setActiveTag] = useState(false)
   const [sort, setSort] = useState("az")
   const [value, setValue] = useState([0, 2000])
-
+  const [rating, setRating] = useState(5)
+  const [hover, setHover] = useState(null)
 
   const {products, loading} = useSelector(state => state.items)  
   const [ newProducts, setNewProducts ] = useState(products)    
 
-console.log(newProducts)
+console.log(rating)
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchProductItems()) 
@@ -46,9 +47,8 @@ useEffect(() => {
   
   setNewProducts(products.filter((item)=>{          
     return (
-        item.brand===(brand.replace("%20", " ")) ||  item.category===(category)
-      );
-    }))     
+        item.brand===(brand.replace("%20", " ")) ||  item.category=== (category) 
+)}))     
    
   }, []) 
 
@@ -56,7 +56,7 @@ useEffect(() => {
 
 
 let [categoryFilters, setcategoryFilters] = useState(new Set());
-
+console.log(categoryFilters)
   function updateFilters(checked, categoryFilter) {
     if (checked){
       setcategoryFilters((prev) => new Set(prev).add(categoryFilter));      
@@ -77,18 +77,16 @@ let [categoryFilters, setcategoryFilters] = useState(new Set());
       useEffect(() => {
         const filteredProducts =
         categoryFilters.size === 0
-          ? newProducts        
-          : products.filter((p) => categoryFilters.has(p.category) || categoryFilters.has(p.brand) && (p.price >= min && p.price <= max) )
-
+          ? newProducts
+          : products.filter((p) => categoryFilters.has(p.category) && categoryFilters.has(p.brand) && (p.price >= min && p.price <= max) && p.rating <= rating + 1)
         setNewProducts(filteredProducts)
-      }, [categoryFilters])
-      //console.log(filteredProducts)
+      }, [categoryFilters, min, max, rating])
+     
   useEffect(() => {
     if (sort === "az") {
       return setNewProducts((prev) =>
         [...prev].sort((a, b) => a.title.localeCompare(b.title))
-      );
-      
+      );      
     } 
     else if (sort === "za") {
       return setNewProducts((prev) =>
@@ -105,13 +103,16 @@ let [categoryFilters, setcategoryFilters] = useState(new Set());
       );
     }
   }, [sort]);
-console.log(sort)
-    // useEffect(() => {
-    //   setNewProducts((prev) =>
-    //     [...prev].filter(p=>p.price >= minPrice && p.price <= maxPrice)
-    // ); 
-      
-    // }, [maxPrice, minPrice]);
+
+// useEffect(() => {
+  
+//   setNewProducts(products.filter((item)=>{          
+//     return (
+//         item.rating===rating 
+//       );
+//     }))     
+   
+//   }, [rating]) 
     
   return (
     <div className="products">
@@ -151,7 +152,7 @@ console.log(sort)
       <div className="contents">
           <div className="left">
           
-            <Sidebar active={active} updateFilters={updateFilters} filteredProducts={newProducts} value={value} setValue={setValue} brandItem={brand} categoryItem={category}/>
+            <Sidebar active={active} updateFilters={updateFilters} filteredProducts={newProducts} value={value} setValue={setValue} brandItem={brand} categoryItem={category} rating={rating} setRating={setRating} hover={hover} setHover={setHover} setNewProducts={setNewProducts} setcategoryFilters={setcategoryFilters}/>
            
           </div>       
           <div className="right">   

@@ -1,15 +1,15 @@
 import './sidebar.scss'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, Fragment} from 'react'
 //import {produkts} from "../../../data"
 import { Link, useLocation } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchProductItems } from '../../../redux/productSlice'
 import Slider from '@mui/material/Slider';
 import { makeStyles } from '@mui/styles';
+import {FaStar} from 'react-icons/fa'
 
 
-
-const Sidebar = ({active, updateFilters, filteredProducts, value, setValue}) => {
+const Sidebar = ({active, updateFilters, filteredProducts, value, setValue, rating, hover, setRating, setHover, setNewProducts, setcategoryFilters}) => {
 const useStyles = makeStyles({
   root: {
     width: '80%',
@@ -24,10 +24,14 @@ const useStyles = makeStyles({
     color: '#000',
   },
 });
-const [showTagged, setShowTagged] = useState()
+
+
+
 
 const [showCategory, setShowCategory] = useState(true)
-const [showBrand, setShowBrand] = useState(false)
+const [showBrand, setShowBrand] = useState(true)
+
+
 // const [activeTag, setActiveTag] = useState(false)
 // const [showColor, setShowColor] = useState(true)
 // const [showSize, setShowSize] = useState(true)
@@ -37,7 +41,14 @@ const dispatch = useDispatch()
 useEffect(() => {
   dispatch(fetchProductItems()) 
 }, [dispatch])
+const [key, setKey] = useState(0);
 
+const clearClickHandler = () => {
+  setKey((k) => k + 1)
+  setcategoryFilters(new Set())
+setNewProducts(products)
+};
+console.log(products)
 const location = useLocation();
 const brandUrl = (location.pathname.split("=")[2]);
 const category = location.pathname.split("/")[2];
@@ -77,6 +88,7 @@ const handleChange = (event, newValue) => {
   setValue(newValue);
 };
   return (
+    <Fragment key={key}>
    <div className={active ?'sidebar active' :"sidebar"}>
       <div className="options">        
         <div className="title" onClick={()=>setShowCategory(!showCategory)}>
@@ -89,14 +101,13 @@ const handleChange = (event, newValue) => {
           {categories?.map((c, i)=>
             <div className="inputItem" key={i}>
             {/* <input type="checkbox" name="categories" id={c} value={c} onChange={e=>filterProducts(e.target.value)} /> */}
-            <input type="checkbox" name="categories" id={c} value={c}   onChange={e=>updateFilters(e.target.checked, c)} />
+            <input type="checkbox" name="categories" id={c} value={c}   onChange={e=>updateFilters(e.target.checked, c)} defaultChecked={false}/>
           <label htmlFor='rectangle'>{c}</label>
       </div>
         )}
        
         </div>
       </div>
-
       
       <div className="options">
         <div className="title" onClick={()=>setShowBrand(!showBrand)}>
@@ -109,7 +120,7 @@ const handleChange = (event, newValue) => {
           {brand?.map((b, i)=>
           <div className="inputItem" key={i}>       
 
-          <input type="checkbox" name="brand" id={b} value={b} onChange={e=>updateFilters(e.target.checked, b)}/>
+          <input type="checkbox" name="brand" id={b} value={b} onChange={e=>updateFilters(e.target.checked, b)} defaultChecked={false}/>
           <label htmlFor='rectangle'>{b}</label>
         </div>
          )}
@@ -149,14 +160,43 @@ const handleChange = (event, newValue) => {
          )}
        </div>
       </div> */}
+       <div className="options">        
+        <div className="title" onClick={()=>setShowCategory(!showCategory)}>
+          Ratings 
+         
+        </div>
+        <div className="star-option">
+          {[...Array(5)].map((star, i)=>{
+          const ratingValue=i+1;
+          return (<label><div className="inputItem" key={i}>
+            {/* <input type="checkbox" name="categories" id={c} value={c} onChange={e=>filterProducts(e.target.value)} /> */}
+            <input 
+              type="radio" 
+              name="rating"  
+              id={ratingValue} 
+              value={ratingValue} 
+              onClick={()=>setRating(ratingValue)} 
+            />
+            <FaStar 
+              className="stars" 
+              size="20" 
+              color={ratingValue <= (hover || rating) ? "#ff8927 ":"#e4e5e9"} 
+              onMouseEnter={()=>setHover(ratingValue)} 
+              onMouseLeave={()=>setHover(null)}            
+            />
+      </div>
+      </label>)}
+        )}       
+        </div>
+      
+      </div>
       <div className="options">
         <div className="title">Price</div>
         <div className="option-price">
-          <span>{value[0]}</span>
+          {/* <span>{value[0]}</span> */}
           {/* <input type="range" name="price" id="price" min={0} max={2000} 
           onChange={(e)=>setValue(e.target.value)}          
-          /> */}
-          
+          /> */}         
 
           <Slider
         getAriaLabel={() => 'Temperature range'}
@@ -173,7 +213,7 @@ const handleChange = (event, newValue) => {
           track: classes.track,
         }}
       />
-      <span>{value[1]} </span>
+      {/* <span>{value[1]} </span> */}
         </div>
       </div>
 
@@ -190,6 +230,8 @@ const handleChange = (event, newValue) => {
             </div>
                       
           </div> */}
+        
+           <button type="submit" className='clear'onClick={clearClickHandler}>Clear</button>
        <div className="tags">
           <div className="title">Tags</div>
           <div className="tag-item">            
@@ -204,7 +246,9 @@ const handleChange = (event, newValue) => {
             })}        
           </div>                        
         </div>
+       
     </div>
+    </Fragment>
   )
 }
 
